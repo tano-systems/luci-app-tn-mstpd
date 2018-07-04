@@ -1,0 +1,10 @@
+<%#
+ Copyright (c) 2018, Tano Systems. All Rights Reserved.
+ Anton Kikin <a.kikin@tano-systems.com>
+-%>
+
+<% v = require "luci.app_mstpd_version" %>
+<fieldset class="cbi-section"><div class="cbi-section-node"><p>
+<%=string.format(translate('MSTPd LuCI application (version %s)'), v.version)%><br />
+<%=translate('&copy; 2018, Tano Systems, Anton Kikin &lt;<a href="mailto:a.kikin@tano-systems.com">a.kikin@tano-systems.com&gt;')%></a>
+</p></div></fieldset>

@@ -1,0 +1,229 @@
+<%#
+ Copyright (c) 2018, Tano Systems. All Rights Reserved.
+ Anton Kikin <a.kikin@tano-systems.com>
+-%>
+
+<%+header%>
+
+<style type="text/css">
+	table.mstpd-bridge-parameters { border: 0; }
+	table.mstpd-bridge-parameters td { padding: 0 20px 0 0; background-color: inherit !important; border: 0; }
+	table.mstpd-bridge-parameters td:first-of-type { font-weight: bold; white-space: nowrap; }
+	table.mstpd-bridge-parameters td:last-of-type { width: 100%; }
+
+	.mstpd-yes { color: #0a0; }
+	.mstpd-no  { color: black; }
+</style>
+
+<script type="text/javascript" src="<%=resource%>/cbi.js"></script>
+<script type="text/javascript">//<![CDATA[
+
+	function add_bridge_row(br, description, param_name, convert_cb = null, postfix = null)
+	{
+		if (typeof br[param_name] == 'undefined')
+			return;
+
+		var value_str;
+		
+		if (convert_cb)
+			value_str = convert_cb(br[param_name]);
+		else
+			value_str = br[param_name];
+
+		return '<tr><td>' + description + ':' + '</td>' +
+		       '<td>' + value_str + (postfix ? (' ' + postfix) : '') + '</td></tr>';
+	}
+
+	function add_ports_row(br, description, param_name, convert_cb = null)
+	{
+		var inner = "";
+		var ports_count = br.ports.length;
+
+		inner += '<tr><td>' + description + '</td>';
+
+		for (i = 0; i < ports_count; i++)
+		{
+			inner += '<td>';
+
+			if (typeof br.ports[i][param_name] != 'undefined')
+			{
+				var value_str;
+
+				if (convert_cb)
+					value_str = convert_cb(br.ports[i][param_name]);
+				else
+					value_str = br.ports[i][param_name];
+
+				inner += value_str;
+			}
+
+			inner += '</td>';
+		}
+
+		inner += '</tr>';
+
+		return inner;
+	}
+
+	function tr_yn(value)
+	{
+		return (value == "no")
+			? '<span class="mstpd-no">&#x2718; <%:no%></span>'
+			: '<span class="mstpd-yes">&#x2714; <%:yes%></span>';
+	}
+
+	function tr_port_state(value)
+	{
+		return value.charAt(0).toUpperCase() + value.slice(1);
+	}
+
+	function tr_root_port(value)
+	{
+		return ((value == "none") || (value == "")) ? '&ndash;' : value;
+	}
+
+	function tr_br_protocol(value)
+	{
+		return value.toUpperCase();
+	}
+
+	function add_ports_table(br)
+	{
+		var inner = "";
+		var ports_count = br.ports.length;
+
+		//
+		// Header
+		//
+		inner +=
+			'<div class="cbi-section-node">' +
+			'<table class="cbi-section-table mstpd-bridge-ports" id="bridge-' + br["bridge"] + '-ports">' +
+			'<tr class="cbi-section-table-titles">';
+
+		inner += '<th class="cbi-section-table-cell"><%:Port%></th>';
+
+		for (i = 0; i < ports_count; i++)
+			inner += '<th class="cbi-section-table-cell">' + br.ports[i]["port"] + '</th>';
+
+		inner += '</tr>';
+
+		//
+		// Contents
+		//
+		inner += add_ports_row(br, "<%=translate('Enabled')%>", "enabled", tr_yn);
+		inner += add_ports_row(br, "<%=translate('Port role')%>", "role");
+		inner += add_ports_row(br, "<%=translate('Port state')%>", "state", tr_port_state);
+		inner += add_ports_row(br, "<%=translate('Port identifier')%>", "port-id");
+		inner += add_ports_row(br, "<%=translate('Port internal cost')%>", "internal-port-cost");
+		inner += add_ports_row(br, "<%=translate('Port external cost')%>", "external-port-cost");
+		inner += add_ports_row(br, "<%=translate('Designated root')%>", "designated-root");
+		inner += add_ports_row(br, "<%=translate('Designated bridge')%>", "designated-bridge");
+		inner += add_ports_row(br, "<%=translate('Designated port')%>", "designated-port");
+		inner += add_ports_row(br, "<%=translate('Admin edge')%>", "admin-edge-port", tr_yn);
+		inner += add_ports_row(br, "<%=translate('Oper edge')%>", "oper-edge-port", tr_yn);
+		inner += add_ports_row(br, "<%=translate('Point-to-point')%>", "point-to-point", tr_yn);
+		inner += add_ports_row(br, "<%=translate('Tx BPDU')%>", "num-tx-bpdu");
+		inner += add_ports_row(br, "<%=translate('Rx BPDU')%>", "num-rx-bpdu");
+		inner += add_ports_row(br, "<%=translate('Tx TCN')%>", "num-tx-tcn");
+		inner += add_ports_row(br, "<%=translate('Rx TCN')%>", "num-rx-tcn");
+
+		//
+		// Footer
+		//
+		inner += '</table></div>';
+
+		return inner;
+	}
+
+	function add_bridge(i, container, br)
+	{
+		var inner = "";
+
+		//
+		// Header
+		//
+		inner +=
+			'<fieldset class="cbi-section" id="cbi-table-table-' + br["bridge"] + '">' +
+			'<legend><%:Bridge%> ' + br["bridge"] + '</legend>' +
+			'<div class="cbi-section-node">';
+
+		//
+		// Bridge parameters
+		//
+		inner +=
+			'<table class="mstpd-bridge-parameters">' +
+			add_bridge_row(br, "<%=translate('Protocol')%>", "force-protocol-version", tr_br_protocol) +
+			add_bridge_row(br, "<%=translate('Enabled')%>", "enabled", tr_yn) +
+			add_bridge_row(br, "<%=translate('Bridge ID')%>", "bridge-id") +
+			add_bridge_row(br, "<%=translate('Designated root')%>", "designated-root") +
+			add_bridge_row(br, "<%=translate('Regional root')%>", "regional-root") +
+			add_bridge_row(br, "<%=translate('Root port')%>", "root-port", tr_root_port) +
+			add_bridge_row(br, "<%=translate('Path cost')%>", "path-cost") +
+			add_bridge_row(br, "<%=translate('Max age')%>", "max-age", null, "<%:s%>") +
+			add_bridge_row(br, "<%=translate('Forward delay time')%>", "forward-delay", null, "<%:s%>") +
+			add_bridge_row(br, "<%=translate('Transmit hold count')%>", "tx-hold-count") +
+			add_bridge_row(br, "<%=translate('Max hops')%>", "max-hops") +
+			add_bridge_row(br, "<%=translate('Hello time')%>", "hello-time", null, "<%:s%>") +
+			add_bridge_row(br, "<%=translate('Ageing time')%>", "ageing-time", null, "<%:s%>") +
+			add_bridge_row(br, "<%=translate('Time since topology change')%>", "time-since-topology-change", null, "<%:s%>") +
+			"</table>";
+
+		//
+		// Ports table
+		//
+		inner += add_ports_table(br)
+
+		//
+		// Footer
+		//
+		inner += '</div>';
+		inner += '</fieldset>';
+
+		container.innerHTML += inner;
+	}
+
+	XHR.poll(5, '<%=url('admin/status/mstpd/status_request')%>', null,
+		function(x, json)
+		{
+			var mstpd_tables =
+				document.getElementById('mstpd-tables');
+
+			// Clear existing data
+			mstpd_tables.innerHTML = "";
+
+			console.log(json)
+
+			if (!json || !json.length)
+			{
+				var inner = "";
+
+				inner += 
+					'<p class="alert-message warning">' +
+					"<%:No MSTPd bridges information.%><br />" +
+					"<%:Maybe you have no bridges with enabled STP support.%></em></p>" +
+					'</p>'
+
+				mstpd_tables.innerHTML = inner;
+				return;
+			}
+
+			for (i = 0; i < json.length; i++)
+				add_bridge(i, mstpd_tables, json[i]);
+		}
+	)
+//]]></script>
+
+<h2 name="content"><%:MSTPd: Status%></h2>
+<div class="cbi-map-descr"><%:This page allows you to see current MSTPd bridges and ports status%></div>
+
+<div id="mstpd-tables">
+	<div class="cbi-section-node">
+		<em><%:Collecting data...%></em>
+	</div>
+	<br />
+</div>
+
+<% include("mstpd/footer") -%>
+<%+footer%>
+
+<script type="text/javascript">cbi_init();</script>

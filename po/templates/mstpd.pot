@@ -1,0 +1,238 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8"
+
+msgid ""
+"&copy; 2018, Tano Systems, Anton Kikin &lt;<a href=\"mailto:a.kikin@tano-"
+"systems.com\">a.kikin@tano-systems.com&gt;"
+msgstr ""
+
+msgid "(0 &mdash; auto)"
+msgstr ""
+
+msgid "(1&ndash;10 seconds)"
+msgstr ""
+
+msgid "(4&ndash;30 seconds)"
+msgstr ""
+
+msgid "(6&ndash;40 seconds)"
+msgstr ""
+
+msgid "<p>MSTPd is a Multiple Spanning Tree Protocol Daemon</p>"
+msgstr ""
+
+msgid "Admin edge"
+msgstr ""
+
+msgid "Ageing time"
+msgstr ""
+
+msgid "Auto"
+msgstr ""
+
+msgid "Auto transition to/from edge state"
+msgstr ""
+
+msgid "BPDU guard"
+msgstr ""
+
+msgid "Bridge"
+msgstr ""
+
+msgid "Bridge (%s)"
+msgstr ""
+
+msgid "Bridge ID"
+msgstr ""
+
+msgid "Bridge forward delay time must be in range from 4 to 30"
+msgstr ""
+
+msgid "Bridge hello time must be in range from 1 to 10"
+msgstr ""
+
+msgid "Bridge max age must be in range from 6 to 40"
+msgstr ""
+
+msgid "Bridge max hops must be in range from 6 to 40"
+msgstr ""
+
+msgid "Bridge transmit hold count must be in range from 1 to 10"
+msgstr ""
+
+msgid "Bridges"
+msgstr ""
+
+msgid "Collecting data..."
+msgstr ""
+
+msgid "Debug (3)"
+msgstr ""
+
+msgid "Designated bridge"
+msgstr ""
+
+msgid "Designated port"
+msgstr ""
+
+msgid "Designated root"
+msgstr ""
+
+msgid "Disable (0)"
+msgstr ""
+
+msgid "Enable MSTPd"
+msgstr ""
+
+msgid "Enabled"
+msgstr ""
+
+msgid "Error (1)"
+msgstr ""
+
+msgid "External path cost"
+msgstr ""
+
+msgid "Forward delay time"
+msgstr ""
+
+msgid "General settings"
+msgstr ""
+
+msgid "Hello time"
+msgstr ""
+
+msgid "Info (2)"
+msgstr ""
+
+msgid "Initial edge state"
+msgstr ""
+
+msgid "Internal path cost"
+msgstr ""
+
+msgid "MSTPd"
+msgstr ""
+
+msgid "MSTPd LuCI application version %s"
+msgstr ""
+
+msgid "MSTPd logging level"
+msgstr ""
+
+msgid "MSTPd: Configure"
+msgstr ""
+
+msgid "MSTPd: Status"
+msgstr ""
+
+msgid "Max age"
+msgstr ""
+
+msgid "Max hops"
+msgstr ""
+
+msgid "Maybe you have no bridges with enabled STP support."
+msgstr ""
+
+msgid "Name of the bridge network interface"
+msgstr ""
+
+msgid "Name of the bridge port network interface"
+msgstr ""
+
+msgid "No"
+msgstr ""
+
+msgid "No MSTPd bridges information."
+msgstr ""
+
+msgid "No bridges with enabled STP support founded"
+msgstr ""
+
+msgid "Oper edge"
+msgstr ""
+
+msgid "Path cost"
+msgstr ""
+
+msgid "Point-to-point"
+msgstr ""
+
+msgid "Point-to-point detection mode"
+msgstr ""
+
+msgid "Port"
+msgstr ""
+
+msgid "Port %d (%s)"
+msgstr ""
+
+msgid "Port external cost"
+msgstr ""
+
+msgid "Port identifier"
+msgstr ""
+
+msgid "Port internal cost"
+msgstr ""
+
+msgid "Port role"
+msgstr ""
+
+msgid "Port state"
+msgstr ""
+
+msgid "Priority"
+msgstr ""
+
+msgid "Protocol"
+msgstr ""
+
+msgid "Regional root"
+msgstr ""
+
+msgid "Restrict port ability to propagate received TCN's"
+msgstr ""
+
+msgid "Restrict port ability to take Root role"
+msgstr ""
+
+msgid "Root port"
+msgstr ""
+
+msgid "Rx BPDU"
+msgstr ""
+
+msgid "Rx TCN"
+msgstr ""
+
+msgid "State machine transition (4)"
+msgstr ""
+
+msgid "This page allows you to see current MSTPd bridges and ports status"
+msgstr ""
+
+msgid "Time since topology change"
+msgstr ""
+
+msgid "Transmit hold count"
+msgstr ""
+
+msgid "Tx BPDU"
+msgstr ""
+
+msgid "Tx TCN"
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+
+msgid "no"
+msgstr ""
+
+msgid "s"
+msgstr ""
+
+msgid "yes"
+msgstr ""

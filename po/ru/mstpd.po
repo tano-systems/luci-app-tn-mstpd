@@ -1,0 +1,247 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid ""
+"&copy; 2018, Tano Systems, Anton Kikin &lt;<a href=\"mailto:a.kikin@tano-"
+"systems.com\">a.kikin@tano-systems.com&gt;"
+msgstr ""
+"&copy; 2018, Tano Systems, Антон Кикин &lt;<a href=\"mailto:a.kikin@tano-"
+"systems.com\">a.kikin@tano-systems.com&gt;"
+
+msgid "(0 &mdash; auto)"
+msgstr "(0 &mdash; автоматически)"
+
+msgid "(1&ndash;10 seconds)"
+msgstr "(1&ndash;10 секунд)"
+
+msgid "(4&ndash;30 seconds)"
+msgstr "(4&ndash;30 секунд)"
+
+msgid "(6&ndash;40 seconds)"
+msgstr "(6&ndash;40 секунд)"
+
+msgid "<p>MSTPd is a Multiple Spanning Tree Protocol Daemon</p>"
+msgstr "<p>MSTPd служба поддержки Spanning Tree протоколов</p>"
+
+msgid "Admin edge"
+msgstr "Административное пограничнное состояние"
+
+msgid "Ageing time"
+msgstr "Время устаревания"
+
+msgid "Auto"
+msgstr "Автоматически"
+
+msgid "Auto transition to/from edge state"
+msgstr "Автоматический переход в/из пограничного состояния"
+
+msgid "BPDU guard"
+msgstr "Защита BPDU"
+
+msgid "Bridge"
+msgstr "Мост"
+
+msgid "Bridge (%s)"
+msgstr "Мост (%s)"
+
+msgid "Bridge ID"
+msgstr "Идентификатор моста"
+
+msgid "Bridge forward delay time must be in range from 4 to 30"
+msgstr ""
+"Значение &laquo;forward delay&raquo; должно быть в диапазоне от 4 до 30 "
+"секунд"
+
+msgid "Bridge hello time must be in range from 1 to 10"
+msgstr ""
+"Значение &laquo;hello time&raquo; должно быть в диапазоне от 1 до 10 секунд"
+
+msgid "Bridge max age must be in range from 6 to 40"
+msgstr ""
+"Значение &laquo;max age&raquo; должно быть в диапазоне от 6 до 40 секунд"
+
+msgid "Bridge max hops must be in range from 6 to 40"
+msgstr "Значение &laquo;max hops&raquo; должно быть в диапазоне от 6 до 40"
+
+msgid "Bridge transmit hold count must be in range from 1 to 10"
+msgstr ""
+"Значение &laquo;transmit hold count&raquo; должно быть в диапазоне от 1 до 10"
+
+msgid "Bridges"
+msgstr "Мосты"
+
+msgid "Collecting data..."
+msgstr "Сбор данных..."
+
+msgid "Debug (3)"
+msgstr "Отладочные сообщения (3)"
+
+msgid "Designated bridge"
+msgstr "Назначенный мост"
+
+msgid "Designated port"
+msgstr "Назначенный порт"
+
+msgid "Designated root"
+msgstr "Назначенный корневой мост"
+
+msgid "Disable (0)"
+msgstr "Отключено (0)"
+
+msgid "Enable MSTPd"
+msgstr "Включить MSTPd"
+
+msgid "Enabled"
+msgstr "Включено"
+
+msgid "Error (1)"
+msgstr "Ошибки (1)"
+
+msgid "External path cost"
+msgstr "Стомость пути (внешняя)"
+
+msgid "Forward delay time"
+msgstr "Время &laquo;forward delay&raquo;"
+
+msgid "General settings"
+msgstr "Общие настройки"
+
+msgid "Hello time"
+msgstr "Время &laquo;hello time&raquo;"
+
+msgid "Info (2)"
+msgstr "Информационные сообщения (2)"
+
+msgid "Initial edge state"
+msgstr "Начальное пограничное состояние"
+
+msgid "Internal path cost"
+msgstr "Стоимость пути (внутренняя)"
+
+msgid "MSTPd"
+msgstr ""
+
+msgid "MSTPd LuCI application (version %s)"
+msgstr "LuCI приложение управления MSTPd (версия %s)"
+
+msgid "MSTPd logging level"
+msgstr "Уровень журналирования"
+
+msgid "MSTPd: Configure"
+msgstr "MSTPd: Настройки"
+
+msgid "MSTPd: Status"
+msgstr "MSTPd: Состояние"
+
+msgid "Max age"
+msgstr "Параметр &laquo;max age&raquo;"
+
+msgid "Max hops"
+msgstr "Параметр &laquo;max hops&raquo;"
+
+msgid "Maybe you have no bridges with enabled STP support."
+msgstr "Возможно, что на мостах не включена поддержка STP"
+
+msgid "Name of the bridge network interface"
+msgstr "Имя сетевого устройства моста"
+
+msgid "Name of the bridge port network interface"
+msgstr "Имя сетевого устройства порта"
+
+msgid "No"
+msgstr "Нет"
+
+msgid "No MSTPd bridges information."
+msgstr "Нет информации об MSTPd мостах."
+
+msgid "No bridges with enabled STP support founded"
+msgstr "Нет мостов с включенной поддержкой STP"
+
+msgid "Oper edge"
+msgstr "Оперативное пограничное состояние"
+
+msgid "Path cost"
+msgstr "Стоимость маршрута"
+
+msgid "Point-to-point"
+msgstr "Состояние P2P"
+
+msgid "Point-to-point detection mode"
+msgstr "Режим обнаружения P2P"
+
+msgid "Port"
+msgstr "Порт"
+
+msgid "Port %d (%s)"
+msgstr "Порт %d (%s)"
+
+msgid "Port external cost"
+msgstr "Стоимость маршрута (внешняя)"
+
+msgid "Port identifier"
+msgstr "Идентификатор"
+
+msgid "Port internal cost"
+msgstr "Стоимость маршрута (внутренняя)"
+
+msgid "Port role"
+msgstr "Роль"
+
+msgid "Port state"
+msgstr "Состояние"
+
+msgid "Priority"
+msgstr "Приоритет"
+
+msgid "Protocol"
+msgstr "Протокол"
+
+msgid "Regional root"
+msgstr "Региональный корневой мост"
+
+msgid "Restrict port ability to propagate received TCN's"
+msgstr "Запретить порту распространять полученные TCN"
+
+msgid "Restrict port ability to take Root role"
+msgstr "Запретить порту принимать роль корневого порта"
+
+msgid "Root port"
+msgstr "Корневой порт"
+
+msgid "Rx BPDU"
+msgstr "Получено BPDU"
+
+msgid "Rx TCN"
+msgstr "Получено TCN"
+
+msgid "State machine transition (4)"
+msgstr "Переходы машины состояний (4)"
+
+msgid "This page allows you to see current MSTPd bridges and ports status"
+msgstr ""
+"На данной странице можно просматривать текущее состояние MSTPd мостов и "
+"портов"
+
+msgid "Time since topology change"
+msgstr "Время с последнего изменения топологии"
+
+msgid "Transmit hold count"
+msgstr "Параметр &laquo;transmit hold count&raquo;"
+
+msgid "Tx BPDU"
+msgstr "Отправлено BPDU"
+
+msgid "Tx TCN"
+msgstr "Отправлено TCN"
+
+msgid "Yes"
+msgstr "Да"
+
+msgid "no"
+msgstr "нет"
+
+msgid "s"
+msgstr "с"
+
+msgid "yes"
+msgstr "да"
