@@ -6,8 +6,8 @@ This package allows you to control and monitor MSTPd in LuCI web interface.
 
 ## Dependencies
 This MSTPd LuCI application depends on mstpd sources from
-git://github/tano-systems/mstpd.git (branch json-output-format-support) repository
-and init scripts from git://github/tano-systems/meta-tano-openwrt.
+https://github.com/tano-systems/mstpd.git (branch json-output-format-support) repository
+and init scripts from https://github.com/tano-systems/meta-tano-openwrt.git.
 
 
 ## Supported languages
@@ -17,8 +17,8 @@ and init scripts from git://github/tano-systems/meta-tano-openwrt.
 
 ## Limitations
 
-Supported only STP and RSTP protocols.
-Configuration and status for the MSTP protocol is not supported.
+Supported configuration and status only for the STP and RSTP protocols.
+MSTP protocol currently is not supported.
 
 
 ## Screenshots
