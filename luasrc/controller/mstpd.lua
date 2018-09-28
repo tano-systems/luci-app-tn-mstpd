@@ -7,14 +7,40 @@ module("luci.controller.mstpd", package.seeall)
 
 function index()
 	entry({"admin", "services", "mstpd"}, cbi("mstpd/config"), _("MSTPd"), 80)
-
 	entry({"admin", "status", "mstpd" }, template("mstpd/status"), _("MSTPd"), 80)
 	entry({"admin", "status", "mstpd", "status_request"}, call("action_status_request")).leaf = true
+	entry({"admin", "status", "mstpd", "status_get"}, call("action_status_get")).leaf = true
 end
 
 -- Status page
 
 local json = require "luci.jsonc"
+
+function action_status_get()
+	local sys = require "luci.sys"
+
+	local status = {
+		running = false,
+		pid     = 0
+	}
+
+	status.running = (sys.call("pidof mstpd >/dev/null") == 0)
+
+	if status.running then
+		status.pid = luci.util.exec("pidof mstpd")
+		if status.pid == "" then
+			status.pid = 0
+		else
+			status.pid = tonumber(status.pid)
+		end
+		if not status.pid then
+			status.running = false
+		end
+	end
+
+	luci.http.prepare_content("application/json")
+	luci.http.write_json(status)
+end
 
 function action_status_request()
 	luci.http.prepare_content("application/json")

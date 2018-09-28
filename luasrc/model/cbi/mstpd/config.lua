@@ -12,38 +12,71 @@ m = Map("mstpd",
 	)
 )
 
--- reload configuration after CBI configuration is commited
-m.on_after_commit = function() luci.sys.call("/sbin/bridge-stp restart_config") end
+m.apply_on_parse = true
 
-s = m:section(TypedSection, "mstpd", translate("General settings"))
+function m.on_apply(self)
+	luci.http.redirect(luci.dispatcher.build_url("admin", "services", "mstpd"))
+end
+
+s = m:section(TypedSection, "mstpd", translate("Global settings"))
 
 s.anonymous = true
 s.addremove = false
 
+-----------------------------------------------------------------------------------------
 --
--- General settings
+-- Daemon settings
 --
-
--- Enabled description
-mstpd_enabled = s:option(Flag, "enabled",
-	translate("Enable MSTPd"))
+-----------------------------------------------------------------------------------------
 
 -- Logging level
 mstpd_loglevel = s:option(ListValue, "loglevel",
 	translate("MSTPd logging level"))
 
+mstpd_loglevel.default = "2"
 mstpd_loglevel:value(0, translate("Disable (0)"))
 mstpd_loglevel:value(1, translate("Error (1)"))
 mstpd_loglevel:value(2, translate("Info (2)"))
 mstpd_loglevel:value(3, translate("Debug (3)"))
 mstpd_loglevel:value(4, translate("State machine transition (4)"))
 
+-- Bridges
+mstpd_bridges = s:option(DynamicList, "bridge",
+	translate("Bridges controlled by MSTPd")
+)
+
+mstpd_bridges.default  = ""
+mstpd_bridges.template = "mstpd/bridgeslist"
+mstpd_bridges.rmempty  = true
+mstpd_bridges.network  = ""
+mstpd_bridges.widget   = "checkbox"
+
+-- State
+s = m:section(SimpleSection, translate("Service state"))
+mstpd_running = s:option(DummyValue, "__running")
+
+mstpd_running.template = "mstpd/mstpd_running"
+
+-----------------------------------------------------------------------------------------
 --
 -- Bridges
 --
-local ntm = require "luci.model.network".init()
+-----------------------------------------------------------------------------------------
+local function has_value(tab, val)
+	if (type(tab) == 'table') then
+		for index, value in ipairs(tab) do
+			if value == val then return true end
+		end
+	else
+		if tab == val then return true end
+	end
 
+	return false
+end
+
+local ntm = require "luci.model.network".init()
 local bridges = { }
+local mstpd_bridges_val = m:get("global", "bridge")
 
 for _, netif in ipairs(ntm:get_interfaces()) do
 	if netif:is_bridge() and netif:bridge_stp() then
@@ -57,17 +90,25 @@ for _, netif in ipairs(ntm:get_interfaces()) do
 			end
 		end
 
-		bridges[#bridges + 1] = {
-			["name"]     = netif:name(),
-			["name-cfg"] = string.sub(netif:name(), 4), -- remove 'br-' prefix
-			["ports"]    = ports
-		}
+		if has_value(mstpd_bridges_val, netif:name()) then
+			bridges[#bridges + 1] = {
+				["name"]     = netif:name(),
+				["name-cfg"] = string.sub(netif:name(), 4), -- remove 'br-' prefix
+				["ports"]    = ports
+			}
+		end
 	end
 end
 
 if #bridges == 0 then
 	s = m:section(SimpleSection, translate("Bridges"))
-	s.template = "mstpd/no_bridges"
+
+	o = s:option(DummyValue, "__info")
+	o.rawhtml = true
+	o.default = [[ <p class="alert-message info">%s<br />%s</p> ]] % {
+		translate("No bridges controlled by MSTPd"),
+		translate("You must select at least one bridge for controlling by MSTPd")
+	}
 end
 
 local function get_br_porttab(port_name)
@@ -108,7 +149,7 @@ for i, br in ipairs(bridges) do
 	br_forcevers:value("stp", "STP")
 	br_forcevers:value("rstp", "RSTP")
 	br_forcevers.default = "rstp"
-	br_forcevers.rmempty = false
+	br_forcevers.rmempty = true
 
 	--
 	br_treeprio = s:taboption("bridge", ListValue, "treeprio",
@@ -133,7 +174,7 @@ for i, br in ipairs(bridges) do
 	br_treeprio:value("15", "61440 (15)")
 
 	br_treeprio.default = "8"
-	br_treeprio.rmempty = false
+	br_treeprio.rmempty = true
 
 	--
 	br_hello = s:taboption("bridge", Value, "hello",
@@ -141,14 +182,17 @@ for i, br in ipairs(bridges) do
 		translate("(1&ndash;10 seconds)"))
 
 	br_hello.default = "2"
-	br_hello.rmempty = false
+	br_hello.rmempty = true
 
 	function br_hello.validate(self, value, section)
-		if value >= 1 and value <= 10 then
-			return value
+		local val = tonumber(value)
+		if not val then
+			return nil, self.title .. ": " .. translate("Value is not a number")
+		elseif val < 1 or val > 10 then
+			return nil, self.title .. ": " .. translate("Must be in range from 1 to 10")
 		end
 
-		return nil, translate("Bridge hello time must be in range from 1 to 10")
+		return value
 	end
 
 	--
@@ -157,16 +201,27 @@ for i, br in ipairs(bridges) do
 		translate("(4&ndash;30 seconds)"))
 
 	br_fdelay.default = "15"
-	br_fdelay.rmempty = false
+	br_fdelay.rmempty = true
 
 	function br_fdelay.validate(self, value, section)
-		if value >= 4 and value <= 30 then
-			return value
+		local val = tonumber(value)
+		if not val then
+			return nil, self.title .. ": " .. translate("Value is not a number")
+		elseif val < 4 or val > 30 then
+			return nil, self.title .. ": " .. translate("Must be in range from 4 to 30")
 		end
 
-		-- TODO: check condition [ 2 * (Forward Delay - 1) >= Max Age ]
+		local fdelay  = val
+		local maxage  = tonumber(m:get(br["name-cfg"], "maxage"))
+		local compare = 2 * (fdelay - 1)
 
-		return nil, translate("Bridge forward delay time must be in range from 4 to 30")
+		-- Check condition [ 2 * (Forward Delay - 1) >= Max Age ]
+		if maxage > compare then
+			return nil, self.title .. ": " ..
+				translate("Must meet the condition [ 2 * (Forward Delay - 1) >= Max Age ]")
+		end
+
+		return value
 	end
 
 	--
@@ -175,32 +230,46 @@ for i, br in ipairs(bridges) do
 		translate("(6&ndash;40 seconds)"))
 
 	br_maxage.default = "20"
-	br_maxage.rmempty = false
+	br_maxage.rmempty = true
 
 	function br_maxage.validate(self, value, section)
-		if value >= 6 and value <= 40 then
-			return value
+		local val = tonumber(value)
+		if not val then
+			return nil, self.title .. ": " .. translate("Value is not a number")
+		elseif val < 6 or val > 40 then
+			return nil, self.title .. ": " .. translate("Must be in range from 6 to 40")
 		end
 
-		-- TODO: check condition [ 2 * (Forward Delay - 1) >= Max Age ]
+		local maxage  = val
+		local fdelay  = tonumber(m:get(br["name-cfg"], "fdelay"))
+		local compare = 2 * (fdelay - 1)
 
-		return nil, translate("Bridge max age must be in range from 6 to 40")
+		-- Check condition [ 2 * (Forward Delay - 1) >= Max Age ]
+		if maxage > compare then
+			return nil, self.title .. ": " ..
+				translate("Must meet the condition [ 2 * (Forward Delay - 1) >= Max Age ]")
+		end
+
+		return value
 	end
 
 	--
-	br_maxhops = s:taboption("bridge", Value, "maxhops",
-		translate("Max hops"),
-		"(6&ndash;40)")
+	br_ageing = s:taboption("bridge", Value, "ageing",
+		translate("Ageing"),
+		translate("(10&ndash;1000000 seconds)"))
 
-	br_maxhops.default = "20"
-	br_maxhops.rmempty = false
+	br_ageing.default = "300"
+	br_ageing.rmempty = true
 
-	function br_maxhops.validate(self, value, section)
-		if value >= 6 and value <= 40 then
-			return value
+	function br_ageing.validate(self, value, section)
+		local val = tonumber(value)
+		if not val then
+			return nil, self.title .. ": " .. translate("Value is not a number")
+		elseif val < 10 or val > 1000000 then
+			return nil, self.title .. ": " .. translate("Must be in range from 10 to 1000000")
 		end
 
-		return nil, translate("Bridge max hops must be in range from 6 to 40")
+		return value
 	end
 
 	--
@@ -209,14 +278,17 @@ for i, br in ipairs(bridges) do
 		"(1&ndash;10)")
 
 	br_txholdcount.default = "6"
-	br_txholdcount.rmempty = false
+	br_txholdcount.rmempty = true
 
 	function br_txholdcount.validate(self, value, section)
-		if value >= 1 and value <= 10 then
-			return value
+		local val = tonumber(value)
+		if not val then
+			return nil, self.title .. ": " .. translate("Value is not a number")
+		elseif val < 1 or val > 10 then
+			return nil, self.title .. ": " .. translate("Must be in range from 1 to 10")
 		end
 
-		return nil, translate("Bridge transmit hold count must be in range from 1 to 10")
+		return value
 	end
 
 	--
@@ -257,27 +329,17 @@ for i, br in ipairs(bridges) do
 		port_treeportprio:value("15", "61440 (15)")
 
 		port_treeportprio.default = "8"
-		port_treeportprio.rmempty = false
+		port_treeportprio.rmempty = true
 
 		-- External path cost
 		port_pathcost = s:taboption(
 			get_br_porttab(port["name"]), Value,
 			get_br_portparam(port["name"], "pathcost"),
-			translate("External path cost"),
+			translate("Path cost"),
 			translate("(0 &mdash; auto)"))
 
 		port_pathcost.default = "0"
-		port_pathcost.rmempty = false
-
-		-- Internal path cost
-		port_treeportcost = s:taboption(
-			get_br_porttab(port["name"]), Value,
-			get_br_portparam(port["name"], "treecost"),
-			translate("Internal path cost"),
-			translate("(0 &mdash; auto)"))
-
-		port_treeportcost.default = "0"
-		port_treeportcost.rmempty = false
+		port_pathcost.rmempty = true
 
 		-- Admin edge
 		port_adminedge = s:taboption(
@@ -290,7 +352,7 @@ for i, br in ipairs(bridges) do
 		port_adminedge:value("yes", translate("Yes"))
 
 		port_adminedge.default = "no"
-		port_adminedge.rmempty = false
+		port_adminedge.rmempty = true
 
 		-- Auto edge
 		port_autoedge = s:taboption(
@@ -302,20 +364,20 @@ for i, br in ipairs(bridges) do
 		port_autoedge:value("yes", translate("Yes"))
 
 		port_autoedge.default = "yes"
-		port_autoedge.rmempty = false
+		port_autoedge.rmempty = true
 
 		-- P2P
 		port_p2p = s:taboption(
 			get_br_porttab(port["name"]), ListValue,
 			get_br_portparam(port["name"], "p2p"),
-			translate("Point-to-point detection mode"))
+			translate("Point-to-Point detection mode"))
 
 		port_p2p:value("no", translate("No"))
 		port_p2p:value("yes", translate("Yes"))
 		port_p2p:value("auto", translate("Auto"))
 
 		port_p2p.default = "auto"
-		port_p2p.rmempty = false
+		port_p2p.rmempty = true
 
 		-- BPDU guard
 		port_bpduguard = s:taboption(
@@ -327,7 +389,7 @@ for i, br in ipairs(bridges) do
 		port_bpduguard:value("yes", translate("Yes"))
 
 		port_bpduguard.default = "no"
-		port_bpduguard.rmempty = false
+		port_bpduguard.rmempty = true
 
 		-- Restrict root role
 		port_restrrole = s:taboption(
@@ -339,7 +401,7 @@ for i, br in ipairs(bridges) do
 		port_restrrole:value("yes", translate("Yes"))
 
 		port_restrrole.default = "no"
-		port_restrrole.rmempty = false
+		port_restrrole.rmempty = true
 
 		-- Restrict TCN receive
 		port_restrtcn = s:taboption(
@@ -351,13 +413,15 @@ for i, br in ipairs(bridges) do
 		port_restrtcn:value("yes", translate("Yes"))
 
 		port_restrtcn.default = "no"
-		port_restrtcn.rmempty = false
+		port_restrtcn.rmempty = true
 	end
 end
 
+-----------------------------------------------------------------------------------------
 --
 -- Footer
 --
+-----------------------------------------------------------------------------------------
 
 f = m:section(SimpleSection, nil)
 f.template = "mstpd/footer"

@@ -3,23 +3,25 @@
 ## Description
 This package allows you to control and monitor MSTPd in LuCI web interface.
 
+This application can be useful for systems with DSA (Distributed Switch Architecture)
+enabled switches or for systems with multiple network interfaces.
 
 ## Dependencies
-This MSTPd LuCI application depends on mstpd sources from
-https://github.com/tano-systems/mstpd.git (branch json-output-format-support) repository
-and init scripts from https://github.com/tano-systems/meta-tano-openwrt.git.
+MSTPd LuCI application developed for LuCI 18.06 branch and
+additionally requires fixes from pull-request openwrt/luci#1951.
 
+This MSTPd LuCI application required latest MSTPd version with
+JSON output support. MSTPd recipe and init scripts for OpenWrt can be founded
+in [meta-tano-openwrt](https://github.com/tano-systems/meta-tano-openwrt.git) OpenEmbedded layer.
 
 ## Supported languages
 - English
 - Russian
 
-
 ## Limitations
 
 Supported configuration and status only for the STP and RSTP protocols.
-MSTP protocol currently is not supported.
-
+MSTP protocol is not supported.
 
 ## Screenshots
 
