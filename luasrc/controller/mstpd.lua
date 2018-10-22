@@ -5,7 +5,13 @@
 
 module("luci.controller.mstpd", package.seeall)
 
+require("luci.sys")
+
 function index()
+	if not nixio.fs.access("/etc/config/mstpd") then
+		return
+	end
+
 	entry({"admin", "services", "mstpd"}, cbi("mstpd/config"), _("MSTPd"), 80)
 	entry({"admin", "status", "mstpd" }, template("mstpd/status"), _("MSTPd"), 80)
 	entry({"admin", "status", "mstpd", "status_request"}, call("action_status_request")).leaf = true
