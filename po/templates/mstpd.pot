@@ -159,10 +159,10 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-msgid "No available bridges"
+msgid "No bridges controlled by MSTPd."
 msgstr ""
 
-msgid "No bridges controlled by MSTPd"
+msgid "No bridges with enabled STP support"
 msgstr ""
 
 msgid "No information available"
@@ -267,7 +267,10 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-msgid "You must select at least one bridge for controlling by MSTPd"
+msgid "You can not select bridges with disabled STP support."
+msgstr ""
+
+msgid "You must select at least one bridge for controlling by MSTPd."
 msgstr ""
 
 msgid "no"

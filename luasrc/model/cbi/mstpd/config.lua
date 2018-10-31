@@ -105,9 +105,10 @@ if #bridges == 0 then
 
 	o = s:option(DummyValue, "__info")
 	o.rawhtml = true
-	o.default = [[ <p class="alert-message info">%s<br />%s</p> ]] % {
-		translate("No bridges controlled by MSTPd"),
-		translate("You must select at least one bridge for controlling by MSTPd")
+	o.default = [[ <p class="alert-message info">%s<br />%s<br />%s</p> ]] % {
+		translate("No bridges controlled by MSTPd."),
+		translate("You must select at least one bridge for controlling by MSTPd."),
+		translate("You can not select bridges with disabled STP support.")
 	}
 end
 

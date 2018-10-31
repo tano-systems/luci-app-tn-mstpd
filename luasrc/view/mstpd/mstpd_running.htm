@@ -12,23 +12,21 @@
 			var mstpd_status =
 				document.getElementById('mstpd-status');
 
-			console.log(json)
-
 			if (!json || typeof json.running == 'undefined' ||
 			             typeof json.pid == 'undefined')
 			{
-				inner += '<p class="alert-message error">' +
-					'<%:Invalid response%></p>';
+				inner += '<div class="cbi-value"><p class="alert-message error">' +
+					'<%:Invalid response%></p></div>';
 			}
 			else if (!json.running || !json.pid)
 			{
-				inner += '<p class="alert-message warning">' +
-					'<%:Stopped%></p>';
+				inner += '<div class="cbi-value"><p class="alert-message warning">' +
+					'<%:Stopped%></p></div>';
 			}
 			else if (json.running && json.pid)
 			{
-				inner += '<p class="alert-message success">' +
-					'<%:Running%> (PID ' + json.pid + ')</p>';
+				inner += '<div class="cbi-value cbi-value-last"><p class="alert-message success">' +
+					'<%:Running%> (PID ' + json.pid + ')</p></div>';
 			}
 
 			mstpd_status.innerHTML = inner;
@@ -36,7 +34,7 @@
 	)
 //]]></script>
 
-<div class="cbi-section-node" id="mstpd-status">
+<div id="mstpd-status">
 	<em><%:Collecting data...%></em>
 </div>
 

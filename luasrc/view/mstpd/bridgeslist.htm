@@ -66,9 +66,8 @@
 
 				if not iface:bridge_stp() then
 					checked[iface:name()] = false
-				end
-
-				count = count + 1
+				else
+					count = count + 1
 		%>
 		<li<%=
 			attr("value", iface:name()) ..
@@ -89,10 +88,10 @@
 				<% end %>
 			</span>
 		</li>
-		<% end end %>
+		<% end end end %>
 		<% if count == 0 then %>
 		<li value="" unselectable>
-			<span><%:No available bridges%></span>
+			<span><%:No bridges with enabled STP support%></span>
 		</li>
 		<% end %>
 	</ul>

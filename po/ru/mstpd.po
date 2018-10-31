@@ -161,11 +161,11 @@ msgstr "Имя сетевого устройства порта"
 msgid "No"
 msgstr "Нет"
 
-msgid "No available bridges"
-msgstr "Нет доступных мостов"
+msgid "No bridges controlled by MSTPd."
+msgstr "Нет мостов управляемых службой MSTPd."
 
-msgid "No bridges controlled by MSTPd"
-msgstr "Нет мостов управляемых службой MSTPd"
+msgid "No bridges with enabled STP support"
+msgstr "Нет мостов с включенной поддержкой STP"
 
 msgid "No information available"
 msgstr "Информация не доступна"
@@ -271,8 +271,13 @@ msgstr "Значение не является числом"
 msgid "Yes"
 msgstr "Да"
 
-msgid "You must select at least one bridge for controlling by MSTPd"
-msgstr "Вы должны выбрать как минимум один мост, который будет управляться службой MSTPd"
+msgid "You can not select bridges with disabled STP support."
+msgstr "Вы не можете выбрать мосты, на которых отключена поддержка STP."
+
+msgid "You must select at least one bridge for controlling by MSTPd."
+msgstr ""
+"Вы должны выбрать как минимум один мост, который будет управляться службой "
+"MSTPd."
 
 msgid "no"
 msgstr "нет"
