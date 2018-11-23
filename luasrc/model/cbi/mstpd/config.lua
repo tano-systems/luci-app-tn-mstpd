@@ -51,12 +51,6 @@ mstpd_bridges.rmempty  = true
 mstpd_bridges.network  = ""
 mstpd_bridges.widget   = "checkbox"
 
--- State
-s = m:section(SimpleSection, translate("Service state"))
-mstpd_running = s:option(DummyValue, "__running")
-
-mstpd_running.template = "mstpd/mstpd_running"
-
 -----------------------------------------------------------------------------------------
 --
 -- Bridges
