@@ -47,7 +47,7 @@
 	ifattr(self.widget == "checkbox", "optional", "optional")
 %>>
 	<script type="item-template"><!--
-		<li value="{{value}}">
+		<li data-value="{{value}}">
 			<img title="<%:Custom Interface%>: &quot;{{value}}&quot;" src="<%=resource%>/icons/ethernet_disabled.png" />
 			<span class="hide-open">{{value}}</span>
 			<span class="hide-close"><%:Custom Interface%>: "{{value}}"</span>
@@ -70,7 +70,7 @@
 					count = count + 1
 		%>
 		<li<%=
-			attr("value", iface:name()) ..
+			attr("data-value", iface:name()) ..
 			ifattr(checked[iface:name()], "selected", "selected")
 		%>>
 			<img<%=attr("title", iface:get_i18n())%> src="<%=resource%>/icons/<%=iface:type()%><%=iface:is_up() and "" or "_disabled"%>.png" />
@@ -90,7 +90,7 @@
 		</li>
 		<% end end end %>
 		<% if count == 0 then %>
-		<li value="" unselectable>
+		<li data-value="" unselectable>
 			<span><%:No bridges with enabled STP support%></span>
 		</li>
 		<% end %>
