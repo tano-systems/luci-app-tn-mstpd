@@ -10,24 +10,24 @@ msgstr ""
 "systems.com\">a.kikin@tano-systems.com</a>&gt;"
 
 #: luasrc/model/cbi/mstpd/config.lua:334
-msgid "(0 &mdash; auto)"
-msgstr "(0 &mdash; автоматически)"
+msgid "(0 — auto)"
+msgstr "(0 — автоматически)"
 
 #: luasrc/model/cbi/mstpd/config.lua:177
-msgid "(1&ndash;10 seconds)"
-msgstr "(1&ndash;10 секунд)"
+msgid "(1–10 seconds)"
+msgstr "(1–10 секунд)"
 
 #: luasrc/model/cbi/mstpd/config.lua:254
-msgid "(10&ndash;1000000 seconds)"
-msgstr "(10&ndash;1000000 секунд)"
+msgid "(10–1000000 seconds)"
+msgstr "(10–1000000 секунд)"
 
 #: luasrc/model/cbi/mstpd/config.lua:196
-msgid "(4&ndash;30 seconds)"
-msgstr "(4&ndash;30 секунд)"
+msgid "(4–30 seconds)"
+msgstr "(4–30 секунд)"
 
 #: luasrc/model/cbi/mstpd/config.lua:225
-msgid "(6&ndash;40 seconds)"
-msgstr "(6&ndash;40 секунд)"
+msgid "(6–40 seconds)"
+msgstr "(6–40 секунд)"
 
 #: luasrc/view/mstpd/bridgeslist.htm:44
 msgid "-- please select --"
@@ -131,7 +131,7 @@ msgstr "Ошибки (1)"
 
 #: luasrc/model/cbi/mstpd/config.lua:195 luasrc/view/mstpd/status.htm:183
 msgid "Forward delay time"
-msgstr "Время &laquo;forward delay&raquo;"
+msgstr "Время «forward delay»"
 
 #: luasrc/model/cbi/mstpd/config.lua:21
 msgid "Global settings"
@@ -139,7 +139,7 @@ msgstr "Общие параметры"
 
 #: luasrc/model/cbi/mstpd/config.lua:176 luasrc/view/mstpd/status.htm:185
 msgid "Hello time"
-msgstr "Время &laquo;hello time&raquo;"
+msgstr "Время «hello time»"
 
 #: luasrc/model/cbi/mstpd/config.lua:39
 msgid "Info (2)"
@@ -171,7 +171,7 @@ msgstr "MSTPd: Состояние"
 
 #: luasrc/model/cbi/mstpd/config.lua:224 luasrc/view/mstpd/status.htm:182
 msgid "Max age"
-msgstr "Параметр &laquo;max age&raquo;"
+msgstr "Параметр «max age»"
 
 #: luasrc/view/mstpd/status.htm:234
 msgid "Maybe you have no bridges with enabled STP support."
@@ -323,7 +323,7 @@ msgstr "Время с последнего изменения топологии
 
 #: luasrc/model/cbi/mstpd/config.lua:272 luasrc/view/mstpd/status.htm:184
 msgid "Transmit hold count"
-msgstr "Параметр &laquo;transmit hold count&raquo;"
+msgstr "Параметр «transmit hold count»"
 
 #: luasrc/view/mstpd/status.htm:202
 msgid "Tx BPDU"
