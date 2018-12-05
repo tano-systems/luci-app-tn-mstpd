@@ -149,7 +149,7 @@ for i, br in ipairs(bridges) do
 	--
 	br_treeprio = s:taboption("bridge", ListValue, "treeprio",
 		translate("Priority"),
-		"(0&ndash;15)")
+		"(0–15)")
 
 	br_treeprio:value("0",  "0 (0)")
 	br_treeprio:value("1",  "4096 (1)")
@@ -174,7 +174,7 @@ for i, br in ipairs(bridges) do
 	--
 	br_hello = s:taboption("bridge", Value, "hello",
 		translate("Hello time"),
-		translate("(1&ndash;10 seconds)"))
+		translate("(1–10 seconds)"))
 
 	br_hello.default = "2"
 	br_hello.rmempty = true
@@ -193,7 +193,7 @@ for i, br in ipairs(bridges) do
 	--
 	br_fdelay = s:taboption("bridge", Value, "fdelay",
 		translate("Forward delay time"),
-		translate("(4&ndash;30 seconds)"))
+		translate("(4–30 seconds)"))
 
 	br_fdelay.default = "15"
 	br_fdelay.rmempty = true
@@ -222,7 +222,7 @@ for i, br in ipairs(bridges) do
 	--
 	br_maxage = s:taboption("bridge", Value, "maxage",
 		translate("Max age"),
-		translate("(6&ndash;40 seconds)"))
+		translate("(6–40 seconds)"))
 
 	br_maxage.default = "20"
 	br_maxage.rmempty = true
@@ -251,7 +251,7 @@ for i, br in ipairs(bridges) do
 	--
 	br_ageing = s:taboption("bridge", Value, "ageing",
 		translate("Ageing"),
-		translate("(10&ndash;1000000 seconds)"))
+		translate("(10–1000000 seconds)"))
 
 	br_ageing.default = "300"
 	br_ageing.rmempty = true
@@ -270,7 +270,7 @@ for i, br in ipairs(bridges) do
 	--
 	br_txholdcount = s:taboption("bridge", Value, "txholdcount",
 		translate("Transmit hold count"),
-		"(1&ndash;10)")
+		"(1–10)")
 
 	br_txholdcount.default = "6"
 	br_txholdcount.rmempty = true
@@ -304,7 +304,7 @@ for i, br in ipairs(bridges) do
 			get_br_porttab(port["name"]), ListValue,
 			get_br_portparam(port["name"], "treeprio"),
 			translate("Priority"),
-			"(0&ndash;15)")
+			"(0–15)")
 
 		port_treeportprio:value("0",  "0 (0)")
 		port_treeportprio:value("1",  "4096 (1)")
@@ -331,7 +331,7 @@ for i, br in ipairs(bridges) do
 			get_br_porttab(port["name"]), Value,
 			get_br_portparam(port["name"], "pathcost"),
 			translate("Path cost"),
-			translate("(0 &mdash; auto)"))
+			translate("(0 — auto)"))
 
 		port_pathcost.default = "0"
 		port_pathcost.rmempty = true

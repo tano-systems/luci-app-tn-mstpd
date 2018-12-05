@@ -1,5 +1,15 @@
 msgid ""
-msgstr "Content-Type: text/plain; charset=UTF-8\n"
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Anton Kikin <a.kikin@tano-systems.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+"X-Generator: Poedit 2.2\n"
 
 #: luasrc/view/mstpd/footer.htm:9
 msgid ""
@@ -13,13 +23,13 @@ msgstr ""
 msgid "(0 — auto)"
 msgstr "(0 — автоматически)"
 
-#: luasrc/model/cbi/mstpd/config.lua:177
-msgid "(1–10 seconds)"
-msgstr "(1–10 секунд)"
-
 #: luasrc/model/cbi/mstpd/config.lua:254
 msgid "(10–1000000 seconds)"
 msgstr "(10–1000000 секунд)"
+
+#: luasrc/model/cbi/mstpd/config.lua:177
+msgid "(1–10 seconds)"
+msgstr "(1–10 секунд)"
 
 #: luasrc/model/cbi/mstpd/config.lua:196
 msgid "(4–30 seconds)"
@@ -149,7 +159,7 @@ msgstr "Информационные сообщения (2)"
 msgid "Initial edge state"
 msgstr "Начальное пограничное состояние"
 
-#: luasrc/controller/mstpd.lua:15 luasrc/controller/mstpd.lua:16
+#: luasrc/controller/mstpd.lua:15
 msgid "MSTPd"
 msgstr ""
 
@@ -175,7 +185,7 @@ msgstr "Параметр «max age»"
 
 #: luasrc/view/mstpd/status.htm:234
 msgid "Maybe you have no bridges with enabled STP support."
-msgstr "Возможно, что на мостах не включена поддержка STP"
+msgstr "Возможно, что на мостах не включена поддержка STP."
 
 #: luasrc/model/cbi/mstpd/config.lua:187 luasrc/model/cbi/mstpd/config.lua:283
 msgid "Must be in range from 1 to 10"
@@ -225,7 +235,7 @@ msgstr "Информация не доступна"
 
 #: luasrc/view/mstpd/status.htm:233
 msgid "No information."
-msgstr "Нет информации"
+msgstr "Нет информации."
 
 #: luasrc/view/mstpd/status.htm:201
 msgid "Oper P2P"
@@ -307,9 +317,17 @@ msgstr "Получено TCN"
 msgid "STP support is disabled on this bridge"
 msgstr "На мосту отключена поддержка STP"
 
+#: luasrc/controller/mstpd.lua:17
+msgid "Settings"
+msgstr "Настройки"
+
 #: luasrc/model/cbi/mstpd/config.lua:41
 msgid "State machine transition (4)"
 msgstr "Переходы машины состояний (4)"
+
+#: luasrc/controller/mstpd.lua:16
+msgid "Status"
+msgstr "Состояние"
 
 #: luasrc/view/mstpd/status.htm:248
 msgid "This page allows you to see current MSTPd bridges and ports status"

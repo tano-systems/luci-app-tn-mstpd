@@ -12,10 +12,11 @@ function index()
 		return
 	end
 
-	entry({"admin", "services", "mstpd"}, cbi("mstpd/config"), _("MSTPd"), 80)
-	entry({"admin", "status", "mstpd" }, template("mstpd/status"), _("MSTPd"), 80)
-	entry({"admin", "status", "mstpd", "status_request"}, call("action_status_request")).leaf = true
-	entry({"admin", "status", "mstpd", "status_get"}, call("action_status_get")).leaf = true
+	entry({"admin", "services", "mstpd"}, firstchild(), _("MSTPd"), 80)
+	entry({"admin", "services", "mstpd", "status" }, template("mstpd/status"), _("Status"), 10)
+	entry({"admin", "services", "mstpd", "config" }, cbi("mstpd/config"), _("Settings"), 20)
+	entry({"admin", "services", "mstpd", "status_request"}, call("action_status_request")).leaf = true
+	entry({"admin", "services", "mstpd", "status_get"}, call("action_status_get")).leaf = true
 end
 
 -- Status page

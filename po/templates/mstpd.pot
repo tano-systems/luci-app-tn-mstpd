@@ -8,23 +8,23 @@ msgid ""
 msgstr ""
 
 #: luasrc/model/cbi/mstpd/config.lua:334
-msgid "(0 &mdash; auto)"
-msgstr ""
-
-#: luasrc/model/cbi/mstpd/config.lua:177
-msgid "(1&ndash;10 seconds)"
+msgid "(0 — auto)"
 msgstr ""
 
 #: luasrc/model/cbi/mstpd/config.lua:254
-msgid "(10&ndash;1000000 seconds)"
+msgid "(10–1000000 seconds)"
+msgstr ""
+
+#: luasrc/model/cbi/mstpd/config.lua:177
+msgid "(1–10 seconds)"
 msgstr ""
 
 #: luasrc/model/cbi/mstpd/config.lua:196
-msgid "(4&ndash;30 seconds)"
+msgid "(4–30 seconds)"
 msgstr ""
 
 #: luasrc/model/cbi/mstpd/config.lua:225
-msgid "(6&ndash;40 seconds)"
+msgid "(6–40 seconds)"
 msgstr ""
 
 #: luasrc/view/mstpd/bridgeslist.htm:44
@@ -147,7 +147,7 @@ msgstr ""
 msgid "Initial edge state"
 msgstr ""
 
-#: luasrc/controller/mstpd.lua:15 luasrc/controller/mstpd.lua:16
+#: luasrc/controller/mstpd.lua:15
 msgid "MSTPd"
 msgstr ""
 
@@ -305,8 +305,16 @@ msgstr ""
 msgid "STP support is disabled on this bridge"
 msgstr ""
 
+#: luasrc/controller/mstpd.lua:17
+msgid "Settings"
+msgstr ""
+
 #: luasrc/model/cbi/mstpd/config.lua:41
 msgid "State machine transition (4)"
+msgstr ""
+
+#: luasrc/controller/mstpd.lua:16
+msgid "Status"
 msgstr ""
 
 #: luasrc/view/mstpd/status.htm:248

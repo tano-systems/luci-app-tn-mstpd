@@ -81,7 +81,7 @@
 
 	function tr_root_port(value)
 	{
-		return ((value == "none") || (value == "")) ? '&ndash;' : value;
+		return ((value == "none") || (value == "")) ? '–' : value;
 	}
 
 	function tr_br_protocol(value)
@@ -219,7 +219,7 @@
 		);
 	}
 
-	XHR.poll(5, '<%=url('admin/status/mstpd/status_request')%>', null,
+	XHR.poll(5, '<%=url('admin/services/mstpd/status_request')%>', null,
 		function(x, json)
 		{
 			var mstpd_tables =
