@@ -52,12 +52,22 @@ end
 function action_status_request()
 	luci.http.prepare_content("application/json")
 
-	bridges = json.parse(luci.util.exec(
-		"/sbin/mstpctl --format=json showbridge") or "")
+	local uci = require("luci.model.uci").cursor()
+	local uci_bridges = uci:get("mstpd", "global", "bridge")
 
-	for i, br in ipairs(bridges) do
-		br.ports = json.parse(luci.util.exec(
-			"/sbin/mstpctl --format=json showportdetail " .. br.bridge) or "")
+	local bridges = ""
+
+	if uci_bridges and #uci_bridges > 0 then
+		local i, br
+		local bridges_list = table.concat(uci_bridges, " ")
+
+		bridges = json.parse(luci.util.exec(
+			"/sbin/mstpctl --format=json showbridge %s" % bridges_list) or "")
+
+		for i, br in ipairs(bridges) do
+			br.ports = json.parse(luci.util.exec(
+				"/sbin/mstpctl --format=json showportdetail " .. br.bridge) or "")
+		end
 	end
 
 	luci.http.write(json.stringify(bridges))
