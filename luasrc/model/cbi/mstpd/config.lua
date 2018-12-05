@@ -4,6 +4,7 @@
 --
 
 local util = require "luci.util"
+local uci  = require "luci.model.uci"
 
 m = Map("mstpd",
 	translate("MSTPd: Configure"),
@@ -50,6 +51,18 @@ mstpd_bridges.template = "mstpd/bridgeslist"
 mstpd_bridges.rmempty  = true
 mstpd_bridges.network  = ""
 mstpd_bridges.widget   = "checkbox"
+
+function mstpd_bridges.write(self, section, value)
+	if type(value) == "table" then
+		local _, br
+		for _, br in ipairs(value) do
+			local net = string.sub(br, 4) -- remove 'br-' prefix
+			m.uci:section("mstpd", "bridge", net, {})
+		end
+	end
+
+	DynamicList.write(self, section, value)
+end
 
 -----------------------------------------------------------------------------------------
 --
@@ -168,7 +181,7 @@ for i, br in ipairs(bridges) do
 	br_treeprio:value("14", "57344 (14)")
 	br_treeprio:value("15", "61440 (15)")
 
-	br_treeprio.default = "8"
+	br_treeprio.default = 8
 	br_treeprio.rmempty = true
 
 	--
@@ -176,7 +189,7 @@ for i, br in ipairs(bridges) do
 		translate("Hello time"),
 		translate("(1–10 seconds)"))
 
-	br_hello.default = "2"
+	br_hello.default = 2
 	br_hello.rmempty = true
 
 	function br_hello.validate(self, value, section)
@@ -195,11 +208,14 @@ for i, br in ipairs(bridges) do
 		translate("Forward delay time"),
 		translate("(4–30 seconds)"))
 
-	br_fdelay.default = "15"
+	br_fdelay.default = 15
 	br_fdelay.rmempty = true
+
+	local default_maxage = 20
 
 	function br_fdelay.validate(self, value, section)
 		local val = tonumber(value)
+
 		if not val then
 			return nil, self.title .. ": " .. translate("Value is not a number")
 		elseif val < 4 or val > 30 then
@@ -208,6 +224,11 @@ for i, br in ipairs(bridges) do
 
 		local fdelay  = val
 		local maxage  = tonumber(m:get(br["name-cfg"], "maxage"))
+
+		if maxage == nil then
+			maxage = default_maxage
+		end
+
 		local compare = 2 * (fdelay - 1)
 
 		-- Check condition [ 2 * (Forward Delay - 1) >= Max Age ]
@@ -224,7 +245,7 @@ for i, br in ipairs(bridges) do
 		translate("Max age"),
 		translate("(6–40 seconds)"))
 
-	br_maxage.default = "20"
+	br_maxage.default = default_maxage
 	br_maxage.rmempty = true
 
 	function br_maxage.validate(self, value, section)
@@ -253,7 +274,7 @@ for i, br in ipairs(bridges) do
 		translate("Ageing"),
 		translate("(10–1000000 seconds)"))
 
-	br_ageing.default = "300"
+	br_ageing.default = 300
 	br_ageing.rmempty = true
 
 	function br_ageing.validate(self, value, section)
@@ -272,7 +293,7 @@ for i, br in ipairs(bridges) do
 		translate("Transmit hold count"),
 		"(1–10)")
 
-	br_txholdcount.default = "6"
+	br_txholdcount.default = 6
 	br_txholdcount.rmempty = true
 
 	function br_txholdcount.validate(self, value, section)
@@ -323,7 +344,7 @@ for i, br in ipairs(bridges) do
 		port_treeportprio:value("14", "57344 (14)")
 		port_treeportprio:value("15", "61440 (15)")
 
-		port_treeportprio.default = "8"
+		port_treeportprio.default = 8
 		port_treeportprio.rmempty = true
 
 		-- External path cost
@@ -333,7 +354,7 @@ for i, br in ipairs(bridges) do
 			translate("Path cost"),
 			translate("(0 — auto)"))
 
-		port_pathcost.default = "0"
+		port_pathcost.default = 0
 		port_pathcost.rmempty = true
 
 		-- Admin edge
