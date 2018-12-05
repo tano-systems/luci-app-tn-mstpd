@@ -16,7 +16,7 @@ m = Map("mstpd",
 m.apply_on_parse = true
 
 function m.on_apply(self)
-	luci.http.redirect(luci.dispatcher.build_url("admin", "services", "mstpd"))
+	luci.http.redirect(luci.dispatcher.build_url("admin", "services", "mstpd", "config"))
 end
 
 s = m:section(TypedSection, "mstpd", translate("Global settings"))
