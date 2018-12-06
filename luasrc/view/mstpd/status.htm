@@ -137,21 +137,38 @@
 
 	function add_bridges(container, bridges)
 	{
-		var i;
-		var inner = "";
-		var br_rows = [];
-		var br_port_rows = [];
+		var i
+		var inner = ""
+		var br_rows = []
+		var br_port_rows = []
+		var br
+
+		if (bridges.length > 1)
+		{
+			inner += '<ul>'
+
+			for (i = 0; i < bridges.length; i++)
+			{
+				br = bridges[i];
+				inner += '<li><a href="#bridge-' + br["bridge"] + '">' +
+					'<%:Bridge%> ' + br["bridge"] + '</a></li>'
+			}
+
+			inner += '</ul>'
+		}
 
 		for (i = 0; i < bridges.length; i++)
 		{
-			var br = bridges[i];
+			br = bridges[i];
 
 			// Header
 			inner +=
-				'<legend><%:Bridge%> ' + br["bridge"] + '</legend>' +
-				'<div class="cbi-section-node">';
+				'<legend>' +
+				'<a id="bridge-' + br["bridge"] + '"></a>' +
+				'<%:Bridge%> ' + br["bridge"] + '</legend>'
 
 			// Bridge parameters
+			inner += '<div class="cbi-section-node">'
 			inner +=
 				'<div class="table mstpd-bridge-parameters" id="mstpd-bridge-' + br['bridge'] + '">';
 
@@ -217,7 +234,7 @@
 
 		for (i = 0; i < bridges.length; i++)
 		{
-			var br = bridges[i];
+			br = bridges[i];
 
 			cbi_update_table(
 				document.getElementById('mstpd-bridge-' + br['bridge']),
