@@ -87,7 +87,7 @@
 
 	function tr_br_protocol(value)
 	{
-		return value.toUpperCase();
+		return '<span class="alert-message success">' + value.toUpperCase() + '</span>'
 	}
 
 	function add_ports_table(br)
@@ -133,6 +133,19 @@
 		inner += '</div>';
 
 		return inner;
+	}
+
+	function port_stp_op_proto(value)
+	{
+		return '<span class="alert-message success">STP</span>'
+	}
+
+	function port_rstp_op_proto(value)
+	{
+		if (value === "yes")
+			return '<span class="alert-message error">STP</span>'
+		else
+			return '<span class="alert-message success">RSTP</span>'
 	}
 
 	function add_bridges(container, bridges)
@@ -197,7 +210,7 @@
 			br_rows[i] = [];
 			br_port_rows[i] = [];
 
-			br_rows[i].push(add_bridge_row(br, "<%=translate('Protocol')%>", "force-protocol-version", tr_br_protocol))
+			br_rows[i].push(add_bridge_row(br, "<%=translate('Administrative protocol version')%>", "force-protocol-version", tr_br_protocol))
 			br_rows[i].push(add_bridge_row(br, "<%=translate('Enabled')%>", "enabled", tr_yn))
 			br_rows[i].push(add_bridge_row(br, "<%=translate('Bridge ID')%>", "bridge-id"))
 			br_rows[i].push(add_bridge_row(br, "<%=translate('Designated root')%>", "designated-root"))
@@ -212,6 +225,14 @@
 			br_rows[i].push(add_bridge_row(br, "<%=translate('Time since topology change')%>", "time-since-topology-change", null, "<%:s%>"))
 
 			br_port_rows[i].push(add_ports_row(br, "<%=translate('Enabled')%>", "enabled", tr_yn));
+
+			br_port_rows[i].push(add_ports_row(br, "<%=translate('Operative protocol version')%>",
+				"received-stp",
+				(br["force-protocol-version"] === "stp")
+					? port_stp_op_proto
+					: port_rstp_op_proto
+			));
+
 			br_port_rows[i].push(add_ports_row(br, "<%=translate('Port role')%>", "role"));
 			br_port_rows[i].push(add_ports_row(br, "<%=translate('Port state')%>", "state", tr_port_state));
 			br_port_rows[i].push(add_ports_row(br, "<%=translate('Port identifier')%>", "port-id"));
@@ -221,9 +242,9 @@
 			br_port_rows[i].push(add_ports_row(br, "<%=translate('Designated port')%>", "designated-port"));
 			br_port_rows[i].push(add_ports_row(br, "<%=translate('Admin edge')%>", "admin-edge-port", tr_yn));
 			br_port_rows[i].push(add_ports_row(br, "<%=translate('Auto edge')%>", "auto-edge-port", tr_yn));
-			br_port_rows[i].push(add_ports_row(br, "<%=translate('Oper edge')%>", "oper-edge-port", tr_yn));
+			br_port_rows[i].push(add_ports_row(br, "<%=translate('Operative edge')%>", "oper-edge-port", tr_yn));
 			br_port_rows[i].push(add_ports_row(br, "<%=translate('Admin P2P')%>", "admin-point-to-point", tr_yna));
-			br_port_rows[i].push(add_ports_row(br, "<%=translate('Oper P2P')%>", "point-to-point", tr_yn));
+			br_port_rows[i].push(add_ports_row(br, "<%=translate('Operative P2P')%>", "point-to-point", tr_yn));
 			br_port_rows[i].push(add_ports_row(br, "<%=translate('Tx BPDU')%>", "num-tx-bpdu"));
 			br_port_rows[i].push(add_ports_row(br, "<%=translate('Rx BPDU')%>", "num-rx-bpdu"));
 			br_port_rows[i].push(add_ports_row(br, "<%=translate('Tx TCN')%>", "num-tx-tcn"));
