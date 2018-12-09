@@ -8,9 +8,7 @@ local uci  = require "luci.model.uci"
 
 m = Map("mstpd",
 	translate("MSTPd: Configure"),
-	translate(
-		"<p>MSTPd is a Multiple Spanning Tree Protocol Daemon</p>"
-	)
+	translate("MSTPd is a Multiple Spanning Tree Protocol Daemon")
 )
 
 m.apply_on_parse = true
@@ -43,7 +41,12 @@ mstpd_loglevel:value(4, translate("State machine transition (4)"))
 
 -- Bridges
 mstpd_bridges = s:option(DynamicList, "bridge",
-	translate("Bridges controlled by MSTPd")
+	translate("Bridges controlled by MSTPd"),
+	translatef(
+		"You can not select bridges with disabled STP support. " ..
+		"You may enable or disable STP support for bridges in the " ..
+		"<a href=\"%s\">network interfaces settings</a>",
+		luci.dispatcher.build_url('admin/network/network'))
 )
 
 mstpd_bridges.default  = ""
@@ -112,10 +115,8 @@ if #bridges == 0 then
 
 	o = s:option(DummyValue, "__info")
 	o.rawhtml = true
-	o.default = [[ <p class="alert-message info">%s<br />%s<br />%s</p> ]] % {
-		translate("No bridges controlled by MSTPd."),
-		translate("You must select at least one bridge for controlling by MSTPd."),
-		translate("You can not select bridges with disabled STP support.")
+	o.default = [[ <p class="alert-message info">%s</p> ]] % {
+		translate("You must select at least one bridge for controlling by the MSTPd service."),
 	}
 end
 

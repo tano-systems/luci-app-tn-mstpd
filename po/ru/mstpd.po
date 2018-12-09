@@ -11,6 +11,10 @@ msgstr ""
 "Language: ru\n"
 "X-Generator: Poedit 2.2\n"
 
+#: luasrc/view/mstpd/status.htm:70
+msgid "%d s"
+msgstr "%d с"
+
 #: luasrc/view/mstpd/footer.htm:9
 msgid ""
 "&copy; 2018, Tano Systems, Anton Kikin &lt;<a href=\"mailto:a.kikin@tano-"
@@ -19,23 +23,23 @@ msgstr ""
 "&copy; 2018, Tano Systems, Антон Кикин &lt;<a href=\"mailto:a.kikin@tano-"
 "systems.com\">a.kikin@tano-systems.com</a>&gt;"
 
-#: luasrc/model/cbi/mstpd/config.lua:334
+#: luasrc/model/cbi/mstpd/config.lua:356
 msgid "(0 — auto)"
 msgstr "(0 — автоматически)"
 
-#: luasrc/model/cbi/mstpd/config.lua:254
+#: luasrc/model/cbi/mstpd/config.lua:276
 msgid "(10–1000000 seconds)"
 msgstr "(10–1000000 секунд)"
 
-#: luasrc/model/cbi/mstpd/config.lua:177
+#: luasrc/model/cbi/mstpd/config.lua:191
 msgid "(1–10 seconds)"
 msgstr "(1–10 секунд)"
 
-#: luasrc/model/cbi/mstpd/config.lua:196
+#: luasrc/model/cbi/mstpd/config.lua:210
 msgid "(4–30 seconds)"
 msgstr "(4–30 секунд)"
 
-#: luasrc/model/cbi/mstpd/config.lua:225
+#: luasrc/model/cbi/mstpd/config.lua:247
 msgid "(6–40 seconds)"
 msgstr "(6–40 секунд)"
 
@@ -43,67 +47,71 @@ msgstr "(6–40 секунд)"
 msgid "-- please select --"
 msgstr "-- сделайте выбор --"
 
-#: luasrc/model/cbi/mstpd/config.lua:10
-msgid "<p>MSTPd is a Multiple Spanning Tree Protocol Daemon</p>"
-msgstr "<p>MSTPd служба поддержки Spanning Tree протоколов</p>"
-
-#: luasrc/view/mstpd/status.htm:200
+#: luasrc/view/mstpd/status.htm:45
 msgid "Admin P2P"
 msgstr "Административное P2P состояние"
 
-#: luasrc/model/cbi/mstpd/config.lua:343 luasrc/view/mstpd/status.htm:197
+#: luasrc/model/cbi/mstpd/config.lua:365 luasrc/view/mstpd/status.htm:42
 msgid "Admin edge"
 msgstr "Административное пограничнное состояние"
 
-#: luasrc/model/cbi/mstpd/config.lua:253
+#: luasrc/view/mstpd/status.htm:17
+msgid "Administrative protocol version"
+msgstr "Административная версия протокола"
+
+#: luasrc/model/cbi/mstpd/config.lua:275
 msgid "Ageing"
 msgstr "Устаревание"
 
-#: luasrc/view/mstpd/status.htm:186
+#: luasrc/view/mstpd/status.htm:28
 msgid "Ageing time"
 msgstr "Время устаревания"
 
-#: luasrc/model/cbi/mstpd/config.lua:372 luasrc/view/mstpd/status.htm:74
+#: luasrc/model/cbi/mstpd/config.lua:394 luasrc/view/mstpd/status.htm:66
 msgid "Auto"
 msgstr "Автоматически"
 
-#: luasrc/view/mstpd/status.htm:198
+#: luasrc/view/mstpd/status.htm:43
 msgid "Auto edge"
 msgstr "Автоматическое пограничное состояние"
 
-#: luasrc/model/cbi/mstpd/config.lua:356
+#: luasrc/model/cbi/mstpd/config.lua:378
 msgid "Auto transition to/from edge state"
 msgstr "Автоматический переход в/из пограничного состояния"
 
-#: luasrc/model/cbi/mstpd/config.lua:381
+#: luasrc/model/cbi/mstpd/config.lua:403
 msgid "BPDU guard"
 msgstr "Защита BPDU"
 
-#: luasrc/model/cbi/mstpd/config.lua:134 luasrc/view/mstpd/status.htm:142
+#: luasrc/model/cbi/mstpd/config.lua:148
 msgid "Bridge"
 msgstr "Мост"
 
-#: luasrc/model/cbi/mstpd/config.lua:120 luasrc/model/cbi/mstpd/config.lua:125
+#: luasrc/controller/mstpd.lua:30 luasrc/view/mstpd/status.htm:322
+msgid "Bridge \"%s\""
+msgstr "Мост «%s»"
+
+#: luasrc/view/mstpd/status.htm:329
+msgid "Bridge \"%s\" ports"
+msgstr "Порты моста «%s»"
+
+#: luasrc/model/cbi/mstpd/config.lua:134 luasrc/model/cbi/mstpd/config.lua:139
 msgid "Bridge (%s)"
 msgstr "Мост (%s)"
 
-#: luasrc/view/mstpd/status.htm:177
+#: luasrc/view/mstpd/status.htm:19
 msgid "Bridge ID"
 msgstr "Идентификатор моста"
 
-#: luasrc/view/mstpd/status.htm:154
-msgid "Bridge parameter"
-msgstr "Параметр моста"
-
-#: luasrc/model/cbi/mstpd/config.lua:98
+#: luasrc/model/cbi/mstpd/config.lua:114
 msgid "Bridges"
 msgstr "Мосты"
 
-#: luasrc/model/cbi/mstpd/config.lua:45
+#: luasrc/model/cbi/mstpd/config.lua:44
 msgid "Bridges controlled by MSTPd"
 msgstr "Мосты управляемые службой MSTPd"
 
-#: luasrc/view/mstpd/status.htm:123 luasrc/view/mstpd/status.htm:159
+#: luasrc/view/mstpd/status.htm:324 luasrc/view/mstpd/status.htm:335
 msgid "Collecting data..."
 msgstr "Сбор данных..."
 
@@ -111,55 +119,63 @@ msgstr "Сбор данных..."
 msgid "Custom Interface"
 msgstr "Пользовательский интерфейс"
 
-#: luasrc/model/cbi/mstpd/config.lua:40
+#: luasrc/model/cbi/mstpd/config.lua:39
 msgid "Debug (3)"
 msgstr "Отладочные сообщения (3)"
 
-#: luasrc/view/mstpd/status.htm:195
+#: luasrc/view/mstpd/status.htm:40
 msgid "Designated bridge"
 msgstr "Назначенный мост"
 
-#: luasrc/view/mstpd/status.htm:196
+#: luasrc/view/mstpd/status.htm:41
 msgid "Designated port"
 msgstr "Назначенный порт"
 
-#: luasrc/view/mstpd/status.htm:178 luasrc/view/mstpd/status.htm:194
+#: luasrc/view/mstpd/status.htm:20 luasrc/view/mstpd/status.htm:39
 msgid "Designated root"
 msgstr "Назначенный корневой мост"
 
-#: luasrc/model/cbi/mstpd/config.lua:37
+#: luasrc/model/cbi/mstpd/config.lua:36
 msgid "Disable (0)"
 msgstr "Отключено (0)"
 
-#: luasrc/view/mstpd/status.htm:176 luasrc/view/mstpd/status.htm:189
+#: luasrc/view/mstpd/status.htm:18 luasrc/view/mstpd/status.htm:33
 msgid "Enabled"
 msgstr "Включено"
 
-#: luasrc/model/cbi/mstpd/config.lua:38
+#: luasrc/model/cbi/mstpd/config.lua:37
 msgid "Error (1)"
 msgstr "Ошибки (1)"
 
-#: luasrc/model/cbi/mstpd/config.lua:195 luasrc/view/mstpd/status.htm:183
+#: luasrc/view/mstpd/status.htm:310
+msgid "Failed to request bridge \"%s\" status information."
+msgstr "Не удалось запросить информацию о состоянии моста «%s»."
+
+#: luasrc/model/cbi/mstpd/config.lua:209 luasrc/view/mstpd/status.htm:25
 msgid "Forward delay time"
 msgstr "Время «forward delay»"
 
-#: luasrc/model/cbi/mstpd/config.lua:21
+#: luasrc/model/cbi/mstpd/config.lua:20
 msgid "Global settings"
 msgstr "Общие параметры"
 
-#: luasrc/model/cbi/mstpd/config.lua:176 luasrc/view/mstpd/status.htm:185
+#: luasrc/model/cbi/mstpd/config.lua:190 luasrc/view/mstpd/status.htm:27
 msgid "Hello time"
 msgstr "Время «hello time»"
 
-#: luasrc/model/cbi/mstpd/config.lua:39
+#: luasrc/view/mstpd/status.htm:261
+msgid "Hide additional information"
+msgstr "Скрыть дополнительную информацию"
+
+#: luasrc/model/cbi/mstpd/config.lua:38
 msgid "Info (2)"
 msgstr "Информационные сообщения (2)"
 
-#: luasrc/model/cbi/mstpd/config.lua:344
+#: luasrc/model/cbi/mstpd/config.lua:366
 msgid "Initial edge state"
 msgstr "Начальное пограничное состояние"
 
-#: luasrc/controller/mstpd.lua:15
+#: luasrc/controller/mstpd.lua:18
 msgid "MSTPd"
 msgstr ""
 
@@ -167,149 +183,145 @@ msgstr ""
 msgid "MSTPd LuCI application (version %s)"
 msgstr "LuCI приложение управления MSTPd (версия %s)"
 
-#: luasrc/model/cbi/mstpd/config.lua:34
+#: luasrc/model/cbi/mstpd/config.lua:11
+msgid "MSTPd is a Multiple Spanning Tree Protocol Daemon"
+msgstr "MSTPd служба поддержки Spanning Tree протоколов"
+
+#: luasrc/model/cbi/mstpd/config.lua:33
 msgid "MSTPd logging level"
 msgstr "Уровень журналирования"
 
-#: luasrc/model/cbi/mstpd/config.lua:9
+#: luasrc/view/mstpd/status.htm:317
+msgid "MSTPd: Bridge \"%s\" status"
+msgstr "MSTPd: Состояние моста «%s»"
+
+#: luasrc/view/mstpd/no-bridges.htm:6
+msgid "MSTPd: Bridges status"
+msgstr "MSTPd: Состояние мостов"
+
+#: luasrc/model/cbi/mstpd/config.lua:10
 msgid "MSTPd: Configure"
 msgstr "MSTPd: Настройки"
 
-#: luasrc/view/mstpd/status.htm:247
-msgid "MSTPd: Status"
-msgstr "MSTPd: Состояние"
-
-#: luasrc/model/cbi/mstpd/config.lua:224 luasrc/view/mstpd/status.htm:182
+#: luasrc/model/cbi/mstpd/config.lua:246 luasrc/view/mstpd/status.htm:24
 msgid "Max age"
 msgstr "Параметр «max age»"
 
-#: luasrc/view/mstpd/status.htm:234
-msgid "Maybe you have no bridges with enabled STP support."
-msgstr "Возможно, что на мостах не включена поддержка STP."
-
-#: luasrc/model/cbi/mstpd/config.lua:187 luasrc/model/cbi/mstpd/config.lua:283
+#: luasrc/model/cbi/mstpd/config.lua:201 luasrc/model/cbi/mstpd/config.lua:305
 msgid "Must be in range from 1 to 10"
 msgstr "Значение должно быть в диапазоне от 1 до 10"
 
-#: luasrc/model/cbi/mstpd/config.lua:264
+#: luasrc/model/cbi/mstpd/config.lua:286
 msgid "Must be in range from 10 to 1000000"
 msgstr "Значение должно быть в диапазоне от 10 до 1000000"
 
-#: luasrc/model/cbi/mstpd/config.lua:206
+#: luasrc/model/cbi/mstpd/config.lua:223
 msgid "Must be in range from 4 to 30"
 msgstr "Значение должно быть в диапазоне от 4 до 30"
 
-#: luasrc/model/cbi/mstpd/config.lua:235
+#: luasrc/model/cbi/mstpd/config.lua:257
 msgid "Must be in range from 6 to 40"
 msgstr "Значение должно быть в диапазоне от 6 до 40"
 
-#: luasrc/model/cbi/mstpd/config.lua:216 luasrc/model/cbi/mstpd/config.lua:245
+#: luasrc/model/cbi/mstpd/config.lua:238 luasrc/model/cbi/mstpd/config.lua:267
 msgid "Must meet the condition [ 2 * (Forward Delay - 1) >= Max Age ]"
 msgstr "Должно выполнятся условие [ 2 * (Forward Delay - 1) >= Max Age ]"
 
-#: luasrc/model/cbi/mstpd/config.lua:135
+#: luasrc/model/cbi/mstpd/config.lua:149
 msgid "Name of the bridge network interface"
 msgstr "Имя сетевого устройства моста"
 
-#: luasrc/model/cbi/mstpd/config.lua:297
+#: luasrc/model/cbi/mstpd/config.lua:319
 msgid "Name of the bridge port network interface"
 msgstr "Имя сетевого устройства порта"
 
-#: luasrc/model/cbi/mstpd/config.lua:346 luasrc/model/cbi/mstpd/config.lua:358
-#: luasrc/model/cbi/mstpd/config.lua:370 luasrc/model/cbi/mstpd/config.lua:383
-#: luasrc/model/cbi/mstpd/config.lua:395 luasrc/model/cbi/mstpd/config.lua:407
+#: luasrc/model/cbi/mstpd/config.lua:368 luasrc/model/cbi/mstpd/config.lua:380
+#: luasrc/model/cbi/mstpd/config.lua:392 luasrc/model/cbi/mstpd/config.lua:405
+#: luasrc/model/cbi/mstpd/config.lua:417 luasrc/model/cbi/mstpd/config.lua:429
 msgid "No"
 msgstr "Нет"
 
-#: luasrc/model/cbi/mstpd/config.lua:103
-msgid "No bridges controlled by MSTPd."
-msgstr "Нет мостов управляемых службой MSTPd."
+#: luasrc/view/mstpd/no-bridges.htm:8
+msgid "No bridges to display..."
+msgstr "Нет мостов для отображения..."
 
 #: luasrc/view/mstpd/bridgeslist.htm:94
 msgid "No bridges with enabled STP support"
 msgstr "Нет мостов с включенной поддержкой STP"
 
-#: luasrc/view/mstpd/status.htm:212 luasrc/view/mstpd/status.htm:218
-msgid "No information available"
-msgstr "Информация не доступна"
-
-#: luasrc/view/mstpd/status.htm:233
-msgid "No information."
-msgstr "Нет информации."
-
-#: luasrc/view/mstpd/status.htm:201
-msgid "Oper P2P"
+#: luasrc/view/mstpd/status.htm:46
+msgid "Operative P2P"
 msgstr "Оперативное P2P состояние"
 
-#: luasrc/view/mstpd/status.htm:199
-msgid "Oper edge"
+#: luasrc/view/mstpd/status.htm:44
+msgid "Operative edge"
 msgstr "Оперативное пограничное состояние"
 
-#: luasrc/model/cbi/mstpd/config.lua:333 luasrc/view/mstpd/status.htm:181
+#: luasrc/view/mstpd/status.htm:34
+msgid "Operative protocol version"
+msgstr "Оперативная версия протокола"
+
+#: luasrc/model/cbi/mstpd/config.lua:355 luasrc/view/mstpd/status.htm:23
 msgid "Path cost"
 msgstr "Стоимость маршрута"
 
-#: luasrc/model/cbi/mstpd/config.lua:368
+#: luasrc/model/cbi/mstpd/config.lua:390
 msgid "Point-to-Point detection mode"
 msgstr "Режим определение P2P"
 
-#: luasrc/model/cbi/mstpd/config.lua:296
+#: luasrc/model/cbi/mstpd/config.lua:318
 msgid "Port"
 msgstr "Порт"
 
-#: luasrc/model/cbi/mstpd/config.lua:129
+#: luasrc/model/cbi/mstpd/config.lua:143
 msgid "Port %d (%s)"
 msgstr "Порт %d (%s)"
 
-#: luasrc/view/mstpd/status.htm:192
+#: luasrc/view/mstpd/status.htm:37
 msgid "Port identifier"
 msgstr "Идентификатор"
 
-#: luasrc/view/mstpd/status.htm:114
-msgid "Port parameter"
-msgstr "Параметр порта"
-
-#: luasrc/view/mstpd/status.htm:193
+#: luasrc/view/mstpd/status.htm:38
 msgid "Port path cost"
 msgstr "Стоимость маршрута порта"
 
-#: luasrc/view/mstpd/status.htm:190
+#: luasrc/view/mstpd/status.htm:35
 msgid "Port role"
 msgstr "Роль"
 
-#: luasrc/view/mstpd/status.htm:191
+#: luasrc/view/mstpd/status.htm:36
 msgid "Port state"
 msgstr "Состояние"
 
-#: luasrc/model/cbi/mstpd/config.lua:151 luasrc/model/cbi/mstpd/config.lua:306
+#: luasrc/model/cbi/mstpd/config.lua:165 luasrc/model/cbi/mstpd/config.lua:328
 msgid "Priority"
 msgstr "Приоритет"
 
-#: luasrc/model/cbi/mstpd/config.lua:142 luasrc/view/mstpd/status.htm:175
+#: luasrc/model/cbi/mstpd/config.lua:156
 msgid "Protocol"
 msgstr "Протокол"
 
-#: luasrc/view/mstpd/status.htm:179
+#: luasrc/view/mstpd/status.htm:21
 msgid "Regional root"
 msgstr "Региональный корневой мост"
 
-#: luasrc/model/cbi/mstpd/config.lua:405
+#: luasrc/model/cbi/mstpd/config.lua:427
 msgid "Restrict port ability to propagate received TCN's"
 msgstr "Запретить порту распространять полученные TCN"
 
-#: luasrc/model/cbi/mstpd/config.lua:393
+#: luasrc/model/cbi/mstpd/config.lua:415
 msgid "Restrict port ability to take Root role"
 msgstr "Запретить порту принимать роль корневого порта"
 
-#: luasrc/view/mstpd/status.htm:180
+#: luasrc/view/mstpd/status.htm:22
 msgid "Root port"
 msgstr "Корневой порт"
 
-#: luasrc/view/mstpd/status.htm:203
+#: luasrc/view/mstpd/status.htm:48
 msgid "Rx BPDU"
 msgstr "Получено BPDU"
 
-#: luasrc/view/mstpd/status.htm:205
+#: luasrc/view/mstpd/status.htm:50
 msgid "Rx TCN"
 msgstr "Получено TCN"
 
@@ -317,76 +329,97 @@ msgstr "Получено TCN"
 msgid "STP support is disabled on this bridge"
 msgstr "На мосту отключена поддержка STP"
 
-#: luasrc/controller/mstpd.lua:17
+#: luasrc/controller/mstpd.lua:41
 msgid "Settings"
 msgstr "Настройки"
 
-#: luasrc/model/cbi/mstpd/config.lua:41
+#: luasrc/view/mstpd/status.htm:260
+msgid "Show additional information"
+msgstr "Показать дополнительную информацию"
+
+#: luasrc/model/cbi/mstpd/config.lua:40
 msgid "State machine transition (4)"
 msgstr "Переходы машины состояний (4)"
 
-#: luasrc/controller/mstpd.lua:16
+#: luasrc/controller/mstpd.lua:24 luasrc/controller/mstpd.lua:36
 msgid "Status"
 msgstr "Состояние"
 
-#: luasrc/view/mstpd/status.htm:248
-msgid "This page allows you to see current MSTPd bridges and ports status"
-msgstr ""
-"На данной странице можно просматривать текущее состояние MSTPd мостов и "
-"портов"
+#: luasrc/view/mstpd/status.htm:247
+msgid "There is no available information"
+msgstr "Информация не доступна"
 
-#: luasrc/view/mstpd/status.htm:187
+#: luasrc/view/mstpd/status.htm:318
+msgid ""
+"This page allows you to see current state of the STP/RSTP bridge and its "
+"ports"
+msgstr ""
+"На данной странице отображается текущее состояние STP/RSTP моста и его портов"
+
+#: luasrc/view/mstpd/status.htm:29
 msgid "Time since topology change"
 msgstr "Время с последнего изменения топологии"
 
-#: luasrc/model/cbi/mstpd/config.lua:272 luasrc/view/mstpd/status.htm:184
+#: luasrc/view/mstpd/no-bridges.htm:12
+msgid ""
+"To display the STP/RSTP bridge status on this page you must select at least "
+"one bridge for controlling by the MSTPd service <a href=\"%s\">here</a>."
+msgstr ""
+"Чтобы отобразить состояние STP/RSTP моста на этой странице, вы должны "
+"выбрать хотя бы один мост для управления службой MSTPd <a href=\"%s\">здесь</"
+"a>."
+
+#: luasrc/model/cbi/mstpd/config.lua:294 luasrc/view/mstpd/status.htm:26
 msgid "Transmit hold count"
 msgstr "Параметр «transmit hold count»"
 
-#: luasrc/view/mstpd/status.htm:202
+#: luasrc/view/mstpd/status.htm:47
 msgid "Tx BPDU"
 msgstr "Отправлено BPDU"
 
-#: luasrc/view/mstpd/status.htm:204
+#: luasrc/view/mstpd/status.htm:49
 msgid "Tx TCN"
 msgstr "Отправлено TCN"
 
-#: luasrc/view/mstpd/status.htm:155
-msgid "Value"
-msgstr "Значение"
-
-#: luasrc/model/cbi/mstpd/config.lua:185 luasrc/model/cbi/mstpd/config.lua:204
-#: luasrc/model/cbi/mstpd/config.lua:233 luasrc/model/cbi/mstpd/config.lua:262
-#: luasrc/model/cbi/mstpd/config.lua:281
+#: luasrc/model/cbi/mstpd/config.lua:199 luasrc/model/cbi/mstpd/config.lua:221
+#: luasrc/model/cbi/mstpd/config.lua:255 luasrc/model/cbi/mstpd/config.lua:284
+#: luasrc/model/cbi/mstpd/config.lua:303
 msgid "Value is not a number"
 msgstr "Значение не является числом"
 
-#: luasrc/model/cbi/mstpd/config.lua:347 luasrc/model/cbi/mstpd/config.lua:359
-#: luasrc/model/cbi/mstpd/config.lua:371 luasrc/model/cbi/mstpd/config.lua:384
-#: luasrc/model/cbi/mstpd/config.lua:396 luasrc/model/cbi/mstpd/config.lua:408
+#: luasrc/model/cbi/mstpd/config.lua:369 luasrc/model/cbi/mstpd/config.lua:381
+#: luasrc/model/cbi/mstpd/config.lua:393 luasrc/model/cbi/mstpd/config.lua:406
+#: luasrc/model/cbi/mstpd/config.lua:418 luasrc/model/cbi/mstpd/config.lua:430
 msgid "Yes"
 msgstr "Да"
 
-#: luasrc/model/cbi/mstpd/config.lua:105
-msgid "You can not select bridges with disabled STP support."
-msgstr "Вы не можете выбрать мосты, на которых отключена поддержка STP."
-
-#: luasrc/model/cbi/mstpd/config.lua:104
-msgid "You must select at least one bridge for controlling by MSTPd."
+#: luasrc/model/cbi/mstpd/config.lua:45
+msgid ""
+"You can not select bridges with disabled STP support. You may enable or "
+"disable STP support for bridges in the <a href=\"%s\">network interfaces "
+"settings</a>"
 msgstr ""
-"Вы должны выбрать как минимум один мост, который будет управляться службой "
-"MSTPd."
+"Вы не можете выбрать мосты с отключенной поддержкой STP. Вы можете включить "
+"или отключить поддержку STP для мостов в <a href=\"%s\">настройках сетевых "
+"интерфейсов</a>"
 
-#: luasrc/view/mstpd/status.htm:68
+#: luasrc/view/mstpd/no-bridges.htm:10
+msgid "You have no selected bridges for controlling by the MSTPd service."
+msgstr "Нет выбранных мостов для управления службой MSTPd."
+
+#: luasrc/model/cbi/mstpd/config.lua:119
+msgid ""
+"You must select at least one bridge for controlling by the MSTPd service."
+msgstr "Вы должны выбрать хотя бы один мост для управления службой MSTPd."
+
+#: luasrc/view/mstpd/status.htm:61
 msgid "no"
 msgstr "нет"
 
-#: luasrc/view/mstpd/status.htm:182 luasrc/view/mstpd/status.htm:183
-#: luasrc/view/mstpd/status.htm:185 luasrc/view/mstpd/status.htm:186
-#: luasrc/view/mstpd/status.htm:187
-msgid "s"
-msgstr "с"
+#: luasrc/view/mstpd/status.htm:132
+msgid "none"
+msgstr "нет"
 
-#: luasrc/view/mstpd/status.htm:69
+#: luasrc/view/mstpd/status.htm:62
 msgid "yes"
 msgstr "да"

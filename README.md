@@ -25,12 +25,15 @@ MSTP protocol is not supported.
 
 ## Screenshots
 
-### Status page
+### Bridge status
 ![Status page](screenshots/luci-app-mstpd-status.png?raw=true "Status page")
 
-### Configuration page (bridge)
+### Bridge ports status full table
+![Status page](screenshots/luci-app-mstpd-status-additional.png?raw=true "Expanded bridge ports status table")
+
+### Bridge configuration
 ![Configuration page (bridge)](screenshots/luci-app-mstpd-config-bridge.png?raw=true "Configuration page (bridge)")
 
-### Configuration page (port)
+### Bridge port configuration
 ![Configuration page (port)](screenshots/luci-app-mstpd-config-port.png?raw=true "Configuration page (port)")
 
