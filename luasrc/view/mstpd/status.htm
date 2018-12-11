@@ -295,6 +295,9 @@
 
 			if (json && json.length)
 			{
+				var b = elm('mstpd-brports-toggle-additional-btn')
+				b.style.display = "block"
+
 				mstpd_update(json)
 				f.style.display = "none"
 				s.style.display = "block"
@@ -339,6 +342,7 @@
 		id="mstpd-brports-toggle-additional-btn"
 		data-short="true"
 		type="button"
+		style="display: none"
 		value="..."
 		disabled="true"
 		onclick="mstpd_brports_toggle_additional(this)" />

@@ -7,6 +7,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 All dates in this document are in `DD.MM.YYYY` format.
 
 ### Unreleased
+### Added
+- Hide additional information toggle button before first data is arrived.
+
 ### Fixed
 - Fixed port state and role appearance in status table.
 
