@@ -14,27 +14,38 @@ function index()
 	local uci  = require("luci.model.uci").cursor()
 
 	local uci_bridges = uci:get("mstpd", "global", "bridge")
+	local has_bridges = false
+
+	local ntm = require("luci.model.network").init()
 
 	entry({"admin", "services", "mstpd"}, firstchild(), _("MSTPd"), 80)
+
+	status_entry = entry({"admin", "services", "mstpd", "status" },
+		firstchild(), _("Status"), 10
+	)
 
 	if uci_bridges and #uci_bridges > 0 then
 		local i, br
 
-		entry({"admin", "services", "mstpd", "status" },
-			firstchild(), _("Status"), 10
-		)
-
 		for i, br in ipairs(uci_bridges) do
-			entry({"admin", "services", "mstpd", "status", br },
-				call("action_status_render"),
-				i18n.translatef('Bridge "%s"', br), i
-			)
+			local _, netif
+			for _, netif in ipairs(ntm:get_interfaces()) do
+				if netif:is_bridge() and netif:bridge_stp() and netif:name() == br then
+					entry({"admin", "services", "mstpd", "status", br },
+						call("action_status_render"),
+						i18n.translatef('Bridge "%s"', br), i
+					)
+
+					has_bridges = true
+					break
+				end
+			end
 		end
-	else
+	end
+
+	if not has_bridges then
 		-- Output status page for no bridges state
-		entry({"admin", "services", "mstpd", "status" },
-			template("mstpd/no-bridges"), _("Status"), 10
-		)
+		status_entry.target = template("mstpd/no-bridges")
 	end
 
 	entry({"admin", "services", "mstpd", "config" },

@@ -12,6 +12,9 @@ All dates in this document are in `DD.MM.YYYY` format.
 
 ### Fixed
 - Fixed port state and role appearance in status table.
+- Do not show status tabs for bridges that are removed from the network
+  configuration but present in the mstpd configuration.
+
 
 ## 1.2.0 - 09.12.2018
 ### Added
