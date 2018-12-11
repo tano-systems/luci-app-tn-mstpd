@@ -56,11 +56,26 @@ mstpd_bridges.network  = ""
 mstpd_bridges.widget   = "checkbox"
 
 function mstpd_bridges.write(self, section, value)
+	--
+	-- Create UCI sections for newly added bridges
+	-- under the MSTPd control
+	--
 	if type(value) == "table" then
 		local _, br
 		for _, br in ipairs(value) do
 			local net = string.sub(br, 4) -- remove 'br-' prefix
-			m.uci:section("mstpd", "bridge", net, {})
+			local create = true
+
+			m.uci:foreach("mstpd", "bridge", function(s)
+				if s[".name"] == net then
+					create = false
+					return false
+				end
+			end)
+
+			if create then
+				m.uci:section("mstpd", "bridge", net, {})
+			end
 		end
 	end
 

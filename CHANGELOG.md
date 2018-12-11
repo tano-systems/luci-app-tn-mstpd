@@ -14,6 +14,8 @@ All dates in this document are in `DD.MM.YYYY` format.
 - Fixed port state and role appearance in status table.
 - Do not show status tabs for bridges that are removed from the network
   configuration but present in the mstpd configuration.
+- Create UCI sections for newly added bridges under the MSTPd control only
+  if they are not exists.
 
 
 ## 1.2.0 - 09.12.2018
