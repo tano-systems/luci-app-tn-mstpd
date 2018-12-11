@@ -74,7 +74,7 @@
 		if (v == "forwarding")
 			return '<span class="alert-message success">Forwarding</span>'
 		else if (v == "learning")
-			return '<span class="alert-message notice">Learning</span>'
+			return '<span class="alert-message info">Learning</span>'
 		else
 			return v.charAt(0).toUpperCase() + v.slice(1);
 	}
@@ -83,9 +83,9 @@
 		if (v == "Designated")
 			return '<span class="alert-message success">Designated</span>'
 		else if (v == "Alternate")
-			return '<span class="alert-message notice">Alternate</span>'
+			return '<span class="alert-message warning">Alternate</span>'
 		else if (v == "Root")
-			return '<span class="alert-message warn">Root</span>'
+			return '<span class="alert-message info">Root</span>'
 		else
 			return v
 	}

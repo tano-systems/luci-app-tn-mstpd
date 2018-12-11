@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 All dates in this document are in `DD.MM.YYYY` format.
 
+### Unreleased
+### Fixed
+- Fixed port state and role appearance in status table.
+
 ## 1.2.0 - 09.12.2018
 ### Added
 - This CHANGELOG file.
