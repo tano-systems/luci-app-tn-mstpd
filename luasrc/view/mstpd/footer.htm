@@ -3,8 +3,8 @@
  Anton Kikin <a.kikin@tano-systems.com>
 -%>
 
-<% v = require "luci.app_mstpd_version" %>
+<% mstpd = require "luci.mstpd" %>
 <fieldset class="cbi-section"><div class="cbi-section-node tano-copyright"><p>
-<%=string.format(translate('MSTPd LuCI application (version %s)'), v.version)%><br />
+<%=string.format(translate('MSTPd LuCI application (version %s)'), mstpd.version())%><br />
 <%=translate('&copy; 2018, Tano Systems, Anton Kikin &lt;<a href="mailto:a.kikin@tano-systems.com">a.kikin@tano-systems.com</a>&gt;')%>
 </p></div></fieldset>

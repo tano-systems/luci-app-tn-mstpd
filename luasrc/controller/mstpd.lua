@@ -5,18 +5,19 @@
 
 module("luci.controller.mstpd", package.seeall)
 
+
 function index()
 	if not nixio.fs.access("/etc/config/mstpd") then
 		return
 	end
 
-	local i18n = require("luci.i18n")
-	local uci  = require("luci.model.uci").cursor()
+	local i18n  = require("luci.i18n")
+	local uci   = require("luci.model.uci").cursor()
+	local mstpd = require("luci.mstpd")
+	local ntm   = require("luci.model.network").init()
 
 	local uci_bridges = uci:get("mstpd", "global", "bridge")
 	local has_bridges = false
-
-	local ntm = require("luci.model.network").init()
 
 	entry({"admin", "services", "mstpd"}, firstchild(), _("MSTPd"), 80)
 
@@ -28,17 +29,13 @@ function index()
 		local i, br
 
 		for i, br in ipairs(uci_bridges) do
-			local _, netif
-			for _, netif in ipairs(ntm:get_interfaces()) do
-				if netif:is_bridge() and netif:bridge_stp() and netif:name() == br then
-					entry({"admin", "services", "mstpd", "status", br },
-						call("action_status_render"),
-						i18n.translatef('Bridge "%s"', br), i
-					)
+			if mstpd.netif_is_stp_bridge(br) then
+				entry({"admin", "services", "mstpd", "status", br },
+					call("action_status_render"),
+					i18n.translatef('Bridge "%s"', br), i
+				)
 
-					has_bridges = true
-					break
-				end
+				has_bridges = true
 			end
 		end
 	end
