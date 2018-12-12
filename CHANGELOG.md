@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 All dates in this document are in `DD.MM.YYYY` format.
 
-### Unreleased
+## [Unreleased]
 ### Added
 - Hide additional information toggle button before first data is arrived.
 
@@ -18,7 +18,7 @@ All dates in this document are in `DD.MM.YYYY` format.
   if they are not exists.
 
 
-## 1.2.0 - 09.12.2018
+## [Version 1.2.0] (09.12.2018)
 ### Added
 - This CHANGELOG file.
 - Operative protocol version display in the bridge ports status table.
@@ -32,11 +32,11 @@ All dates in this document are in `DD.MM.YYYY` format.
 - Minor bridge ports status table display improvements.
 - Updated screenshots.
 
-## 1.1.0 - 05.12.2018
+## [Version 1.1.0] (05.12.2018)
 ### Fixed
 - Fixed application for multiple bridges configurations.
 
-## 1.0.4 - 05.12.2018
+## [Version 1.0.4] (05.12.2018)
 ### Changed
 - Merged status and config menu items as 3rd level pages under "Services"
   main menu item.
@@ -44,16 +44,16 @@ All dates in this document are in `DD.MM.YYYY` format.
 ### Fixed
 - Fixed typography in Russian translation.
 
-## 1.0.3 - 02.12.2018
+## [Version 1.0.3] (02.12.2018)
 ### Fixed
 - Fixed bridges select width on config page. This widget produced
   an incorrect UCI config then saved.
 
-## 1.0.2 - 23.11.2018
+## [Version 1.0.2] (23.11.2018)
 ### Removed
 - Removed service status display on status and config pages.
 
-## 1.0.1 - 31.10.2018
+## [Version 1.0.1] (31.10.2018)
 ### Added
 - Added support for LuCI from OpenWrt 18.06.x branch.
 - Added screenshots to README.md.
@@ -62,6 +62,15 @@ All dates in this document are in `DD.MM.YYYY` format.
 - Minor bugfixes.
 - Fixed invalid HTML markup in footer.
 
-## 1.0.0 - 04.07.2018
+## [Version 1.0.0] (04.07.2018)
 
 Initial release
+
+[Unreleased]: https://github.com/tano-systems/luci-app-mstpd/tree/master
+[Version 1.2.0]: https://github.com/tano-systems/luci-app-mstpd/releases/tag/v1.2.0
+[Version 1.1.0]: https://github.com/tano-systems/luci-app-mstpd/releases/tag/v1.1.0
+[Version 1.0.4]: https://github.com/tano-systems/luci-app-mstpd/releases/tag/v1.0.4
+[Version 1.0.3]: https://github.com/tano-systems/luci-app-mstpd/releases/tag/v1.0.3
+[Version 1.0.2]: https://github.com/tano-systems/luci-app-mstpd/releases/tag/v1.0.2
+[Version 1.0.1]: https://github.com/tano-systems/luci-app-mstpd/releases/tag/v1.0.1
+[Version 1.0.0]: https://github.com/tano-systems/luci-app-mstpd/releases/tag/v1.0.0
