@@ -7,8 +7,8 @@ local util = require "luci.util"
 local uci  = require "luci.model.uci"
 
 m = Map("mstpd",
-	translate("MSTPd: Configure"),
-	translate("MSTPd is a Multiple Spanning Tree Protocol Daemon")
+	translate("STP/RSTP: Configure"),
+	translate("Multiple Spanning Tree Protocol Daemon")
 )
 
 m.apply_on_parse = true

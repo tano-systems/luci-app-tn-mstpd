@@ -19,7 +19,7 @@ function index()
 	local uci_bridges = uci:get("mstpd", "global", "bridge")
 	local has_bridges = false
 
-	entry({"admin", "services", "mstpd"}, firstchild(), _("MSTPd"), 80)
+	entry({"admin", "services", "mstpd"}, firstchild(), _("STP/RSTP"), 80)
 
 	status_entry = entry({"admin", "services", "mstpd", "status" },
 		firstchild(), _("Status"), 10

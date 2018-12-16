@@ -12,6 +12,9 @@ All dates in this document are in `DD.MM.YYYY` format.
   Previously supported only Bootstrap LuCI theme.
 - Hide additional information toggle button before first data is arrived.
 
+### Changed
+- Application main menu entry has been renamed to "STP/RSTP".
+
 ### Fixed
 - Fixed port state and role appearance in status table.
 - Do not show status tabs for bridges that are removed from the network
