@@ -8,6 +8,31 @@
 	.mstpd-yes { color: #0a0; }
 	.mstpd-no  { color: black; }
 	.mstpd-br-param { display: inline-block; min-width: 280px; }
+
+	.mstpd-badge {
+		display: inline-block;
+		width: fit-content !important;
+		padding: 3px 8px;
+		border-radius: 3px;
+		width: 100%;
+		background-color: #e6e6e6;
+		border: solid 1px #b9b9b9;
+		color: #595959;
+	}
+
+	.mstpd-badge.mstpd-state-forwarding { background-color: #b7efcf; border-color: #2abd69; color: #165e34; }
+	.mstpd-badge.mstpd-state-learning   { background-color: #b2daf3; border-color: #46a6e2; color: #1a74ac; }
+	.mstpd-badge.mstpd-state-discarding { background-color: #e6e6e6; border-color: #b9b9b9; color: #a0a0a0; }
+
+	.mstpd-badge.mstpd-role-designated  { background-color: #b7efcf; border-color: #2abd69; color: #165e34; }
+	.mstpd-badge.mstpd-role-root        { background-color: #b2daf3; border-color: #46a6e2; color: #1a74ac; }
+	.mstpd-badge.mstpd-role-alternate   { background-color: #f9e3b3; border-color: #b7820f; color: #b7820f; }
+	.mstpd-badge.mstpd-role-backup      { background-color: #f9e3f9; border-color: #e380e3; color: #b70f82; }
+	.mstpd-badge.mstpd-role-disabled    { background-color: #e6e6e6; border-color: #b9b9b9; color: #a0a0a0; }
+
+	.mstpd-badge.mstpd-proto-ok         { background-color: #b7efcf; border-color: #2abd69; color: #165e34; }
+	.mstpd-badge.mstpd-proto-changed    { background-color: #ee5f5b; border-color: #dd1c16; color: #ffffff; }
+
 </style>
 
 <script type="text/javascript">//<![CDATA[
@@ -72,26 +97,32 @@
 
 	function vcb_port_state(br, v) {
 		if (v == "forwarding")
-			return '<span class="alert-message success">Forwarding</span>'
+			return '<span class="mstpd-badge mstpd-state-forwarding">Forwarding</span>'
 		else if (v == "learning")
-			return '<span class="alert-message info">Learning</span>'
+			return '<span class="mstpd-badge mstpd-state-learning">Learning</span>'
+		else if (v == "discarding")
+			return '<span class="mstpd-badge mstpd-state-discarding">Discarding</span>'
 		else
 			return v.charAt(0).toUpperCase() + v.slice(1);
 	}
 
 	function vcb_port_role(br, v) {
 		if (v == "Designated")
-			return '<span class="alert-message success">Designated</span>'
+			return '<span class="mstpd-badge mstpd-role-designated">Designated</span>'
 		else if (v == "Alternate")
-			return '<span class="alert-message warning">Alternate</span>'
+			return '<span class="mstpd-badge mstpd-role-alternate">Alternate</span>'
 		else if (v == "Root")
-			return '<span class="alert-message info">Root</span>'
+			return '<span class="mstpd-badge mstpd-role-root">Root</span>'
+		else if (v == "Backup")
+			return '<span class="mstpd-badge mstpd-role-backup">Backup</span>'
+		else if (v == "Disabled")
+			return '<span class="mstpd-badge mstpd-role-disabled">Disabled</span>'
 		else
 			return v
 	}
 
 	function vcb_num_or_dash(br, v) {
-		return parseInt(v) == 0 ? '&ndash;' : v
+		return parseInt(v) == 0 ? '–' : v
 	}
 
 	///////////////////////////////////////////////////////////////////////////
@@ -206,12 +237,12 @@
 
 		rows.push(mstpd_brports_status_add(br, "received-stp", function(br, v){
 			if (br["force-protocol-version"] === "stp") {
-				return '<span class="alert-message success">STP</span>'
+				return '<span class="mstpd-badge mstpd-proto-ok">STP</span>'
 			} else {
 				if (v === "yes")
-					return '<span class="alert-message error">STP</span>'
+					return '<span class="mstpd-badge mstpd-proto-changed">STP</span>'
 				else
-					return '<span class="alert-message success">RSTP</span>'
+					return '<span class="mstpd-badge mstpd-proto-ok">RSTP</span>'
 			}
 		}))
 
@@ -223,7 +254,7 @@
 			
 		rows.push(mstpd_brports_status_add(br, "designated-port", function(br, v) {
 			if (v === '0.000')
-				return '&ndash;'
+				return '–'
 			return v
 		}))
 

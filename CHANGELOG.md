@@ -8,6 +8,8 @@ All dates in this document are in `DD.MM.YYYY` format.
 
 ## [Unreleased]
 ### Added
+- Added support for the official OpenWrt and Material LuCI themes.
+  Previously supported only Bootstrap LuCI theme.
 - Hide additional information toggle button before first data is arrived.
 
 ### Fixed
