@@ -1,14 +1,14 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=UTF-8"
 
-#: luasrc/view/mstpd/status.htm:95
+#: luasrc/view/mstpd/status.htm:101
 msgid "%d s"
 msgstr ""
 
 #: luasrc/view/mstpd/footer.htm:9
 msgid ""
 "&copy; 2018, Tano Systems, Anton Kikin &lt;<a href=\"mailto:a.kikin@tano-"
-"systems.com\">a.kikin@tano-systems.com</a>&gt;"
+"systems.com\"><nobr>a.kikin@tano-systems.com</nobr></a>&gt;"
 msgstr ""
 
 #: luasrc/model/cbi/mstpd/config.lua:371
@@ -35,15 +35,15 @@ msgstr ""
 msgid "-- please select --"
 msgstr ""
 
-#: luasrc/view/mstpd/status.htm:70
+#: luasrc/view/mstpd/status.htm:76
 msgid "Admin P2P"
 msgstr ""
 
-#: luasrc/model/cbi/mstpd/config.lua:380 luasrc/view/mstpd/status.htm:67
+#: luasrc/model/cbi/mstpd/config.lua:380 luasrc/view/mstpd/status.htm:73
 msgid "Admin edge"
 msgstr ""
 
-#: luasrc/view/mstpd/status.htm:42
+#: luasrc/view/mstpd/status.htm:48
 msgid "Administrative protocol version"
 msgstr ""
 
@@ -51,15 +51,15 @@ msgstr ""
 msgid "Ageing"
 msgstr ""
 
-#: luasrc/view/mstpd/status.htm:53
+#: luasrc/view/mstpd/status.htm:59
 msgid "Ageing time"
 msgstr ""
 
-#: luasrc/model/cbi/mstpd/config.lua:409 luasrc/view/mstpd/status.htm:91
+#: luasrc/model/cbi/mstpd/config.lua:409 luasrc/view/mstpd/status.htm:97
 msgid "Auto"
 msgstr ""
 
-#: luasrc/view/mstpd/status.htm:68
+#: luasrc/view/mstpd/status.htm:74
 msgid "Auto edge"
 msgstr ""
 
@@ -75,11 +75,11 @@ msgstr ""
 msgid "Bridge"
 msgstr ""
 
-#: luasrc/controller/mstpd.lua:35 luasrc/view/mstpd/status.htm:354
+#: luasrc/controller/mstpd.lua:35 luasrc/view/mstpd/status.htm:360
 msgid "Bridge \"%s\""
 msgstr ""
 
-#: luasrc/view/mstpd/status.htm:361
+#: luasrc/view/mstpd/status.htm:367
 msgid "Bridge \"%s\" ports"
 msgstr ""
 
@@ -87,7 +87,7 @@ msgstr ""
 msgid "Bridge (%s)"
 msgstr ""
 
-#: luasrc/view/mstpd/status.htm:44
+#: luasrc/view/mstpd/status.htm:50
 msgid "Bridge ID"
 msgstr ""
 
@@ -99,7 +99,7 @@ msgstr ""
 msgid "Bridges controlled by MSTPd"
 msgstr ""
 
-#: luasrc/view/mstpd/status.htm:356 luasrc/view/mstpd/status.htm:367
+#: luasrc/view/mstpd/status.htm:362 luasrc/view/mstpd/status.htm:373
 msgid "Collecting data..."
 msgstr ""
 
@@ -111,15 +111,15 @@ msgstr ""
 msgid "Debug (3)"
 msgstr ""
 
-#: luasrc/view/mstpd/status.htm:65
+#: luasrc/view/mstpd/status.htm:71
 msgid "Designated bridge"
 msgstr ""
 
-#: luasrc/view/mstpd/status.htm:66
+#: luasrc/view/mstpd/status.htm:72
 msgid "Designated port"
 msgstr ""
 
-#: luasrc/view/mstpd/status.htm:45 luasrc/view/mstpd/status.htm:64
+#: luasrc/view/mstpd/status.htm:51 luasrc/view/mstpd/status.htm:70
 msgid "Designated root"
 msgstr ""
 
@@ -127,7 +127,7 @@ msgstr ""
 msgid "Disable (0)"
 msgstr ""
 
-#: luasrc/view/mstpd/status.htm:43 luasrc/view/mstpd/status.htm:58
+#: luasrc/view/mstpd/status.htm:49 luasrc/view/mstpd/status.htm:64
 msgid "Enabled"
 msgstr ""
 
@@ -135,11 +135,11 @@ msgstr ""
 msgid "Error (1)"
 msgstr ""
 
-#: luasrc/view/mstpd/status.htm:342
+#: luasrc/view/mstpd/status.htm:348
 msgid "Failed to request bridge \"%s\" status information."
 msgstr ""
 
-#: luasrc/model/cbi/mstpd/config.lua:224 luasrc/view/mstpd/status.htm:50
+#: luasrc/model/cbi/mstpd/config.lua:224 luasrc/view/mstpd/status.htm:56
 msgid "Forward delay time"
 msgstr ""
 
@@ -147,11 +147,11 @@ msgstr ""
 msgid "Global settings"
 msgstr ""
 
-#: luasrc/model/cbi/mstpd/config.lua:205 luasrc/view/mstpd/status.htm:52
+#: luasrc/model/cbi/mstpd/config.lua:205 luasrc/view/mstpd/status.htm:58
 msgid "Hello time"
 msgstr ""
 
-#: luasrc/view/mstpd/status.htm:290
+#: luasrc/view/mstpd/status.htm:296
 msgid "Hide additional information"
 msgstr ""
 
@@ -171,7 +171,7 @@ msgstr ""
 msgid "MSTPd logging level"
 msgstr ""
 
-#: luasrc/model/cbi/mstpd/config.lua:261 luasrc/view/mstpd/status.htm:49
+#: luasrc/model/cbi/mstpd/config.lua:261 luasrc/view/mstpd/status.htm:55
 msgid "Max age"
 msgstr ""
 
@@ -221,19 +221,19 @@ msgstr ""
 msgid "No bridges with enabled STP support"
 msgstr ""
 
-#: luasrc/view/mstpd/status.htm:71
+#: luasrc/view/mstpd/status.htm:77
 msgid "Operative P2P"
 msgstr ""
 
-#: luasrc/view/mstpd/status.htm:69
+#: luasrc/view/mstpd/status.htm:75
 msgid "Operative edge"
 msgstr ""
 
-#: luasrc/view/mstpd/status.htm:59
+#: luasrc/view/mstpd/status.htm:65
 msgid "Operative protocol version"
 msgstr ""
 
-#: luasrc/model/cbi/mstpd/config.lua:370 luasrc/view/mstpd/status.htm:48
+#: luasrc/model/cbi/mstpd/config.lua:370 luasrc/view/mstpd/status.htm:54
 msgid "Path cost"
 msgstr ""
 
@@ -249,19 +249,19 @@ msgstr ""
 msgid "Port %d (%s)"
 msgstr ""
 
-#: luasrc/view/mstpd/status.htm:62
+#: luasrc/view/mstpd/status.htm:68
 msgid "Port identifier"
 msgstr ""
 
-#: luasrc/view/mstpd/status.htm:63
+#: luasrc/view/mstpd/status.htm:69
 msgid "Port path cost"
 msgstr ""
 
-#: luasrc/view/mstpd/status.htm:60
+#: luasrc/view/mstpd/status.htm:66
 msgid "Port role"
 msgstr ""
 
-#: luasrc/view/mstpd/status.htm:61
+#: luasrc/view/mstpd/status.htm:67
 msgid "Port state"
 msgstr ""
 
@@ -273,7 +273,7 @@ msgstr ""
 msgid "Protocol"
 msgstr ""
 
-#: luasrc/view/mstpd/status.htm:46
+#: luasrc/view/mstpd/status.htm:52
 msgid "Regional root"
 msgstr ""
 
@@ -285,15 +285,15 @@ msgstr ""
 msgid "Restrict port ability to take Root role"
 msgstr ""
 
-#: luasrc/view/mstpd/status.htm:47
+#: luasrc/view/mstpd/status.htm:53
 msgid "Root port"
 msgstr ""
 
-#: luasrc/view/mstpd/status.htm:73
+#: luasrc/view/mstpd/status.htm:79
 msgid "Rx BPDU"
 msgstr ""
 
-#: luasrc/view/mstpd/status.htm:75
+#: luasrc/view/mstpd/status.htm:81
 msgid "Rx TCN"
 msgstr ""
 
@@ -305,7 +305,7 @@ msgstr ""
 msgid "STP/RSTP"
 msgstr ""
 
-#: luasrc/view/mstpd/status.htm:349
+#: luasrc/view/mstpd/status.htm:355
 msgid "STP/RSTP: Bridge \"%s\" status"
 msgstr ""
 
@@ -321,7 +321,7 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: luasrc/view/mstpd/status.htm:289
+#: luasrc/view/mstpd/status.htm:295
 msgid "Show additional information"
 msgstr ""
 
@@ -333,17 +333,17 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
-#: luasrc/view/mstpd/status.htm:276
+#: luasrc/view/mstpd/status.htm:282
 msgid "There is no available information"
 msgstr ""
 
-#: luasrc/view/mstpd/status.htm:350
+#: luasrc/view/mstpd/status.htm:356
 msgid ""
 "This page allows you to see current state of the STP/RSTP bridge and its "
 "ports"
 msgstr ""
 
-#: luasrc/view/mstpd/status.htm:54
+#: luasrc/view/mstpd/status.htm:60
 msgid "Time since topology change"
 msgstr ""
 
@@ -353,15 +353,15 @@ msgid ""
 "one bridge for controlling by the MSTPd service <a href=\"%s\">here</a>."
 msgstr ""
 
-#: luasrc/model/cbi/mstpd/config.lua:309 luasrc/view/mstpd/status.htm:51
+#: luasrc/model/cbi/mstpd/config.lua:309 luasrc/view/mstpd/status.htm:57
 msgid "Transmit hold count"
 msgstr ""
 
-#: luasrc/view/mstpd/status.htm:72
+#: luasrc/view/mstpd/status.htm:78
 msgid "Tx BPDU"
 msgstr ""
 
-#: luasrc/view/mstpd/status.htm:74
+#: luasrc/view/mstpd/status.htm:80
 msgid "Tx TCN"
 msgstr ""
 
@@ -393,14 +393,14 @@ msgid ""
 "You must select at least one bridge for controlling by the MSTPd service."
 msgstr ""
 
-#: luasrc/view/mstpd/status.htm:86
+#: luasrc/view/mstpd/status.htm:92
 msgid "no"
 msgstr ""
 
-#: luasrc/view/mstpd/status.htm:163
+#: luasrc/view/mstpd/status.htm:169
 msgid "none"
 msgstr ""
 
-#: luasrc/view/mstpd/status.htm:87
+#: luasrc/view/mstpd/status.htm:93
 msgid "yes"
 msgstr ""

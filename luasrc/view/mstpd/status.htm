@@ -2,12 +2,18 @@
  Copyright (c) 2018, Tano Systems. All Rights Reserved.
  Anton Kikin <a.kikin@tano-systems.com>
 -%>
+
+<% function nobr(s) return "<nobr>" .. s .. "</nobr>" end %>
+
 <%+header%>
 
 <style type="text/css">
 	.mstpd-yes { color: #0a0; }
 	.mstpd-no  { color: black; }
-	.mstpd-br-param { display: inline-block; min-width: 280px; }
+
+	@media only screen and (min-width: 568px) {
+		.mstpd-br-param { display: inline-block; min-width: 280px; }
+	}
 
 	.mstpd-badge {
 		display: inline-block;
@@ -346,19 +352,19 @@
 	)
 //]]></script>
 
-<h2 name="content"><%=translatef("STP/RSTP: Bridge \"%s\" status", bridge)%></h2>
+<h2 name="content"><%=translatef("STP/RSTP: Bridge \"%s\" status", nobr(bridge))%></h2>
 <div class="cbi-map-descr"><%:This page allows you to see current state of the STP/RSTP bridge and its ports%></div>
 <div id="mstpd-status-content-fail" style="display:none"></div>
 <div id="mstpd-status-content">
 <fieldset class="cbi-section">
-	<legend><%=translatef("Bridge \"%s\"", bridge)%></legend>
+	<legend><%=translatef("Bridge \"%s\"", nobr(bridge))%></legend>
 	<ul id="mstpd-br-status">
 		<li><em><%:Collecting data...%></em></li>
 	</ul>
 </fieldset>
 
 <fieldset class="cbi-section">
-	<legend><%=translatef("Bridge \"%s\" ports", bridge)%></legend>
+	<legend><%=translatef("Bridge \"%s\" ports", nobr(bridge))%></legend>
 	<div class="table" id="mstpd-brports-status">
 		<div class="tr table-titles">
 			<div class="th top center">...</div>
