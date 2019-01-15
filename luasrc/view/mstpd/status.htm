@@ -368,14 +368,14 @@
 
 <fieldset class="cbi-section">
 	<legend><%=translatef("Bridge \"%s\" ports", nobr(bridge))%></legend>
-	<div class="table" id="mstpd-brports-status">
+	<div class="table-wrapper"><div class="table" id="mstpd-brports-status">
 		<div class="tr table-titles">
 			<div class="th top center">...</div>
 		</div>
 		<div class="tr placeholder">
 			<div class="td"><em><%:Collecting data...%></em></div>
 		</div>
-	</div>
+	</div></div>
 	<input class="cbi-button cbi-button-apply"
 		id="mstpd-brports-toggle-additional-btn"
 		data-short="true"
