@@ -355,7 +355,15 @@
 	)
 //]]></script>
 
-<h2 name="content"><%=translatef("STP/RSTP: Bridge \"%s\" status", nobr(bridge))%></h2>
+<h2 name="content"><%:STP/RSTP Status%></h2>
+
+<ul class="tabs">
+	<% for i, br in ipairs(bridges_list) do %>
+		<li class="tabmenu-item-status <% if bridge == br then %>active<% end %>"><a href="<%=url('admin/services/mstpd/status/' .. br)%>"><%=translatef('Bridge "%s"', br)%></a></li>
+	<% end %>
+</ul>
+
+<h2 name="content"><%=translatef("Bridge \"%s\" status", nobr(bridge))%></h2>
 <div class="cbi-map-descr"><%:This page allows you to see current state of the STP/RSTP bridge and its ports%></div>
 <div id="mstpd-status-content-fail" style="display:none"></div>
 <div id="mstpd-status-content">

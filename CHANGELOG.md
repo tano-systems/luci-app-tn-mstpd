@@ -14,6 +14,7 @@ All dates in this document are in `DD.MM.YYYY` format.
 
 ### Changed
 - Application main menu entry has been renamed to "STP/RSTP".
+- Renamed some titles on application pages.
 
 ### Fixed
 - Fixed port state and role appearance in status table.

@@ -11,39 +11,10 @@ function index()
 		return
 	end
 
-	local i18n  = require("luci.i18n")
-	local uci   = require("luci.model.uci").cursor()
-	local mstpd = require("luci.mstpd")
-	local ntm   = require("luci.model.network").init()
-
-	local uci_bridges = uci:get("mstpd", "global", "bridge")
-	local has_bridges = false
-
 	entry({"admin", "services", "mstpd"}, firstchild(), _("STP/RSTP"), 80)
 
-	status_entry = entry({"admin", "services", "mstpd", "status" },
-		firstchild(), _("Status"), 10
-	)
-
-	if uci_bridges and #uci_bridges > 0 then
-		local i, br
-
-		for i, br in ipairs(uci_bridges) do
-			if mstpd.netif_is_stp_bridge(br) then
-				entry({"admin", "services", "mstpd", "status", br },
-					call("action_status_render"),
-					i18n.translatef('Bridge "%s"', br), i
-				)
-
-				has_bridges = true
-			end
-		end
-	end
-
-	if not has_bridges then
-		-- Output status page for no bridges state
-		status_entry.target = template("mstpd/no-bridges")
-	end
+	entry({"admin", "services", "mstpd", "status" },
+		call("action_status_render"), _("Status"), 10).leaf = true
 
 	entry({"admin", "services", "mstpd", "config" },
 		cbi("mstpd/config"), _("Settings"), 20)
@@ -57,24 +28,39 @@ end
 
 -- Status page
 
-function action_status_render()
-	local vars = luci.http.formvalue()
-	local req  = luci.dispatcher.context.request
-	local path = luci.dispatcher.context.path
+function action_status_render(bridge)
+	local i18n  = require("luci.i18n")
+	local uci   = require("luci.model.uci").cursor()
+	local mstpd = require("luci.mstpd")
+	local ntm   = require("luci.model.network").init()
 
-	local bridge = ""
+	local uci_bridges = uci:get("mstpd", "global", "bridge")
+	local has_bridges = false
+	local bridges_list = { }
 
-	-- find requested bridge
-	for i, p in ipairs(luci.dispatcher.context.path) do
-		if luci.dispatcher.context.path[i] == "status" then
-			bridge = luci.dispatcher.context.path[i + 1]
-			break
+	if uci_bridges and #uci_bridges > 0 then
+		local i, br
+
+		for i, br in ipairs(uci_bridges) do
+			if mstpd.netif_is_stp_bridge(br) then
+				has_bridges = true
+				bridges_list[#bridges_list + 1] = br
+			end
 		end
 	end
 
-	luci.template.render("mstpd/status", {
-		bridge = bridge
-	})
+	if not bridge and #bridges_list > 0 then
+		bridge = bridges_list[1]
+	end
+
+	if not bridge then
+		luci.template.render("mstpd/no-bridges")
+	else
+		luci.template.render("mstpd/status", {
+			bridge = bridge,
+			bridges_list = bridges_list
+		})
+	end
 end
 
 function action_status_request()
