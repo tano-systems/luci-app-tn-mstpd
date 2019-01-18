@@ -41,7 +41,6 @@
 
 	.mstpd-badge.mstpd-proto-ok         { background-color: #b7efcf; border-color: #2abd69; color: #165e34; }
 	.mstpd-badge.mstpd-proto-changed    { background-color: #ee5f5b; border-color: #dd1c16; color: #ffffff; }
-
 </style>
 
 <script type="text/javascript">//<![CDATA[
@@ -367,14 +366,14 @@
 <div class="cbi-map-descr"><%:This page allows you to see current state of the STP/RSTP bridge and its ports%></div>
 <div id="mstpd-status-content-fail" style="display:none"></div>
 <div id="mstpd-status-content">
-<fieldset class="cbi-section">
+<div class="cbi-section">
 	<legend><%=translatef("Bridge \"%s\"", nobr(bridge))%></legend>
 	<ul id="mstpd-br-status">
 		<li><em><%:Collecting data...%></em></li>
 	</ul>
-</fieldset>
+</div>
 
-<fieldset class="cbi-section">
+<div class="cbi-section">
 	<legend><%=translatef("Bridge \"%s\" ports", nobr(bridge))%></legend>
 	<div class="table-wrapper"><div class="table" id="mstpd-brports-status">
 		<div class="tr table-titles">
@@ -392,7 +391,7 @@
 		value="..."
 		disabled="true"
 		onclick="mstpd_brports_toggle_additional(this)" />
-</fieldset>
+</div>
 </div>
 
 <%+mstpd/footer%>
