@@ -103,6 +103,10 @@
 		return '<%:%d s%>'.format(v)
 	}
 
+	function vcb_time(br, v) {
+		return '%t (<%:%d s%>)'.format(v, v)
+	}
+
 	function vcb_port_state(br, v) {
 		if (v == "forwarding")
 			return '<span class="mstpd-badge mstpd-state-forwarding">Forwarding</span>'
@@ -177,7 +181,7 @@
 		html += mstpd_br_status_add(br, "tx-hold-count")
 		html += mstpd_br_status_add(br, "hello-time", vcb_seconds)
 		html += mstpd_br_status_add(br, "ageing-time", vcb_seconds)
-		html += mstpd_br_status_add(br, "time-since-topology-change", vcb_seconds)
+		html += mstpd_br_status_add(br, "time-since-topology-change", vcb_time)
 
 		list.innerHTML = html
 	}
