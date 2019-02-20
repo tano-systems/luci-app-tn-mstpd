@@ -328,7 +328,7 @@
 		mstpd_br_recent = data[0]
 	}
 
-	XHR.poll(5, '<%=url('admin/services/mstpd/status_request')%>', { bridge: '<%=bridge%>' },
+	XHR.poll(-1, '<%=url('admin/services/mstpd/status_request')%>', { bridge: '<%=bridge%>' },
 		function(x, json)
 		{
 			var s = elm('mstpd-status-content')

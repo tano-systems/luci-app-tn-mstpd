@@ -16,6 +16,7 @@ All dates in this document are in `DD.MM.YYYY` format.
 - Application main menu entry has been renamed to "STP/RSTP".
 - Renamed some titles on application pages.
 - Human readable display for time since topology change.
+- Use polling interval from LuCI configuration (luci.main.pollinterval)
 
 ### Fixed
 - Fixed port state and role appearance in status table.
