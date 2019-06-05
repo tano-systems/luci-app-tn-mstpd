@@ -3,7 +3,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2019-01-16 21:45+0300\n"
+"PO-Revision-Date: 2019-06-05 19:43+0300\n"
 "Last-Translator: Anton Kikin <a.kikin@tano-systems.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -255,7 +255,7 @@ msgstr "Стоимость маршрута"
 
 #: luasrc/model/cbi/mstpd/config.lua:405
 msgid "Point-to-Point detection mode"
-msgstr "Режим определение P2P"
+msgstr "Режим определения P2P"
 
 #: luasrc/model/cbi/mstpd/config.lua:333
 msgid "Port"
