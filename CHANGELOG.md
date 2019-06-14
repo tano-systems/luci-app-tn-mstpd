@@ -11,6 +11,8 @@ All dates in this document are in `DD.MM.YYYY` format.
 - Added support for the official OpenWrt and Material LuCI themes.
   Previously supported only Bootstrap LuCI theme.
 - Hide additional information toggle button before first data is arrived.
+- Display last topology change port and topology change count parameters
+  for bridge.
 
 ### Changed
 - Application main menu entry has been renamed to "STP/RSTP".

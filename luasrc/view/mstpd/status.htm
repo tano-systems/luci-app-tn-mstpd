@@ -59,7 +59,9 @@
 		'tx-hold-count'              : '<%=translate("Transmit hold count")%>',
 		'hello-time'                 : '<%=translate("Hello time")%>',
 		'ageing-time'                : '<%=translate("Ageing time")%>',
-		'time-since-topology-change' : '<%=translate("Time since topology change")%>'
+		'time-since-topology-change' : '<%=translate("Time since topology change")%>',
+		'last-topology-change-port'  : '<%=translate("Last topology change port")%>',
+		'topology-change-count'      : '<%=translate("Topology change count")%>'
 	}
 
 	var mstpd_brport_params = {
@@ -182,6 +184,12 @@
 		html += mstpd_br_status_add(br, "hello-time", vcb_seconds)
 		html += mstpd_br_status_add(br, "ageing-time", vcb_seconds)
 		html += mstpd_br_status_add(br, "time-since-topology-change", vcb_time)
+
+		html += mstpd_br_status_add(br, "last-topology-change-port", function(br, v) {
+			return ((v == "None") || (v == "")) ? '<%:none%>' : v
+		})
+
+		html += mstpd_br_status_add(br, "topology-change-count")
 
 		list.innerHTML = html
 	}
