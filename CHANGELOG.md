@@ -21,6 +21,7 @@ All dates in this document are in `DD.MM.YYYY` format.
 - Use polling interval from LuCI configuration (luci.main.pollinterval)
 
 ### Fixed
+- Fixed bridge and bridge port name fields value dipslay in settings.
 - Fixed Russian translation.
 - Fixed port state and role appearance in status table.
 - Do not show status tabs for bridges that are removed from the network

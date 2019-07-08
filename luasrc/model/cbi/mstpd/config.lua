@@ -163,7 +163,7 @@ for i, br in ipairs(bridges) do
 		translate("Bridge"),
 		translate("Name of the bridge network interface"))
 
-	dummy.value = br["name"]
+	dummy.default = br["name"]
 	dummy.readonly = 1
 
 	--
@@ -333,7 +333,7 @@ for i, br in ipairs(bridges) do
 			translate("Port"),
 			translate("Name of the bridge port network interface"))
 
-		dummy.value = port["name"]
+		dummy.default = port["name"]
 		dummy.readonly = 1
 
 		-- Port priority
