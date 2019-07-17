@@ -28,7 +28,7 @@ All dates in this document are in `DD.MM.YYYY` format.
   configuration but present in the mstpd configuration.
 - Create UCI sections for newly added bridges under the MSTPd control only
   if they are not exists.
-
+- Fixed alert messages for various themes.
 
 ## [Version 1.2.0] (09.12.2018)
 ### Added

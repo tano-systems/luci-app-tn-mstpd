@@ -130,7 +130,7 @@ if #bridges == 0 then
 
 	o = s:option(DummyValue, "__info")
 	o.rawhtml = true
-	o.default = [[ <p class="alert-message info">%s</p> ]] % {
+	o.default = [[ <div class="alert-message info" style="width: 100%%"><p>%s</p></div> ]] % {
 		translate("You must select at least one bridge for controlling by the MSTPd service."),
 	}
 end
