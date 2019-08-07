@@ -13,6 +13,7 @@ All dates in this document are in `DD.MM.YYYY` format.
 - Hide additional information toggle button before first data is arrived.
 - Display last topology change port and topology change count parameters
   for bridge.
+- Added spinner for messages about waiting for data.
 
 ### Changed
 - Application main menu entry has been renamed to "STP/RSTP".
