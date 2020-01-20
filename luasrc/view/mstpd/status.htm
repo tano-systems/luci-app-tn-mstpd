@@ -406,5 +406,12 @@
 </div>
 </div>
 
-<%+mstpd/footer%>
+<%
+	local uci = require("luci.model.uci").cursor()
+	local hide_footer = uci:get_bool("luci", "app_tn_mstpd", "hide_footer") or false
+	if hide_footer == false then
+%>
+	<%+mstpd/footer%>
+<% end %>
+
 <%+footer%>

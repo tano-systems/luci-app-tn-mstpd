@@ -15,6 +15,7 @@ All dates in this document are in `DD.MM.YYYY` format.
   for bridge.
 - Added spinner for messages about waiting for data.
 - Removed useless ucitrack definition
+- Allow to hide footer by UCI option 'luci.app_tn_mstpd.hide_footer'
 
 ### Changed
 - Application main menu entry has been renamed to "STP/RSTP".

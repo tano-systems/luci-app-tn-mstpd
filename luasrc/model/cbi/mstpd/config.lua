@@ -455,7 +455,10 @@ end
 --
 -----------------------------------------------------------------------------------------
 
-f = m:section(SimpleSection, nil)
-f.template = "mstpd/footer"
+local hide_footer = m.uci:get_bool("luci", "app_tn_mstpd", "hide_footer") or false
+if hide_footer == false then
+	f = m:section(SimpleSection, nil)
+	f.template = "mstpd/footer"
+end
 
 return m
