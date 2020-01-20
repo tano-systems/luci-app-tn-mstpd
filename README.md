@@ -12,7 +12,7 @@ additionally requires fixes from pull-request openwrt/luci#1951.
 
 This MSTPd LuCI application required latest MSTPd version with
 JSON output support. MSTPd recipe and init scripts for OpenWrt can be founded
-in [meta-tano-openwrt](https://github.com/tano-systems/meta-tano-openwrt.git) OpenEmbedded layer.
+in [meta-tanowrt](https://github.com/tano-systems/meta-tanowrt.git) OpenEmbedded layer.
 
 ## Supported languages
 - English
