@@ -1,12 +1,4 @@
 #!/bin/sh
 
-# needed for "Save and Apply" to reload mstpd
-uci -q batch <<-EOF >/dev/null
-	delete ucitrack.@mstpd[-1]
-	add ucitrack mstpd
-	set ucitrack.@mstpd[-1].exec="/etc/init.d/mstpd reload"
-	commit ucitrack
-EOF
-
 rm -f /tmp/luci-indexcache
 exit 0

@@ -14,6 +14,7 @@ All dates in this document are in `DD.MM.YYYY` format.
 - Display last topology change port and topology change count parameters
   for bridge.
 - Added spinner for messages about waiting for data.
+- Removed useless ucitrack definition
 
 ### Changed
 - Application main menu entry has been renamed to "STP/RSTP".
