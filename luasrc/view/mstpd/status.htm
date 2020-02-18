@@ -370,7 +370,7 @@
 
 <ul class="tabs">
 	<% for i, br in ipairs(bridges_list) do %>
-		<li class="tabmenu-item-status <% if bridge == br then %>active<% end %>"><a href="<%=url('admin/services/mstpd/status/' .. br)%>"><%=translatef('Bridge "%s"', br)%></a></li>
+		<li class="tabmenu-item-status <% if bridge == br then %>active<% else %>cbi-tab-disabled<% end %>"><a href="<%=url('admin/services/mstpd/status/' .. br)%>"><%=translatef('Bridge "%s"', br)%></a></li>
 	<% end %>
 </ul>
 
