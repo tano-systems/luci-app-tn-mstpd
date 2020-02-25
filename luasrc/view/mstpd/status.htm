@@ -336,9 +336,19 @@
 		mstpd_br_recent = data[0]
 	}
 
-	XHR.poll(-1, '<%=url('admin/services/mstpd/status_request')%>', { bridge: '<%=bridge%>' },
-		function(x, json)
-		{
+	L.Poll.add(function() {
+		var data = new FormData();
+		data.append('bridge', '<%=bridge%>');
+
+		return L.Request.get(L.url('admin/services/mstpd/status_request'), data, {
+			timeout: 0
+		}).then(function(r) {
+			var json = null;
+
+			try {
+				json = JSON.parse(r.responseText);
+			} catch(e) {}
+
 			var s = elm('mstpd-status-content')
 			var f = elm('mstpd-status-content-fail')
 
@@ -362,8 +372,8 @@
 					'<%=translatef("Failed to request bridge \"%s\" status information.", bridge)%>' +
 					'</p></div></div>'
 			}
-		}
-	)
+		});
+	});
 //]]></script>
 
 <h2 name="content"><%:STP/RSTP Status%></h2>

@@ -22,6 +22,7 @@ All dates in this document are in `DD.MM.YYYY` format.
 - Renamed some titles on application pages.
 - Human readable display for time since topology change.
 - Use polling interval from LuCI configuration (luci.main.pollinterval)
+- Use L.Poll.add() instead of deprecated XHR.Poll() for data polling.
 
 ### Fixed
 - Fixed bridge and bridge port name fields value dipslay in settings.
