@@ -360,7 +360,7 @@ for i, br in ipairs(bridges) do
 		port_treeportprio:value("14", "57344 (14)")
 		port_treeportprio:value("15", "61440 (15)")
 
-		port_treeportprio.default = 8
+		port_treeportprio.default = '8'
 		port_treeportprio.rmempty = true
 
 		-- External path cost
