@@ -66,6 +66,8 @@
 
 	var mstpd_brport_params = {
 		'enabled'                    : '<%=translate("Enabled", "Port status")%>',
+		'bpdu-filter-port'           : '<%=translate("STP/RSTP processing")%>',
+		'bpdu-guard-port'            : '<%=translate("BPDU guard")%>',
 		'received-stp'               : '<%=translate("Operative protocol version")%>',
 		'role'                       : '<%=translate("Port role")%>',
 		'state'                      : '<%=translate("Port state")%>',
@@ -81,6 +83,7 @@
 		'point-to-point'             : '<%=translate("Operative P2P")%>',
 		'num-tx-bpdu'                : '<%=translate("Tx BPDU")%>',
 		'num-rx-bpdu'                : '<%=translate("Rx BPDU")%>',
+		'num-rx-bpdu-filtered'       : '<%=translate("Rx BPDU (filtered)")%>',
 		'num-tx-tcn'                 : '<%=translate("Tx TCN")%>',
 		'num-rx-tcn'                 : '<%=translate("Rx TCN")%>',
 	}
@@ -95,6 +98,10 @@
 		return (v == "no")
 			? '<span class="mstpd-no">&#x2718; <%:no%></span>'
 			: '<span class="mstpd-yes">&#x2714; <%:yes%></span>'
+	}
+
+	function vcb_yn_inverted(br, v) {
+		return vcb_yn(br, (v == "yes") ? "no" : "yes");
 	}
 
 	function vcb_yna(br, v) {
@@ -230,7 +237,7 @@
 		}
 	}
 
-	function mstpd_brports_status_add(br, option, value_cb_func)
+	function mstpd_brports_status_add(br, option, value_cb_func, bpdu_filter)
 	{
 		var row = []
 
@@ -243,6 +250,13 @@
 		row.push(mstpd_brport_params[option])
 
 		br.ports.forEach(function(p) {
+			if (bpdu_filter) {
+				if (p['bpdu-filter-port'] == 'yes') {
+					row.push('–');
+					return;
+				}
+			}
+
 			row.push(value_cb_func(br, p[option]))
 		})
 
@@ -254,6 +268,7 @@
 		var rows = []
 
 		rows.push(mstpd_brports_status_add(br, "enabled", vcb_yn))
+		rows.push(mstpd_brports_status_add(br, "bpdu-filter-port", vcb_yn_inverted))
 
 		rows.push(mstpd_brports_status_add(br, "received-stp", function(br, v){
 			if (br["force-protocol-version"] === "stp") {
@@ -264,32 +279,34 @@
 				else
 					return '<span class="mstpd-badge mstpd-proto-ok">RSTP</span>'
 			}
-		}))
+		}, true))
 
-		rows.push(mstpd_brports_status_add(br, "role", vcb_port_role))
-		rows.push(mstpd_brports_status_add(br, "state", vcb_port_state))
+		rows.push(mstpd_brports_status_add(br, "role", vcb_port_role, true))
+		rows.push(mstpd_brports_status_add(br, "state", vcb_port_state, true))
 		rows.push(mstpd_brports_status_add(br, "port-id"))
-		rows.push(mstpd_brports_status_add(br, "designated-root"))
-		rows.push(mstpd_brports_status_add(br, "designated-bridge"))
+		rows.push(mstpd_brports_status_add(br, "designated-root", null, true))
+		rows.push(mstpd_brports_status_add(br, "designated-bridge", null, true))
 			
 		rows.push(mstpd_brports_status_add(br, "designated-port", function(br, v) {
 			if (v === '0.000')
 				return '–'
 			return v
-		}))
+		}, true))
 
 		if (!short_mode)
 		{
-			rows.push(mstpd_brports_status_add(br, "external-port-cost"))
-			rows.push(mstpd_brports_status_add(br, "admin-edge-port", vcb_yn))
-			rows.push(mstpd_brports_status_add(br, "auto-edge-port", vcb_yn))
-			rows.push(mstpd_brports_status_add(br, "oper-edge-port", vcb_yn))
-			rows.push(mstpd_brports_status_add(br, "admin-point-to-point", vcb_yna))
-			rows.push(mstpd_brports_status_add(br, "point-to-point", vcb_yn))
-			rows.push(mstpd_brports_status_add(br, "num-tx-bpdu", vcb_num_or_dash))
-			rows.push(mstpd_brports_status_add(br, "num-rx-bpdu", vcb_num_or_dash))
-			rows.push(mstpd_brports_status_add(br, "num-tx-tcn", vcb_num_or_dash))
-			rows.push(mstpd_brports_status_add(br, "num-rx-tcn", vcb_num_or_dash))
+			rows.push(mstpd_brports_status_add(br, "external-port-cost", null, true))
+			rows.push(mstpd_brports_status_add(br, "admin-edge-port", vcb_yn, true))
+			rows.push(mstpd_brports_status_add(br, "auto-edge-port", vcb_yn, true))
+			rows.push(mstpd_brports_status_add(br, "oper-edge-port", vcb_yn, true))
+			rows.push(mstpd_brports_status_add(br, "admin-point-to-point", vcb_yna, true))
+			rows.push(mstpd_brports_status_add(br, "point-to-point", vcb_yn, true))
+			rows.push(mstpd_brports_status_add(br, "bpdu-guard-port", vcb_yn, true))
+			rows.push(mstpd_brports_status_add(br, "num-tx-bpdu", vcb_num_or_dash, true))
+			rows.push(mstpd_brports_status_add(br, "num-rx-bpdu", vcb_num_or_dash, true))
+			rows.push(mstpd_brports_status_add(br, "num-rx-bpdu-filtered", vcb_num_or_dash))
+			rows.push(mstpd_brports_status_add(br, "num-tx-tcn", vcb_num_or_dash, true))
+			rows.push(mstpd_brports_status_add(br, "num-rx-tcn", vcb_num_or_dash, true))
 		}
 
 		cbi_update_table(tbl, rows,

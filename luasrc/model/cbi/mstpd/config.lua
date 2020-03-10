@@ -336,6 +336,20 @@ for i, br in ipairs(bridges) do
 		dummy.default = port["name"]
 		dummy.readonly = 1
 
+		-- BPDU filter
+		port_bpdufilter = s:taboption(
+			get_br_porttab(port["name"]), ListValue,
+			get_br_portparam(port["name"], "bpdufilter"),
+			translate("BPDU Filter"),
+			translate("Disable STP/RSTP processing on this port")
+		)
+
+		port_bpdufilter:value("no", translate("No"))
+		port_bpdufilter:value("yes", translate("Yes"))
+
+		port_bpdufilter.default = "no"
+		port_bpdufilter.rmempty = true
+
 		-- Port priority
 		port_treeportprio = s:taboption(
 			get_br_porttab(port["name"]), ListValue,
@@ -360,6 +374,7 @@ for i, br in ipairs(bridges) do
 		port_treeportprio:value("14", "57344 (14)")
 		port_treeportprio:value("15", "61440 (15)")
 
+		port_treeportprio:depends(get_br_portparam(port["name"], "bpdufilter"), 'no')
 		port_treeportprio.default = '8'
 		port_treeportprio.rmempty = true
 
@@ -370,6 +385,7 @@ for i, br in ipairs(bridges) do
 			translate("Path cost"),
 			translate("(0 — auto)"))
 
+		port_pathcost:depends(get_br_portparam(port["name"], "bpdufilter"), 'no')
 		port_pathcost.default = 0
 		port_pathcost.rmempty = true
 
@@ -383,6 +399,7 @@ for i, br in ipairs(bridges) do
 		port_adminedge:value("no", translate("No"))
 		port_adminedge:value("yes", translate("Yes"))
 
+		port_adminedge:depends(get_br_portparam(port["name"], "bpdufilter"), 'no')
 		port_adminedge.default = "no"
 		port_adminedge.rmempty = true
 
@@ -395,6 +412,7 @@ for i, br in ipairs(bridges) do
 		port_autoedge:value("no", translate("No"))
 		port_autoedge:value("yes", translate("Yes"))
 
+		port_autoedge:depends(get_br_portparam(port["name"], "bpdufilter"), 'no')
 		port_autoedge.default = "yes"
 		port_autoedge.rmempty = true
 
@@ -408,6 +426,7 @@ for i, br in ipairs(bridges) do
 		port_p2p:value("yes", translate("Yes"))
 		port_p2p:value("auto", translate("Auto"))
 
+		port_p2p:depends(get_br_portparam(port["name"], "bpdufilter"), 'no')
 		port_p2p.default = "auto"
 		port_p2p.rmempty = true
 
@@ -420,6 +439,7 @@ for i, br in ipairs(bridges) do
 		port_bpduguard:value("no", translate("No"))
 		port_bpduguard:value("yes", translate("Yes"))
 
+		port_bpduguard:depends(get_br_portparam(port["name"], "bpdufilter"), 'no')
 		port_bpduguard.default = "no"
 		port_bpduguard.rmempty = true
 
@@ -432,6 +452,7 @@ for i, br in ipairs(bridges) do
 		port_restrrole:value("no", translate("No"))
 		port_restrrole:value("yes", translate("Yes"))
 
+		port_restrrole:depends(get_br_portparam(port["name"], "bpdufilter"), 'no')
 		port_restrrole.default = "no"
 		port_restrrole.rmempty = true
 
@@ -444,6 +465,7 @@ for i, br in ipairs(bridges) do
 		port_restrtcn:value("no", translate("No"))
 		port_restrtcn:value("yes", translate("Yes"))
 
+		port_restrtcn:depends(get_br_portparam(port["name"], "bpdufilter"), 'no')
 		port_restrtcn.default = "no"
 		port_restrtcn.rmempty = true
 	end
