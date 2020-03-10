@@ -61,7 +61,7 @@
 				if iface:is_bridge() and
 				   (not self.noaliases  or iface:type() ~= "alias") and
 				   (not self.noinactive or iface:is_up()) and
-				   iface:name() != self.exclude
+				   iface:name() ~= self.exclude
 				then
 
 				if not iface:bridge_stp() then
