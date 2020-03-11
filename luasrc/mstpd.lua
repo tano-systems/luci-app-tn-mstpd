@@ -5,7 +5,7 @@
 
 module("luci.mstpd", package.seeall)
 
-local app_version = "1.3.1"
+local app_version = "1.3.2"
 local app_home = "https://github.com/tano-systems/luci-app-tn-mstpd"
 
 function version()

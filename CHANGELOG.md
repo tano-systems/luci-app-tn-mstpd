@@ -9,6 +9,10 @@ All dates in this document are in `DD.MM.YYYY` format.
 ## [Unreleased]
 *Nothing yet*
 
+## [Version 1.3.2] (11.03.2020)
+### Fixed
+- Fixed application version display in footer.
+
 ## [Version 1.3.1] (11.03.2020)
 ### Fixed
 - Fixed some minor translation issues.
@@ -93,6 +97,7 @@ All dates in this document are in `DD.MM.YYYY` format.
 Initial release
 
 [Unreleased]: https://github.com/tano-systems/luci-app-tn-mstpd/tree/master
+[Version 1.3.2]: https://github.com/tano-systems/luci-app-tn-mstpd/releases/tag/v1.3.2
 [Version 1.3.1]: https://github.com/tano-systems/luci-app-tn-mstpd/releases/tag/v1.3.1
 [Version 1.3.0]: https://github.com/tano-systems/luci-app-tn-mstpd/releases/tag/v1.3.0
 [Version 1.2.0]: https://github.com/tano-systems/luci-app-tn-mstpd/releases/tag/v1.2.0
