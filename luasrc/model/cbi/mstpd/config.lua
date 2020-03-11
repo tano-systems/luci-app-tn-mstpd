@@ -439,7 +439,6 @@ for i, br in ipairs(bridges) do
 		port_bpduguard:value("no", translate("No"))
 		port_bpduguard:value("yes", translate("Yes"))
 
-		port_bpduguard:depends(get_br_portparam(port["name"], "bpdufilter"), 'no')
 		port_bpduguard.default = "no"
 		port_bpduguard.rmempty = true
 
