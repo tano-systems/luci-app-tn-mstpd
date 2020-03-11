@@ -7,6 +7,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 All dates in this document are in `DD.MM.YYYY` format.
 
 ## [Unreleased]
+
+*Nothing yet*
+
+## [Version 1.3.0] (11.03.2020)
 ### Added
 - Added support for the official OpenWrt and Material LuCI themes.
   Previously supported only Bootstrap LuCI theme.
@@ -85,11 +89,12 @@ All dates in this document are in `DD.MM.YYYY` format.
 
 Initial release
 
-[Unreleased]: https://github.com/tano-systems/luci-app-mstpd/tree/master
-[Version 1.2.0]: https://github.com/tano-systems/luci-app-mstpd/releases/tag/v1.2.0
-[Version 1.1.0]: https://github.com/tano-systems/luci-app-mstpd/releases/tag/v1.1.0
-[Version 1.0.4]: https://github.com/tano-systems/luci-app-mstpd/releases/tag/v1.0.4
-[Version 1.0.3]: https://github.com/tano-systems/luci-app-mstpd/releases/tag/v1.0.3
-[Version 1.0.2]: https://github.com/tano-systems/luci-app-mstpd/releases/tag/v1.0.2
-[Version 1.0.1]: https://github.com/tano-systems/luci-app-mstpd/releases/tag/v1.0.1
-[Version 1.0.0]: https://github.com/tano-systems/luci-app-mstpd/releases/tag/v1.0.0
+[Unreleased]: https://github.com/tano-systems/luci-app-tn-mstpd/tree/master
+[Version 1.3.0]: https://github.com/tano-systems/luci-app-tn-mstpd/releases/tag/v1.3.0
+[Version 1.2.0]: https://github.com/tano-systems/luci-app-tn-mstpd/releases/tag/v1.2.0
+[Version 1.1.0]: https://github.com/tano-systems/luci-app-tn-mstpd/releases/tag/v1.1.0
+[Version 1.0.4]: https://github.com/tano-systems/luci-app-tn-mstpd/releases/tag/v1.0.4
+[Version 1.0.3]: https://github.com/tano-systems/luci-app-tn-mstpd/releases/tag/v1.0.3
+[Version 1.0.2]: https://github.com/tano-systems/luci-app-tn-mstpd/releases/tag/v1.0.2
+[Version 1.0.1]: https://github.com/tano-systems/luci-app-tn-mstpd/releases/tag/v1.0.1
+[Version 1.0.0]: https://github.com/tano-systems/luci-app-tn-mstpd/releases/tag/v1.0.0
