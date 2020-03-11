@@ -81,7 +81,7 @@ msgstr "Автоматический переход в/из погранично
 
 #: luasrc/model/cbi/mstpd/config.lua:343
 msgid "BPDU Filter"
-msgstr "BPDU фильтр"
+msgstr "Фильтр BPDU"
 
 #: luasrc/view/mstpd/status.htm:70 luasrc/model/cbi/mstpd/config.lua:437
 msgid "BPDU guard"
@@ -154,6 +154,10 @@ msgstr "Отключено (0)"
 #: luasrc/model/cbi/mstpd/config.lua:344
 msgid "Disable STP/RSTP processing on this port"
 msgstr "Отключить обработку STP/RSTP на данном порту"
+
+#: luasrc/model/cbi/mstpd/config.lua:438
+msgid "Disable port if BPDU is detected (received) on it."
+msgstr "Отключить порт если на нём будет обнаружен (принят) BPDU."
 
 #: luasrc/view/mstpd/status.htm:51
 msgctxt "Bridge status"
@@ -241,10 +245,10 @@ msgstr "Имя сетевого устройства моста"
 msgid "Name of the bridge port network interface"
 msgstr "Имя сетевого устройства порта"
 
-#: luasrc/model/cbi/mstpd/config.lua:464 luasrc/model/cbi/mstpd/config.lua:347
+#: luasrc/model/cbi/mstpd/config.lua:465 luasrc/model/cbi/mstpd/config.lua:347
 #: luasrc/model/cbi/mstpd/config.lua:399 luasrc/model/cbi/mstpd/config.lua:412
-#: luasrc/model/cbi/mstpd/config.lua:425 luasrc/model/cbi/mstpd/config.lua:439
-#: luasrc/model/cbi/mstpd/config.lua:451
+#: luasrc/model/cbi/mstpd/config.lua:425 luasrc/model/cbi/mstpd/config.lua:440
+#: luasrc/model/cbi/mstpd/config.lua:452
 msgid "No"
 msgstr "Нет"
 
@@ -316,11 +320,11 @@ msgstr "Протокол"
 msgid "Regional root"
 msgstr "Региональный корневой мост"
 
-#: luasrc/model/cbi/mstpd/config.lua:462
+#: luasrc/model/cbi/mstpd/config.lua:463
 msgid "Restrict port ability to propagate received TCN's"
 msgstr "Запретить порту распространять полученные TCN"
 
-#: luasrc/model/cbi/mstpd/config.lua:449
+#: luasrc/model/cbi/mstpd/config.lua:450
 msgid "Restrict port ability to take Root role"
 msgstr "Запретить порту принимать роль корневого порта"
 
@@ -422,10 +426,10 @@ msgstr "Отправлено TCN"
 msgid "Value is not a number"
 msgstr "Значение не является числом"
 
-#: luasrc/model/cbi/mstpd/config.lua:465 luasrc/model/cbi/mstpd/config.lua:348
+#: luasrc/model/cbi/mstpd/config.lua:466 luasrc/model/cbi/mstpd/config.lua:348
 #: luasrc/model/cbi/mstpd/config.lua:400 luasrc/model/cbi/mstpd/config.lua:413
-#: luasrc/model/cbi/mstpd/config.lua:426 luasrc/model/cbi/mstpd/config.lua:440
-#: luasrc/model/cbi/mstpd/config.lua:452
+#: luasrc/model/cbi/mstpd/config.lua:426 luasrc/model/cbi/mstpd/config.lua:441
+#: luasrc/model/cbi/mstpd/config.lua:453
 msgid "Yes"
 msgstr "Да"
 
@@ -453,9 +457,13 @@ msgid "no"
 msgstr "нет"
 
 #: luasrc/view/mstpd/status.htm:185 luasrc/view/mstpd/status.htm:197
+msgctxt "Port name"
 msgid "none"
 msgstr "нет"
 
 #: luasrc/view/mstpd/status.htm:101
 msgid "yes"
 msgstr "да"
+
+#~ msgid "Disable port if BPDU is received on it."
+#~ msgstr "Отключить порт если на нём будет принят BPDU."

@@ -7,8 +7,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 All dates in this document are in `DD.MM.YYYY` format.
 
 ## [Unreleased]
-
-*Nothing yet*
+### Fixed
+- Fixed some minor translation issues.
 
 ## [Version 1.3.0] (11.03.2020)
 ### Added

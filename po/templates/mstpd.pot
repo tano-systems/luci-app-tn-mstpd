@@ -143,6 +143,10 @@ msgstr ""
 msgid "Disable STP/RSTP processing on this port"
 msgstr ""
 
+#: luasrc/model/cbi/mstpd/config.lua:438
+msgid "Disable port if BPDU is detected (received) on it."
+msgstr ""
+
 #: luasrc/view/mstpd/status.htm:51
 msgctxt "Bridge status"
 msgid "Enabled"
@@ -229,10 +233,10 @@ msgstr ""
 msgid "Name of the bridge port network interface"
 msgstr ""
 
-#: luasrc/model/cbi/mstpd/config.lua:464
+#: luasrc/model/cbi/mstpd/config.lua:465
 #: luasrc/model/cbi/mstpd/config.lua:347 luasrc/model/cbi/mstpd/config.lua:399
 #: luasrc/model/cbi/mstpd/config.lua:412 luasrc/model/cbi/mstpd/config.lua:425
-#: luasrc/model/cbi/mstpd/config.lua:439 luasrc/model/cbi/mstpd/config.lua:451
+#: luasrc/model/cbi/mstpd/config.lua:440 luasrc/model/cbi/mstpd/config.lua:452
 msgid "No"
 msgstr ""
 
@@ -304,11 +308,11 @@ msgstr ""
 msgid "Regional root"
 msgstr ""
 
-#: luasrc/model/cbi/mstpd/config.lua:462
+#: luasrc/model/cbi/mstpd/config.lua:463
 msgid "Restrict port ability to propagate received TCN's"
 msgstr ""
 
-#: luasrc/model/cbi/mstpd/config.lua:449
+#: luasrc/model/cbi/mstpd/config.lua:450
 msgid "Restrict port ability to take Root role"
 msgstr ""
 
@@ -406,10 +410,10 @@ msgstr ""
 msgid "Value is not a number"
 msgstr ""
 
-#: luasrc/model/cbi/mstpd/config.lua:465
+#: luasrc/model/cbi/mstpd/config.lua:466
 #: luasrc/model/cbi/mstpd/config.lua:348 luasrc/model/cbi/mstpd/config.lua:400
 #: luasrc/model/cbi/mstpd/config.lua:413 luasrc/model/cbi/mstpd/config.lua:426
-#: luasrc/model/cbi/mstpd/config.lua:440 luasrc/model/cbi/mstpd/config.lua:452
+#: luasrc/model/cbi/mstpd/config.lua:441 luasrc/model/cbi/mstpd/config.lua:453
 msgid "Yes"
 msgstr ""
 
@@ -434,6 +438,7 @@ msgid "no"
 msgstr ""
 
 #: luasrc/view/mstpd/status.htm:185 luasrc/view/mstpd/status.htm:197
+msgctxt "Port name"
 msgid "none"
 msgstr ""
 

@@ -182,7 +182,7 @@
 		html += mstpd_br_status_add(br, "regional-root")
 
 		html += mstpd_br_status_add(br, "root-port", function(br, v) {
-			return ((v == "none") || (v == "")) ? '<%:none%>' : v
+			return ((v == "none") || (v == "")) ? '<%:none|Port name%>' : v
 		})
 
 		html += mstpd_br_status_add(br, "path-cost")
@@ -194,7 +194,7 @@
 		html += mstpd_br_status_add(br, "time-since-topology-change", vcb_time)
 
 		html += mstpd_br_status_add(br, "last-topology-change-port", function(br, v) {
-			return ((v == "None") || (v == "")) ? '<%:none%>' : v
+			return ((v == "None") || (v == "")) ? '<%:none|Port name%>' : v
 		})
 
 		html += mstpd_br_status_add(br, "topology-change-count")

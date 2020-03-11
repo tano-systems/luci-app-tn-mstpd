@@ -434,7 +434,8 @@ for i, br in ipairs(bridges) do
 		port_bpduguard = s:taboption(
 			get_br_porttab(port["name"]), ListValue,
 			get_br_portparam(port["name"], "bpduguard"),
-			translate("BPDU guard"))
+			translate("BPDU guard"),
+			translate("Disable port if BPDU is detected (received) on it."))
 
 		port_bpduguard:value("no", translate("No"))
 		port_bpduguard:value("yes", translate("Yes"))
