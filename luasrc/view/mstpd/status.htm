@@ -68,6 +68,7 @@
 		'enabled'                    : '<%=translate("Enabled", "Port status")%>',
 		'bpdu-filter-port'           : '<%=translate("STP/RSTP processing")%>',
 		'bpdu-guard-port'            : '<%=translate("BPDU guard")%>',
+		'bpdu-guard-error'           : '<%=translate("BPDU guard error")%>',
 		'received-stp'               : '<%=translate("Operative protocol version")%>',
 		'role'                       : '<%=translate("Port role")%>',
 		'state'                      : '<%=translate("Port state")%>',
@@ -302,6 +303,7 @@
 			rows.push(mstpd_brports_status_add(br, "admin-point-to-point", vcb_yna, true))
 			rows.push(mstpd_brports_status_add(br, "point-to-point", vcb_yn, true))
 			rows.push(mstpd_brports_status_add(br, "bpdu-guard-port", vcb_yn))
+			rows.push(mstpd_brports_status_add(br, "bpdu-guard-error", vcb_yn))
 			rows.push(mstpd_brports_status_add(br, "num-tx-bpdu", vcb_num_or_dash, true))
 			rows.push(mstpd_brports_status_add(br, "num-rx-bpdu", vcb_num_or_dash, true))
 			rows.push(mstpd_brports_status_add(br, "num-rx-bpdu-filtered", vcb_num_or_dash))

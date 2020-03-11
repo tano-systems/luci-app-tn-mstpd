@@ -17,6 +17,7 @@ All dates in this document are in `DD.MM.YYYY` format.
 - Removed useless ucitrack definition
 - Allow to hide footer by UCI option 'luci.app_tn_mstpd.hide_footer'
 - Add support for BPDU filter option configuration.
+- Add BPDU guard error status for each port on status page.
 
 ### Changed
 - Application main menu entry has been renamed to "STP/RSTP".
