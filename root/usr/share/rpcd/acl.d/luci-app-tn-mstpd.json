@@ -1,0 +1,11 @@
+{
+	"luci-app-tn-mstpd": {
+		"description": "Grant UCI access for luci-app-tn-mstpd",
+		"read": {
+			"uci": [ "mstpd", "luci" ]
+		},
+		"write": {
+			"uci": [ "mstpd" ]
+		}
+	}
+}
