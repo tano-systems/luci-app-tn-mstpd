@@ -1,0 +1,69 @@
+/*
+ * Copyright (c) 2020, Tano Systems LLC. All Rights Reserved.
+ * Author: Anton Kikin <a.kikin@tano-systems.com>
+ */
+
+.mstpd-yes { color: #2abd69; }
+.mstpd-no  { }
+
+.mstpd-br-params {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 24px;
+}
+
+@media only screen and (max-width: 850px) {
+	.mstpd-br-params {
+		grid-template-columns: 1fr;
+	}
+}
+
+.mstpd-br-params > div {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	border-bottom: 1px solid #e6e6e6;
+	padding: 0 8px;
+}
+
+.mstpd-br-params .mstpd-br-param {
+	margin-right: 6px;
+/*	white-space: nowrap;*/
+	font-weight: bold;
+}
+
+.mstpd-br-params .mstpd-br-param::after {
+	content: ':';
+}
+
+.mstpd-br-params .mstpd-br-param-value {
+	white-space: nowrap;
+	font-weight: normal;
+}
+
+.mstpd-badge {
+	display: inline-block;
+	width: auto !important;
+	width: fit-content !important;
+	width: -moz-fit-content !important;
+	width: -webkit-fit-content !important;
+	box-shadow: 0 1px 3px 0 grey;
+	padding: 0px 8px;
+	border-radius: 5px;
+	width: 100%;
+	background-color: #e6e6e6;
+	border: 0;
+	color: #595959;
+}
+
+.mstpd-badge.mstpd-state-forwarding { background-color: #b7efcf; border-color: #2abd69; color: #165e34; }
+.mstpd-badge.mstpd-state-learning   { background-color: #b2daf3; border-color: #46a6e2; color: #1a74ac; }
+.mstpd-badge.mstpd-state-discarding { background-color: #e6e6e6; border-color: #b9b9b9; color: #a0a0a0; }
+
+.mstpd-badge.mstpd-role-designated  { background-color: #b7efcf; border-color: #2abd69; color: #165e34; }
+.mstpd-badge.mstpd-role-root        { background-color: #b2daf3; border-color: #46a6e2; color: #1a74ac; }
+.mstpd-badge.mstpd-role-alternate   { background-color: #f9e3b3; border-color: #b7820f; color: #b7820f; }
+.mstpd-badge.mstpd-role-backup      { background-color: #f9e3f9; border-color: #e380e3; color: #b70f82; }
+.mstpd-badge.mstpd-role-disabled    { background-color: #e6e6e6; border-color: #b9b9b9; color: #a0a0a0; }
+
+.mstpd-badge.mstpd-proto-ok         { background-color: #b7efcf; border-color: #2abd69; color: #165e34; }
+.mstpd-badge.mstpd-proto-changed    { background-color: #ee5f5b; border-color: #dd1c16; color: #ffffff; }

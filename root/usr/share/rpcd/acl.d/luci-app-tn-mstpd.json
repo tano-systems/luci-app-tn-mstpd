@@ -1,6 +1,16 @@
 {
+	"luci-app-tn-mstpd-status": {
+		"description": "Grant access for STP/RSTP status information",
+		"read": {
+			"ubus": {
+				"mstpd": [ "getStatus" ]
+			},
+			"uci": [ "mstpd", "luci" ]
+		}
+	},
+
 	"luci-app-tn-mstpd": {
-		"description": "Grant UCI access for luci-app-tn-mstpd",
+		"description": "Grant access for STP/RSTP configuration",
 		"read": {
 			"uci": [ "mstpd", "luci" ]
 		},

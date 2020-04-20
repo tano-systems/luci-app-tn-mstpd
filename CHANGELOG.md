@@ -7,8 +7,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 All dates in this document are in `DD.MM.YYYY` format.
 
 ## [Unreleased]
+### Changed
+- Converted to client side rendering.
+- Slightly changed the markup of the status page.
+
 ### Added
-- Added ACL rules for latest LuCI support
+- Added ACL rules for latest LuCI revision support
 
 ## [Version 1.3.2] (11.03.2020)
 ### Fixed
