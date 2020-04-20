@@ -383,7 +383,7 @@ return L.view.extend({
 		if (bridges.length == 0) {
 			s = m.section(form.NamedSection, 'global', 'mstpd');
 
-			o = s.option(form.DummyValue, '__info', 'xxx', 'yyy');
+			o = s.option(form.DummyValue, '__info');
 			o.write = function() {};
 			o.remove = function() {};
 			o.render = function() {
