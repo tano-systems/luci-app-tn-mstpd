@@ -1,478 +1,435 @@
 msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
-"Project-Id-Version: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: 2020-03-11 03:28+0300\n"
+"Project-Id-Version: luci-app-tn-mstpd\n"
+"POT-Creation-Date: 2018-07-04 04:34+0300\n"
+"PO-Revision-Date: 2020-04-20 18:59+0300\n"
 "Last-Translator: Anton Kikin <a.kikin@tano-systems.com>\n"
-"Language-Team: \n"
+"Language-Team: Tano Systems LLC\n"
 "MIME-Version: 1.0\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ru\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Poedit 2.2\n"
 
-#: .tmp/luasrc/view/mstpd/status.htm:113 .tmp/luasrc/view/mstpd/status.htm:117
-#: htdocs/luci-static/resources/view/mstpd/status.js:78
+#: htdocs/luci-static/resources/view/mstpd/status.js:77
 msgid "%d s"
 msgstr "%d с"
 
-#: htdocs/luci-static/resources/view/mstpd/status.js:82
+#: htdocs/luci-static/resources/view/mstpd/status.js:81
 msgid "%t (%d s)"
-msgstr ""
+msgstr "%t (%d с)"
 
-#: .tmp/luasrc/view/mstpd/footer.htm:9
-msgid ""
-"&copy; 2018–2020, Tano Systems, Anton Kikin &lt;<a href=\"mailto:a."
-"kikin@tano-systems.com\"><nobr>a.kikin@tano-systems.com</nobr></a>&gt;"
-msgstr ""
-"&copy; 2018–2020, Tano Systems, Антон Кикин &lt;<a href=\"mailto:a."
-"kikin@tano-systems.com\"><nobr>a.kikin@tano-systems.com</nobr></a>&gt;"
-
-#: htdocs/luci-static/resources/view/mstpd/config.js:30
+#: htdocs/luci-static/resources/view/mstpd/config.js:31
 msgid "(%d port)"
 msgid_plural "(%d ports)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "(%d порт)"
+msgstr[1] "(%d порта)"
+msgstr[2] "(%d портов)"
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:226
+#: htdocs/luci-static/resources/view/mstpd/config.js:234
 msgid "(0 — auto)"
 msgstr "(0 — автоматически)"
 
-#: .tmp/luasrc/view/mstpd/bridgeslist.htm:44
-msgid "-- please select --"
-msgstr "-- сделайте выбор --"
-
-#: .tmp/luasrc/view/mstpd/status.htm:83
-#: htdocs/luci-static/resources/view/mstpd/status.js:54
+#: htdocs/luci-static/resources/view/mstpd/status.js:53
 msgid "Admin P2P"
 msgstr "Административное P2P состояние"
 
-#: .tmp/luasrc/view/mstpd/status.htm:80
-#: htdocs/luci-static/resources/view/mstpd/config.js:236
-#: htdocs/luci-static/resources/view/mstpd/status.js:51
+#: htdocs/luci-static/resources/view/mstpd/config.js:244
+#: htdocs/luci-static/resources/view/mstpd/status.js:50
 msgid "Admin edge"
 msgstr "Административное пограничнное состояние"
 
-#: .tmp/luasrc/view/mstpd/status.htm:50
-#: htdocs/luci-static/resources/view/mstpd/status.js:21
+#: htdocs/luci-static/resources/view/mstpd/status.js:20
 msgid "Administrative protocol version"
 msgstr "Административная версия протокола"
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:184
+#: htdocs/luci-static/resources/view/mstpd/config.js:190
 msgid "Advanced Settings"
-msgstr ""
+msgstr "Дополнительные настройки"
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:150
+#: htdocs/luci-static/resources/view/mstpd/config.js:153
 msgid "Ageing"
 msgstr "Устаревание"
 
-#: .tmp/luasrc/view/mstpd/status.htm:61
-#: htdocs/luci-static/resources/view/mstpd/status.js:32
+#: htdocs/luci-static/resources/view/mstpd/status.js:31
 msgid "Ageing time"
 msgstr "Время устаревания"
 
-#: .tmp/luasrc/view/mstpd/status.htm:109
-#: htdocs/luci-static/resources/view/mstpd/config.js:267
-#: htdocs/luci-static/resources/view/mstpd/status.js:74
+#: htdocs/luci-static/resources/view/mstpd/config.js:275
+#: htdocs/luci-static/resources/view/mstpd/status.js:73
 msgid "Auto"
 msgstr "Автоматически"
 
-#: .tmp/luasrc/view/mstpd/status.htm:81
-#: htdocs/luci-static/resources/view/mstpd/config.js:250
-#: htdocs/luci-static/resources/view/mstpd/status.js:52
+#: htdocs/luci-static/resources/view/mstpd/config.js:258
+#: htdocs/luci-static/resources/view/mstpd/status.js:51
 msgid "Auto edge"
 msgstr "Автоматическое пограничное состояние"
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:250
+#: htdocs/luci-static/resources/view/mstpd/config.js:258
 msgid "Auto transition to/from edge state"
 msgstr "Автоматический переход в/из пограничного состояния"
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:276
+#: htdocs/luci-static/resources/view/mstpd/config.js:284
 msgid "BPDU filter"
-msgstr ""
+msgstr "Фильтр BPDU"
 
-#: .tmp/luasrc/view/mstpd/status.htm:70
-#: htdocs/luci-static/resources/view/mstpd/config.js:289
-#: htdocs/luci-static/resources/view/mstpd/status.js:41
+#: htdocs/luci-static/resources/view/mstpd/config.js:297
+#: htdocs/luci-static/resources/view/mstpd/status.js:40
 msgid "BPDU guard"
 msgstr "Защита BPDU"
 
-#: .tmp/luasrc/view/mstpd/status.htm:71
-#: htdocs/luci-static/resources/view/mstpd/status.js:42
+#: htdocs/luci-static/resources/view/mstpd/status.js:41
 msgid "BPDU guard error"
 msgstr "Срабатывание защиты BPDU"
 
-#: .tmp/luasrc/view/mstpd/status.htm:402 .tmp/luasrc/view/mstpd/status.htm:411
-#: htdocs/luci-static/resources/view/mstpd/config.js:427
-#: htdocs/luci-static/resources/view/mstpd/status.js:379
+#: htdocs/luci-static/resources/view/mstpd/config.js:448
+#: htdocs/luci-static/resources/view/mstpd/status.js:410
 msgid "Bridge \"%s\""
 msgstr "Мост «%s»"
 
-#: .tmp/luasrc/view/mstpd/status.htm:418
-#: htdocs/luci-static/resources/view/mstpd/config.js:437
-#: htdocs/luci-static/resources/view/mstpd/status.js:391
+#: htdocs/luci-static/resources/view/mstpd/config.js:458
+#: htdocs/luci-static/resources/view/mstpd/status.js:421
 msgid "Bridge \"%s\" ports"
 msgstr "Порты моста «%s»"
 
-#: .tmp/luasrc/view/mstpd/status.htm:406
-msgid "Bridge \"%s\" status"
-msgstr "Состояние моста «%s»"
-
-#: .tmp/luasrc/view/mstpd/status.htm:52
-#: htdocs/luci-static/resources/view/mstpd/status.js:23
+#: htdocs/luci-static/resources/view/mstpd/status.js:22
 msgid "Bridge ID"
 msgstr "Идентификатор моста"
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:151
+#: htdocs/luci-static/resources/view/mstpd/config.js:154
 msgid ""
 "Bridge ethernet (MAC) address ageing time (10–1000000 seconds). After "
 "specified time of not having seen a frame coming from a certain address, the "
 "bridge will time out (delete) that address from the Forwarding DataBase (FDB)"
 msgstr ""
+"Время устаревания ethernet (MAC) адресов (10–1000000 секунд). По истечении "
+"указанного времени, если не было замечено ни одного кадра, приходящего с "
+"определенного адреса, мост будет удалять этот адрес из базы данных пересылок "
+"(FDB)."
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:54
+#: htdocs/luci-static/resources/view/mstpd/config.js:55
 msgid "Bridge priority (0–61440). Default bridge priority is 32768."
-msgstr ""
+msgstr "Приоритет моста (0–61440). Приоритет моста по умолчанию — 32768."
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:356
+#: htdocs/luci-static/resources/view/mstpd/config.js:364
 msgid "Bridges controlled by STP/RSTP service"
-msgstr ""
+msgstr "Мосты управляемые службой STP/RSTP"
 
-#: .tmp/luasrc/view/mstpd/status.htm:413 .tmp/luasrc/view/mstpd/status.htm:424
-#: htdocs/luci-static/resources/view/mstpd/status.js:202
+#: htdocs/luci-static/resources/view/mstpd/status.js:208
 msgid "Collecting data..."
 msgstr "Сбор данных..."
 
-#: .tmp/luasrc/view/mstpd/bridgeslist.htm:51
-#: .tmp/luasrc/view/mstpd/bridgeslist.htm:53
 #: htdocs/luci-static/resources/mstpd.js:103
 #: htdocs/luci-static/resources/mstpd.js:105
 msgid "Custom Interface"
 msgstr "Пользовательский интерфейс"
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:352
+#: htdocs/luci-static/resources/view/mstpd/config.js:360
 msgid "Debug (3)"
 msgstr "Отладочные сообщения (3)"
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:100
+#: htdocs/luci-static/resources/view/mstpd/config.js:102
 msgid ""
 "Delay for the root and designated ports to transit to the forwarding state "
 "(4–30 seconds)."
 msgstr ""
+"Задержка перехода корневого и назначенных портов в состояние пересылки (4–30 "
+"секунд)."
 
-#: .tmp/luasrc/view/mstpd/status.htm:78
-#: htdocs/luci-static/resources/view/mstpd/status.js:49
+#: htdocs/luci-static/resources/view/mstpd/status.js:48
 msgid "Designated bridge"
 msgstr "Назначенный мост"
 
-#: .tmp/luasrc/view/mstpd/status.htm:79
-#: htdocs/luci-static/resources/view/mstpd/status.js:50
+#: htdocs/luci-static/resources/view/mstpd/status.js:49
 msgid "Designated port"
 msgstr "Назначенный порт"
 
-#: .tmp/luasrc/view/mstpd/status.htm:53 .tmp/luasrc/view/mstpd/status.htm:77
-#: htdocs/luci-static/resources/view/mstpd/status.js:24
-#: htdocs/luci-static/resources/view/mstpd/status.js:48
+#: htdocs/luci-static/resources/view/mstpd/status.js:23
+#: htdocs/luci-static/resources/view/mstpd/status.js:47
 msgid "Designated root"
 msgstr "Назначенный корневой мост"
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:349
+#: htdocs/luci-static/resources/view/mstpd/config.js:357
 msgid "Disable (0)"
 msgstr "Отключено (0)"
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:276
+#: htdocs/luci-static/resources/view/mstpd/config.js:284
 msgid "Disable STP/RSTP processing on this port"
 msgstr "Отключить обработку STP/RSTP на данном порту"
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:290
+#: htdocs/luci-static/resources/view/mstpd/config.js:298
 msgid "Disable port if BPDU is detected (received) on it."
 msgstr "Отключить порт если на нём будет обнаружен (принят) BPDU."
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:40
+#: htdocs/luci-static/resources/view/mstpd/config.js:41
 msgid ""
 "Each port of the bridge sends out RSTP BPDU's, and automatically migrates to "
 "STP-compatible mode when detecting that it is connected with a bridge "
 "running STP"
 msgstr ""
+"Каждый порт моста отправляет RSTP BPDU и автоматически переходит в STP-"
+"совместимый режим при обнаружении соединения с мостом, работающим по "
+"протоколу STP"
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:38
+#: htdocs/luci-static/resources/view/mstpd/config.js:39
 msgid "Each port of the bridge sends out STP BPDU's"
-msgstr ""
+msgstr "Каждый порт моста посылает STP BPDU"
 
-#: .tmp/luasrc/view/mstpd/status.htm:51
-#: htdocs/luci-static/resources/view/mstpd/status.js:22
+#: htdocs/luci-static/resources/view/mstpd/status.js:21
 msgctxt "Bridge status"
 msgid "Enabled"
 msgstr "Включён"
 
-#: .tmp/luasrc/view/mstpd/status.htm:68
-#: htdocs/luci-static/resources/view/mstpd/status.js:39
+#: htdocs/luci-static/resources/view/mstpd/status.js:38
 msgctxt "Port status"
 msgid "Enabled"
 msgstr "Включён"
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:350
+#: htdocs/luci-static/resources/view/mstpd/config.js:358
 msgid "Error (1)"
 msgstr "Ошибки (1)"
 
-#: .tmp/luasrc/view/mstpd/status.htm:391
-msgid "Failed to request bridge \"%s\" status information."
-msgstr "Не удалось запросить информацию о состоянии моста «%s»."
-
-#: .tmp/luasrc/view/mstpd/status.htm:58
-#: htdocs/luci-static/resources/view/mstpd/config.js:99
-#: htdocs/luci-static/resources/view/mstpd/status.js:29
+#: htdocs/luci-static/resources/view/mstpd/config.js:101
+#: htdocs/luci-static/resources/view/mstpd/status.js:28
 msgid "Forward delay time"
 msgstr "Время «forward delay»"
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:183
+#: htdocs/luci-static/resources/view/mstpd/config.js:189
 msgid "General Settings"
-msgstr ""
+msgstr "Общие настройки"
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:335
+#: htdocs/luci-static/resources/view/mstpd/config.js:343
 msgid "Global settings"
 msgstr "Общие параметры"
 
 #: root/usr/share/rpcd/acl.d/luci-app-tn-mstpd.json:13
 msgid "Grant access for STP/RSTP configuration"
-msgstr ""
+msgstr "Предоставить доступ к конфигурации STP/RSTP"
 
 #: root/usr/share/rpcd/acl.d/luci-app-tn-mstpd.json:3
 msgid "Grant access for STP/RSTP status information"
-msgstr ""
+msgstr "Предоставить доступ к информации о состояние STP/RSTP"
 
-#: .tmp/luasrc/view/mstpd/status.htm:60
-#: htdocs/luci-static/resources/view/mstpd/config.js:78
-#: htdocs/luci-static/resources/view/mstpd/status.js:31
+#: htdocs/luci-static/resources/view/mstpd/config.js:79
+#: htdocs/luci-static/resources/view/mstpd/status.js:30
 msgid "Hello time"
 msgstr "Время «hello time»"
 
-#: .tmp/luasrc/view/mstpd/status.htm:329
-msgid "Hide additional information"
-msgstr "Скрыть дополнительную информацию"
-
-#: htdocs/luci-static/resources/view/mstpd/config.js:351
+#: htdocs/luci-static/resources/view/mstpd/config.js:359
 msgid "Info (2)"
 msgstr "Информационные сообщения (2)"
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:237
+#: htdocs/luci-static/resources/view/mstpd/config.js:245
 msgid "Initial edge state"
 msgstr "Начальное пограничное состояние"
 
 #: htdocs/luci-static/resources/view/mstpd/config.js:25
-#: htdocs/luci-static/resources/view/mstpd/config.js:187
+#: htdocs/luci-static/resources/view/mstpd/config.js:193
 msgid "Interface"
-msgstr ""
+msgstr "Интерфейс"
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:79
+#: htdocs/luci-static/resources/view/mstpd/config.js:80
 msgid ""
 "Interval at which the bridge sends hello packets to the surrounding bridges "
 "to make sure the paths are fault-free (1–10 seconds)."
 msgstr ""
+"Интервал, с которым мост отправляет hello-пакеты на соседние мосты, чтобы "
+"удостовериться, что маршруты исправны (1–10 секунд)."
 
-#: .tmp/luasrc/view/mstpd/status.htm:63
-#: htdocs/luci-static/resources/view/mstpd/status.js:34
+#: htdocs/luci-static/resources/view/mstpd/status.js:33
 msgid "Last topology change port"
 msgstr "Порт последнего изменения топологии"
 
-#: htdocs/luci-static/resources/view/mstpd/status.js:301
+#: htdocs/luci-static/resources/view/mstpd/status.js:316
 msgid "Less information"
-msgstr ""
+msgstr "Меньше информации"
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:346
+#: htdocs/luci-static/resources/view/mstpd/config.js:354
 msgid "Logging level"
-msgstr ""
+msgstr "Уровень журналирования"
 
-#: htdocs/luci-static/resources/mstpd.js:14 .tmp/luasrc/view/mstpd/footer.htm:8
+#: htdocs/luci-static/resources/mstpd.js:14
 msgid "MSTPd LuCI application (version %s)"
 msgstr "LuCI приложение управления MSTPd (версия %s)"
 
-#: .tmp/luasrc/view/mstpd/status.htm:57
-#: htdocs/luci-static/resources/view/mstpd/config.js:126
-#: htdocs/luci-static/resources/view/mstpd/status.js:28
+#: htdocs/luci-static/resources/view/mstpd/config.js:129
+#: htdocs/luci-static/resources/view/mstpd/status.js:27
 msgid "Max age"
 msgstr "Время «max age»"
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:127
+#: htdocs/luci-static/resources/view/mstpd/config.js:130
 msgid ""
 "Maximum length of time a configuration BPDU can be held by the bridge (6–40 "
 "seconds)."
 msgstr ""
+"Максимальное время, в течение которого конфигурационные BPDU могут "
+"удерживаться мостом (6–40 секунд)."
 
-#: htdocs/luci-static/resources/view/mstpd/status.js:300
+#: htdocs/luci-static/resources/view/mstpd/status.js:315
 msgid "More information"
-msgstr ""
-
-#: htdocs/luci-static/resources/view/mstpd/config.js:86
-#: htdocs/luci-static/resources/view/mstpd/config.js:106
-#: htdocs/luci-static/resources/view/mstpd/config.js:133
-#: htdocs/luci-static/resources/view/mstpd/config.js:158
-#: htdocs/luci-static/resources/view/mstpd/config.js:173
-msgid "Must be a number"
-msgstr ""
+msgstr "Больше информации"
 
 #: htdocs/luci-static/resources/view/mstpd/config.js:88
-#: htdocs/luci-static/resources/view/mstpd/config.js:175
+#: htdocs/luci-static/resources/view/mstpd/config.js:109
+#: htdocs/luci-static/resources/view/mstpd/config.js:136
+#: htdocs/luci-static/resources/view/mstpd/config.js:164
+#: htdocs/luci-static/resources/view/mstpd/config.js:179
+msgid "Must be a number"
+msgstr "Значение должно быть числом"
+
+#: htdocs/luci-static/resources/view/mstpd/config.js:90
+#: htdocs/luci-static/resources/view/mstpd/config.js:181
 msgid "Must be in range from 1 to 10"
 msgstr "Значение должно быть в диапазоне от 1 до 10"
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:160
+#: htdocs/luci-static/resources/view/mstpd/config.js:166
 msgid "Must be in range from 10 to 1000000"
 msgstr "Значение должно быть в диапазоне от 10 до 1000000"
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:108
+#: htdocs/luci-static/resources/view/mstpd/config.js:111
 msgid "Must be in range from 4 to 30"
 msgstr "Значение должно быть в диапазоне от 4 до 30"
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:135
+#: htdocs/luci-static/resources/view/mstpd/config.js:138
 msgid "Must be in range from 6 to 40"
 msgstr "Значение должно быть в диапазоне от 6 до 40"
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:120
-#: htdocs/luci-static/resources/view/mstpd/config.js:143
+#: htdocs/luci-static/resources/view/mstpd/config.js:123
+#: htdocs/luci-static/resources/view/mstpd/config.js:146
 msgid "Must meet the condition [ 2 * (Forward Delay - 1) >= Max Age ]"
 msgstr "Должно выполнятся условие [ 2 * (Forward Delay - 1) >= Max Age ]"
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:265
-#: htdocs/luci-static/resources/view/mstpd/status.js:65
+#: htdocs/luci-static/resources/view/mstpd/config.js:273
+#: htdocs/luci-static/resources/view/mstpd/status.js:64
 msgid "No"
 msgstr "Нет"
 
-#: .tmp/luasrc/view/mstpd/no-bridges.htm:8
-msgid "No bridges to display..."
-msgstr "Нет мостов для отображения..."
-
-#: .tmp/luasrc/view/mstpd/bridgeslist.htm:94
-msgid "No bridges with enabled STP support"
-msgstr "Нет мостов с включенной поддержкой STP"
-
-#: htdocs/luci-static/resources/view/mstpd/config.js:331
-msgid "On this page you may configure STP/RSTP settings"
+#: htdocs/luci-static/resources/view/mstpd/status.js:105
+#: htdocs/luci-static/resources/view/mstpd/status.js:303
+msgid ""
+"No data to display. Perhaps no bridges are configured to be controlled by "
+"the STP/RSTP service."
 msgstr ""
+"Нет данных для отображения. Возможно, не настроены мосты для управления "
+"службой STP/RSTP."
 
-#: .tmp/luasrc/view/mstpd/status.htm:84
-#: htdocs/luci-static/resources/view/mstpd/status.js:55
+#: htdocs/luci-static/resources/view/mstpd/status.js:391
+msgid ""
+"No data to display. You must <a href=\"%s\">select</a> at least one bridge "
+"for controlling by the STP/RSTP service."
+msgstr ""
+"Нет данных для отображения. Необходимо <a href=\"%s\">выбрать</a> для "
+"управления службой STP/RSTP как минимум один мост."
+
+#: htdocs/luci-static/resources/view/mstpd/config.js:339
+msgid "On this page you may configure STP/RSTP settings"
+msgstr "На этой странице можно настроить параметры STP/RSTP"
+
+#: htdocs/luci-static/resources/view/mstpd/status.js:54
 msgid "Operative P2P"
 msgstr "Оперативное P2P состояние"
 
-#: .tmp/luasrc/view/mstpd/status.htm:82
-#: htdocs/luci-static/resources/view/mstpd/status.js:53
+#: htdocs/luci-static/resources/view/mstpd/status.js:52
 msgid "Operative edge"
 msgstr "Оперативное пограничное состояние"
 
-#: .tmp/luasrc/view/mstpd/status.htm:72
-#: htdocs/luci-static/resources/view/mstpd/status.js:43
+#: htdocs/luci-static/resources/view/mstpd/status.js:42
 msgid "Operative protocol version"
 msgstr "Оперативная версия протокола"
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:263
+#: htdocs/luci-static/resources/view/mstpd/config.js:271
 msgid "P2P mode"
-msgstr ""
+msgstr "Режим P2P"
 
-#: .tmp/luasrc/view/mstpd/status.htm:56
-#: htdocs/luci-static/resources/view/mstpd/config.js:225
-#: htdocs/luci-static/resources/view/mstpd/status.js:27
+#: htdocs/luci-static/resources/view/mstpd/config.js:233
+#: htdocs/luci-static/resources/view/mstpd/status.js:26
 msgid "Path cost"
 msgstr "Стоимость маршрута"
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:263
+#: htdocs/luci-static/resources/view/mstpd/config.js:271
 msgid "Point-to-Point detection mode"
 msgstr "Режим определения P2P"
 
-#: htdocs/luci-static/resources/view/mstpd/status.js:214
+#: htdocs/luci-static/resources/view/mstpd/status.js:221
 msgid "Port"
 msgstr "Порт"
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:456
+#: htdocs/luci-static/resources/view/mstpd/config.js:478
 msgid "Port \"%s\" of bridge \"%s\" parameters"
-msgstr ""
+msgstr "Параметры порта «%s» моста «%s»"
 
-#: .tmp/luasrc/view/mstpd/status.htm:75
-#: htdocs/luci-static/resources/view/mstpd/status.js:46
+#: htdocs/luci-static/resources/view/mstpd/status.js:45
 msgid "Port identifier"
 msgstr "Идентификатор"
 
-#: .tmp/luasrc/view/mstpd/status.htm:76
-#: htdocs/luci-static/resources/view/mstpd/status.js:47
+#: htdocs/luci-static/resources/view/mstpd/status.js:46
 msgid "Port path cost"
 msgstr "Стоимость маршрута порта"
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:198
+#: htdocs/luci-static/resources/view/mstpd/config.js:206
 msgid "Port priority (0–61440). Default port priority is 32768."
-msgstr ""
+msgstr "Приоритет порта (0–61440). Приоритет по умолчанию — 32768."
 
-#: .tmp/luasrc/view/mstpd/status.htm:73
-#: htdocs/luci-static/resources/view/mstpd/status.js:44
+#: htdocs/luci-static/resources/view/mstpd/status.js:43
 msgid "Port role"
 msgstr "Роль"
 
-#: .tmp/luasrc/view/mstpd/status.htm:74
-#: htdocs/luci-static/resources/view/mstpd/status.js:45
+#: htdocs/luci-static/resources/view/mstpd/status.js:44
 msgid "Port state"
 msgstr "Состояние"
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:53
-#: htdocs/luci-static/resources/view/mstpd/config.js:197
+#: htdocs/luci-static/resources/view/mstpd/config.js:54
+#: htdocs/luci-static/resources/view/mstpd/config.js:205
 msgid "Priority"
 msgstr "Приоритет"
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:36
+#: htdocs/luci-static/resources/view/mstpd/config.js:37
 msgid "Protocol"
 msgstr "Протокол"
 
-#: .tmp/luasrc/view/mstpd/status.htm:54
-#: htdocs/luci-static/resources/view/mstpd/status.js:25
+#: htdocs/luci-static/resources/view/mstpd/status.js:24
 msgid "Regional root"
 msgstr "Региональный корневой мост"
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:315
+#: htdocs/luci-static/resources/view/mstpd/config.js:323
 msgid "Restrict port ability to propagate received TCN's"
 msgstr "Запретить порту распространять полученные TCN"
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:303
+#: htdocs/luci-static/resources/view/mstpd/config.js:311
 msgid "Restrict port ability to take root role"
-msgstr ""
+msgstr "Запретить порту принимать роль корневого порта"
 
-#: .tmp/luasrc/view/mstpd/status.htm:55
-#: htdocs/luci-static/resources/view/mstpd/status.js:26
+#: htdocs/luci-static/resources/view/mstpd/status.js:25
 msgid "Root port"
 msgstr "Корневой порт"
 
-#: .tmp/luasrc/view/mstpd/status.htm:86
-#: htdocs/luci-static/resources/view/mstpd/status.js:57
+#: htdocs/luci-static/resources/view/mstpd/status.js:56
 msgid "Rx BPDU"
 msgstr "Получено BPDU"
 
-#: .tmp/luasrc/view/mstpd/status.htm:87
-#: htdocs/luci-static/resources/view/mstpd/status.js:58
+#: htdocs/luci-static/resources/view/mstpd/status.js:57
 msgid "Rx BPDU (filtered)"
 msgstr "Получено BPDU (отфильтровано)"
 
-#: .tmp/luasrc/view/mstpd/status.htm:89
-#: htdocs/luci-static/resources/view/mstpd/status.js:60
+#: htdocs/luci-static/resources/view/mstpd/status.js:59
 msgid "Rx TCN"
 msgstr "Получено TCN"
-
-#: .tmp/luasrc/view/mstpd/bridgeslist.htm:87
-msgid "STP support is disabled on this bridge"
-msgstr "На мосту отключена поддержка STP"
 
 #: root/usr/share/luci/menu.d/luci-app-tn-mstpd.json:3
 msgid "STP/RSTP"
 msgstr "STP/RSTP"
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:330
+#: htdocs/luci-static/resources/view/mstpd/config.js:338
 msgid "STP/RSTP Settings"
 msgstr "Настройки STP/RSTP"
 
-#: .tmp/luasrc/view/mstpd/no-bridges.htm:6
-#: .tmp/luasrc/view/mstpd/status.htm:398
-#: htdocs/luci-static/resources/view/mstpd/status.js:364
+#: htdocs/luci-static/resources/view/mstpd/status.js:378
 msgid "STP/RSTP Status"
 msgstr "Состояние STP/RSTP"
 
-#: .tmp/luasrc/view/mstpd/status.htm:69
-#: htdocs/luci-static/resources/view/mstpd/status.js:40
+#: htdocs/luci-static/resources/view/mstpd/status.js:39
 msgid "STP/RSTP processing"
 msgstr "Обработка STP/RSTP"
 
@@ -480,11 +437,7 @@ msgstr "Обработка STP/RSTP"
 msgid "Settings"
 msgstr "Настройки"
 
-#: .tmp/luasrc/view/mstpd/status.htm:328
-msgid "Show additional information"
-msgstr "Показать дополнительную информацию"
-
-#: htdocs/luci-static/resources/view/mstpd/config.js:353
+#: htdocs/luci-static/resources/view/mstpd/config.js:361
 msgid "State machine transition (4)"
 msgstr "Переходы машины состояний (4)"
 
@@ -492,96 +445,69 @@ msgstr "Переходы машины состояний (4)"
 msgid "Status"
 msgstr "Состояние"
 
-#: .tmp/luasrc/view/mstpd/status.htm:315
+#: htdocs/luci-static/resources/view/mstpd/status.js:295
 msgid "There is no available information"
 msgstr "Информация не доступна"
 
-#: htdocs/luci-static/resources/view/mstpd/status.js:286
-msgid "There is no available information%>"
-msgstr ""
-
-#: .tmp/luasrc/view/mstpd/status.htm:407
-msgid ""
-"This page allows you to see current state of the STP/RSTP bridge and its "
-"ports"
-msgstr ""
-"На данной странице отображается текущее состояние STP/RSTP моста и его портов"
-
-#: htdocs/luci-static/resources/view/mstpd/status.js:365
+#: htdocs/luci-static/resources/view/mstpd/status.js:379
 msgid ""
 "This page allows you to see current state of the STP/RSTP bridges and its "
 "ports"
 msgstr ""
+"На этой странице можно просмотреть текущее состояние мостов STP/RSTP и их "
+"портов"
 
-#: .tmp/luasrc/view/mstpd/status.htm:62
-#: htdocs/luci-static/resources/view/mstpd/status.js:33
+#: htdocs/luci-static/resources/view/mstpd/status.js:32
 msgid "Time since topology change"
 msgstr "Время с последнего изменения топологии"
 
-#: .tmp/luasrc/view/mstpd/no-bridges.htm:13
-msgid ""
-"To display the STP/RSTP bridge status on this page you must select at least "
-"one bridge for controlling by the MSTPd service <a href=\"%s\">here</a>."
-msgstr ""
-"Чтобы отобразить состояние STP/RSTP моста на этой странице, вы должны "
-"выбрать хотя бы один мост для управления службой MSTPd <a href=\"%s\">здесь</"
-"a>."
-
-#: .tmp/luasrc/view/mstpd/status.htm:64
-#: htdocs/luci-static/resources/view/mstpd/status.js:35
+#: htdocs/luci-static/resources/view/mstpd/status.js:34
 msgid "Topology change count"
 msgstr "Количество изменений топологии"
 
-#: .tmp/luasrc/view/mstpd/status.htm:59
-#: htdocs/luci-static/resources/view/mstpd/config.js:166
-#: htdocs/luci-static/resources/view/mstpd/status.js:30
+#: htdocs/luci-static/resources/view/mstpd/config.js:172
+#: htdocs/luci-static/resources/view/mstpd/status.js:29
 msgid "Transmit hold count"
 msgstr "Параметр «transmit hold count»"
 
-#: .tmp/luasrc/view/mstpd/status.htm:85
-#: htdocs/luci-static/resources/view/mstpd/status.js:56
+#: htdocs/luci-static/resources/view/mstpd/status.js:55
 msgid "Tx BPDU"
 msgstr "Отправлено BPDU"
 
-#: .tmp/luasrc/view/mstpd/status.htm:88
-#: htdocs/luci-static/resources/view/mstpd/status.js:59
+#: htdocs/luci-static/resources/view/mstpd/status.js:58
 msgid "Tx TCN"
 msgstr "Отправлено TCN"
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:266
-#: htdocs/luci-static/resources/view/mstpd/status.js:66
+#: htdocs/luci-static/resources/view/mstpd/config.js:274
+#: htdocs/luci-static/resources/view/mstpd/status.js:65
 msgid "Yes"
 msgstr "Да"
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:438
+#: htdocs/luci-static/resources/view/mstpd/config.js:459
 msgid ""
 "You can include and exclude ports from the bridge on the <a href=\"%s"
 "\">network interfaces configuration</a> page."
 msgstr ""
+"Включить или исключить порты из моста можно на странице <a href=\"%s"
+"\">конфигурации сетевых интерфейсов</a>."
 
-#: htdocs/luci-static/resources/view/mstpd/config.js:357
+#: htdocs/luci-static/resources/view/mstpd/config.js:365
 msgid ""
 "You can not select bridges with disabled STP support. You may enable or "
 "disable STP support for bridges on the <a href=\"%s\">network interfaces "
 "settings</a>"
 msgstr ""
+"Нельзя выбрать мосты с отключенной поддержкой STP. Включить или отключить "
+"поддержку STP для мостов можно на странице <a href=\"%s\">настройки сетевых "
+"интерфейсов</a>"
 
-#: .tmp/luasrc/view/mstpd/no-bridges.htm:10
-msgid "You have no selected bridges for controlling by the MSTPd service."
-msgstr "Нет выбранных мостов для управления службой MSTPd."
-
-#: htdocs/luci-static/resources/view/mstpd/config.js:393
+#: htdocs/luci-static/resources/view/mstpd/config.js:414
 msgid ""
 "You must select at least one bridge for controlling by the STP/RSTP service"
-msgstr ""
+msgstr "Необходимо выбрать хотя бы один мост для управления службой STP/RSP"
 
-#: .tmp/luasrc/view/mstpd/status.htm:100
-msgid "no"
-msgstr "нет"
-
-#: .tmp/luasrc/view/mstpd/status.htm:185 .tmp/luasrc/view/mstpd/status.htm:197
-#: htdocs/luci-static/resources/view/mstpd/status.js:115
-#: htdocs/luci-static/resources/view/mstpd/status.js:127
+#: htdocs/luci-static/resources/view/mstpd/status.js:120
+#: htdocs/luci-static/resources/view/mstpd/status.js:132
 msgctxt "Port name"
 msgid "none"
 msgstr "нет"
@@ -589,76 +515,8 @@ msgstr "нет"
 #: htdocs/luci-static/resources/mstpd.js:50
 #: htdocs/luci-static/resources/mstpd.js:96
 msgid "unspecified"
-msgstr ""
-
-#: .tmp/luasrc/view/mstpd/status.htm:101
-msgid "yes"
-msgstr "да"
+msgstr "не определено"
 
 #: htdocs/luci-static/resources/mstpd.js:16
 msgid "© 2018–2020, Tano Systems LLC, Anton Kikin"
-msgstr ""
-
-#~ msgid "(10–1000000 seconds)"
-#~ msgstr "(10–1000000 секунд)"
-
-#~ msgid "(1–10 seconds)"
-#~ msgstr "(1–10 секунд)"
-
-#~ msgid "(4–30 seconds)"
-#~ msgstr "(4–30 секунд)"
-
-#~ msgid "(6–40 seconds)"
-#~ msgstr "(6–40 секунд)"
-
-#~ msgid "BPDU Filter"
-#~ msgstr "Фильтр BPDU"
-
-#~ msgid "Bridge"
-#~ msgstr "Мост"
-
-#~ msgid "Bridge (%s)"
-#~ msgstr "Мост (%s)"
-
-#~ msgid "Bridges"
-#~ msgstr "Мосты"
-
-#~ msgid "Bridges controlled by MSTPd"
-#~ msgstr "Мосты управляемые службой MSTPd"
-
-#~ msgid "MSTPd logging level"
-#~ msgstr "Уровень журналирования"
-
-#~ msgid "Name of the bridge network interface"
-#~ msgstr "Имя сетевого устройства моста"
-
-#~ msgid "Name of the bridge port network interface"
-#~ msgstr "Имя сетевого устройства порта"
-
-#~ msgid "On this page you may configure MSTPd settings"
-#~ msgstr "На данной страницы можно выполнить конфигурацию службы MSTPd"
-
-#~ msgid "Port %d (%s)"
-#~ msgstr "Порт %d (%s)"
-
-#~ msgid "Restrict port ability to take Root role"
-#~ msgstr "Запретить порту принимать роль корневого порта"
-
-#~ msgid "Value is not a number"
-#~ msgstr "Значение не является числом"
-
-#~ msgid ""
-#~ "You can not select bridges with disabled STP support. You may enable or "
-#~ "disable STP support for bridges in the <a href=\"%s\">network interfaces "
-#~ "settings</a>"
-#~ msgstr ""
-#~ "Вы не можете выбрать мосты с отключенной поддержкой STP. Вы можете "
-#~ "включить или отключить поддержку STP для мостов в <a href=\"%s"
-#~ "\">настройках сетевых интерфейсов</a>"
-
-#~ msgid ""
-#~ "You must select at least one bridge for controlling by the MSTPd service."
-#~ msgstr "Вы должны выбрать хотя бы один мост для управления службой MSTPd."
-
-#~ msgid "Disable port if BPDU is received on it."
-#~ msgstr "Отключить порт если на нём будет принят BPDU."
+msgstr "© 2018–2020, ООО «Тано Системс», Антон Кикин"
