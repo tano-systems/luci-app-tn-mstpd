@@ -3,19 +3,46 @@
 		"description": "Grant access for STP/RSTP status information",
 		"read": {
 			"ubus": {
-				"mstpd": [ "getStatus" ]
+				"mstpd": [
+					"getStatus"
+				]
 			},
-			"uci": [ "mstpd", "luci" ]
+			"uci": [
+				"mstpd",
+				"luci"
+			]
 		}
 	},
 
-	"luci-app-tn-mstpd": {
+	"luci-app-tn-mstpd-config": {
 		"description": "Grant access for STP/RSTP configuration",
 		"read": {
-			"uci": [ "mstpd", "luci" ]
+			"uci": [
+				"mstpd",
+				"luci",
+				"network",
+				"wireless",
+				"firewall"
+			],
+			"ubus": {
+				"luci-rpc": [
+					"getBoardJSON",
+					"getHostHints",
+					"getNetworkDevices",
+					"getWirelessDevices"
+				],
+				"network": [
+					"get_proto_handlers"
+				],
+				"network.interface": [
+					"dump"
+				]
+			}
 		},
 		"write": {
-			"uci": [ "mstpd" ]
+			"uci": [
+				"mstpd"
+			]
 		}
 	}
 }
