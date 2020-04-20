@@ -3,37 +3,40 @@
 ## Description
 This package allows you to control and monitor MSTPd in LuCI web interface.
 
-This application can be useful for systems with DSA (Distributed Switch Architecture)
-enabled switches or for systems with multiple network interfaces.
+This application can be useful for systems with DSA (Distributed Switch Architecture) enabled switches or for systems with multiple network interfaces.
 
 ## Dependencies
-MSTPd LuCI application developed for LuCI 18.06 branch and
-additionally requires fixes from pull-request openwrt/luci#1951.
 
-This MSTPd LuCI application required latest MSTPd version with
-JSON output support. MSTPd recipe and init scripts for OpenWrt can be founded
-in [meta-tanowrt](https://github.com/tano-systems/meta-tanowrt.git) OpenEmbedded layer.
+Master branch of this repository requires latest LuCI revision with client side rendering feature. Support for older LuCI releases (e.g. for version 18.06.x) is left in the [1.x](https://github.com/tano-systems/luci-app-tn-mstpd/tree/1.x) branch of this repository.
 
-## Supported languages
+This MSTPd LuCI application required latest MSTPd version with JSON output support. MSTPd recipe and required procd init scripts for OpenWrt can be founded in [meta-tanowrt](https://github.com/tano-systems/meta-tanowrt.git) OpenEmbedded layer.
+
+## Supported Languages
 - English
 - Russian
 
-## Limitations
+## Supported (tested) LuCI Themes
+- [luci-theme-tano](https://github.com/tano-systems/luci-theme-tano) ([screenshots](#screenshots) are taken with this theme)
+- luci-theme-bootstrap
+- luci-theme-openwrt-2020
+- luci-theme-openwrt
 
-Supported configuration and status only for the STP and RSTP protocols.
-MSTP protocol is not supported.
+## Limitations
+Supported configuration and status only for the STP and RSTP protocols. MSTP protocol is not supported.
 
 ## Screenshots
 
-### Bridge status
-![Status page](screenshots/luci-app-mstpd-status.png?raw=true "Status page")
+### Bridge Status
+![Status page](screenshots/luci-app-mstpd-status.png?raw=true)  
+![Status page](screenshots/luci-app-mstpd-status-additional.png?raw=true)
 
-### Bridge ports status full table
-![Status page](screenshots/luci-app-mstpd-status-additional.png?raw=true "Expanded bridge ports status table")
+### Global Settings
+![Configuration page (global)](screenshots/luci-app-mstpd-config.png?raw=true")
 
-### Bridge configuration
-![Configuration page (bridge)](screenshots/luci-app-mstpd-config-bridge.png?raw=true "Configuration page (bridge)")
+### Bridge Configuration
+![Configuration page (bridge)](screenshots/luci-app-mstpd-config-bridge.png?raw=true")
 
-### Bridge port configuration
-![Configuration page (port)](screenshots/luci-app-mstpd-config-port.png?raw=true "Configuration page (port)")
+### Port Configuration
+![Configuration page (port)](screenshots/luci-app-mstpd-config-port.png?raw=true")  
+![Configuration page (port)](screenshots/luci-app-mstpd-config-port-adv.png?raw=true")
 
