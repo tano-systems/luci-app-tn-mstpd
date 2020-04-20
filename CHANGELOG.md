@@ -7,6 +7,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 All dates in this document are in `DD.MM.YYYY` format.
 
 ## [Unreleased]
+
+*Nothing yet*
+
+## [Version 1.3.3] (20.04.2020)
 ### Added
 - Added ACL rules for latest LuCI support
 
@@ -98,6 +102,7 @@ All dates in this document are in `DD.MM.YYYY` format.
 Initial release
 
 [Unreleased]: https://github.com/tano-systems/luci-app-tn-mstpd/tree/master
+[Version 1.3.3]: https://github.com/tano-systems/luci-app-tn-mstpd/releases/tag/v1.3.3
 [Version 1.3.2]: https://github.com/tano-systems/luci-app-tn-mstpd/releases/tag/v1.3.2
 [Version 1.3.1]: https://github.com/tano-systems/luci-app-tn-mstpd/releases/tag/v1.3.1
 [Version 1.3.0]: https://github.com/tano-systems/luci-app-tn-mstpd/releases/tag/v1.3.0
