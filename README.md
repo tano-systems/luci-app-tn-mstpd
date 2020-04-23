@@ -7,7 +7,7 @@ This application can be useful for systems with DSA (Distributed Switch Architec
 
 ## Dependencies
 
-Master branch of this repository requires latest LuCI revision with client side rendering feature. Support for older LuCI releases (e.g. for version 18.06.x) is left in the [1.x](https://github.com/tano-systems/luci-app-tn-mstpd/tree/1.x) branch of this repository.
+Master branch of this repository requires latest LuCI revision with client side rendering feature. Support for older LuCI releases (e.g. for version 18.06.x) is left in the [v1.x](https://github.com/tano-systems/luci-app-tn-mstpd/tree/v1.x) branch of this repository.
 
 This MSTPd LuCI application required latest MSTPd version with JSON output support. MSTPd recipe and required procd init scripts for OpenWrt can be founded in [meta-tanowrt](https://github.com/tano-systems/meta-tanowrt.git) OpenEmbedded layer.
 
