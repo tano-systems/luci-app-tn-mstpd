@@ -389,7 +389,7 @@ return L.view.extend({
 		var bridgesEnabled = m.data.get('mstpd', 'global', 'bridge');
 
 		netDevices.forEach(function(netdev) {
-			if (!bridgesEnabled || !bridgesEnabled.includes(netdev.ifname))
+			if (!bridgesEnabled || (bridgesEnabled.indexOf(netdev.ifname) === -1))
 				return;
 
 			if (!netdev.isBridge())

@@ -8,7 +8,8 @@ All dates in this document are in `DD.MM.YYYY` format.
 
 ## [Unreleased]
 
-*Nothing yet*
+### Fixed
+- Fixed IE11 compatibility.
 
 ## [Version 2.0.1] (21.04.2020)
 ### Fixed

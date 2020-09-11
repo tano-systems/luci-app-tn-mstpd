@@ -56,7 +56,7 @@ const mstpdBridgePortParams = {
 	'num-rx-bpdu'                : _('Rx BPDU'),
 	'num-rx-bpdu-filtered'       : _('Rx BPDU (filtered)'),
 	'num-tx-tcn'                 : _('Tx TCN'),
-	'num-rx-tcn'                 : _('Rx TCN'),
+	'num-rx-tcn'                 : _('Rx TCN')
 };
 
 function vcb_yn(br, v) {
@@ -226,7 +226,7 @@ var CBIBridgePortsStatus = form.DummyValue.extend({
 					E('div', {
 						'class': 'th middle right',
 						'id': 'mstpd-brports-status-header-' + p
-					}, br.ports[p].port),
+					}, br.ports[p].port)
 				);
 			}
 
@@ -332,7 +332,7 @@ var CBIBridgePortsStatus = form.DummyValue.extend({
 				})
 			])
 		]);
-	},
+	}
 });
 
 return L.view.extend({
@@ -351,7 +351,7 @@ return L.view.extend({
 	load: function() {
 		return Promise.all([
 			L.resolveDefault(callMSTPStatus(), {}),
-			mstpd.init(),
+			mstpd.init()
 		]);
 	},
 

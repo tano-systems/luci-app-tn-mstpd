@@ -174,5 +174,5 @@ return L.Class.extend({
 	renderFooter: renderFooter,
 	init: init,
 	getStatusShortMode: getStatusShortMode,
-	setStatusShortMode: setStatusShortMode,
+	setStatusShortMode: setStatusShortMode
 });
