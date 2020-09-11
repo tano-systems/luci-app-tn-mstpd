@@ -7,14 +7,19 @@
 .mstpd-no  { }
 
 .mstpd-br-params {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
+	column-count: 2;
+	-moz-column-count: 2;
+	-webkit-column-count: 2;
 	column-gap: 24px;
+	-moz-column-gap: 24px;
+	-webkit-column-gap: 24px;
 }
 
 @media only screen and (max-width: 850px) {
 	.mstpd-br-params {
-		grid-template-columns: 1fr;
+		column-count: 1;
+		-moz-column-count: 1;
+		-webkit-column-count: 1;
 	}
 }
 
