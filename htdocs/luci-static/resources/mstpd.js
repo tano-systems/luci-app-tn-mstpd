@@ -13,7 +13,7 @@ const appFooter = E('div', { 'class': 'cbi-section' }, [
 		E('a', { 'href': appHomeUrl },
 			_('MSTPd LuCI application (version %s)').format(appVersion)),
 		E('br', {}),
-		_('© 2018–2020, Tano Systems LLC, Anton Kikin'),
+		_('© 2018–2021, Tano Systems LLC, Anton Kikin'),
 		' <',
 		E('a', { 'href': 'mailto:a.kikin@tano-systems.com' },
 			E('nobr', {}, 'a.kikin@tano-systems.com')),
