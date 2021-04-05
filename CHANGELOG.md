@@ -8,7 +8,18 @@ All dates in this document are in `DD.MM.YYYY` format.
 
 ## [Unreleased]
 
+### Added
+- Display in status table counters for port transitions to "Forwarding"
+  and "Blocking" states.
+
+### Changed
+- Change HTML markup of the bridge ports status table. Instead of the
+  "More information"/"Less information" button, it is now possible to
+  display/hide additional information for each of the ports by clicking
+  on the row of the table corresponding to the port.
+
 ### Fixed
+- Fixed minor CSS bugs.
 - Fixed IE11 compatibility.
 
 ## [Version 2.0.1] (21.04.2020)

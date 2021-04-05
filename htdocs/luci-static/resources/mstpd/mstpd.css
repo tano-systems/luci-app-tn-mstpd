@@ -6,7 +6,7 @@
 .mstpd-yes { color: #2abd69; }
 .mstpd-no  { }
 
-.mstpd-br-params {
+.mstpd-params {
 	column-count: 2;
 	-moz-column-count: 2;
 	-webkit-column-count: 2;
@@ -23,27 +23,65 @@
 	}
 }
 
-.mstpd-br-params > div {
-	display: grid;
-	grid-template-columns: 1fr auto;
-	border-bottom: 1px solid #e6e6e6;
-	padding: 0 8px;
+.mstpd-collapsed.tr {
+	cursor: -webkit-zoom-in;
+	cursor: zoom-in;
 }
 
-.mstpd-br-params .mstpd-br-param {
+.mstpd-expanded.tr {
+	cursor: -webkit-zoom-out;
+	cursor: zoom-out;
+}
+
+.mstpd-extrow .td {
+	border-top: none !important;
+	padding-top: 0;
+}
+
+.mstpd-params > div {
+	display: grid;
+	padding: 0 8px;
+	grid-template-columns: 1fr auto;
+	border-bottom: 1px solid #e6e6e6;
+	border-bottom-width: 1px;
+	        column-break-inside: avoid;
+	-webkit-column-break-inside: avoid;
+}
+
+.mstpd-params .mstpd-param {
 	margin-right: 6px;
 /*	white-space: nowrap;*/
 	font-weight: bold;
 }
 
-.mstpd-br-params .mstpd-br-param::after {
+.mstpd-params .mstpd-param::after {
 	content: ':';
 }
 
-.mstpd-br-params .mstpd-br-param-value {
+.mstpd-params .mstpd-param-value {
 	white-space: nowrap;
 	font-weight: normal;
 }
+
+.mstpd-port-params {
+/*	border: 1px solid #cccccc;*/
+	border-radius: 5px;
+	padding: 8px 8px;
+	box-shadow: 0 1px 3px 0 grey;
+/*	background-color: rgba(240,240,240,0.5);*/
+}
+
+.mstpd-port-params .mstpd-param {
+	margin-right: 12px;
+	font-weight: normal;
+/*	font-style: italic;*/
+}
+
+.mstpd-port-params > div {
+	border-bottom: none;
+	padding: 0;
+}
+
 
 .mstpd-badge {
 	display: inline-block;

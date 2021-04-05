@@ -144,35 +144,8 @@ function renderFooter() {
 	return isNeedToHideFooter() ? '' : appFooter;
 }
 
-function getStatusShortMode(bridge) {
-	var data = session.getLocalData('luci-app-tn-mstpd');
-	if (data === null)
-		data = {};
-
-	if (data.hasOwnProperty('statusShortMode'))
-		if (data.statusShortMode.hasOwnProperty(bridge))
-			return data.statusShortMode[bridge];
-
-	/* Default value */
-	return true;
-}
-
-function setStatusShortMode(bridge, mode) {
-	var data = session.getLocalData('luci-app-tn-mstpd');
-	if (data === null)
-		data = {};
-
-	if (!data.hasOwnProperty('statusShortMode'))
-		data.statusShortMode = {};
-
-	data.statusShortMode[bridge] = mode;
-	session.setLocalData('luci-app-tn-mstpd', data);
-}
-
 return L.Class.extend({
 	BridgesSelect: CBIBridgesSelect,
 	renderFooter: renderFooter,
 	init: init,
-	getStatusShortMode: getStatusShortMode,
-	setStatusShortMode: setStatusShortMode
 });
