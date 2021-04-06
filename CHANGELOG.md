@@ -8,6 +8,9 @@ All dates in this document are in `DD.MM.YYYY` format.
 
 ## [Unreleased]
 
+*Nothing yet*
+
+## [Version 2.1.0] (06.04.2021)
 ### Added
 - Display in status table counters for port transitions to "Forwarding"
   and "Blocking" states.
@@ -123,6 +126,7 @@ All dates in this document are in `DD.MM.YYYY` format.
 Initial release
 
 [Unreleased]: https://github.com/tano-systems/luci-app-tn-mstpd/tree/master
+[Version 2.1.0]: https://github.com/tano-systems/luci-app-tn-mstpd/releases/tag/v2.1.0
 [Version 2.0.1]: https://github.com/tano-systems/luci-app-tn-mstpd/releases/tag/v2.0.1
 [Version 2.0.0]: https://github.com/tano-systems/luci-app-tn-mstpd/releases/tag/v2.0.0
 [Version 1.3.2]: https://github.com/tano-systems/luci-app-tn-mstpd/releases/tag/v1.3.2
