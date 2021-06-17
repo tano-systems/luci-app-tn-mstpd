@@ -388,8 +388,16 @@ return L.view.extend({
 		var bridges = [];
 		var bridgesEnabled = m.data.get('mstpd', 'global', 'bridge');
 
+		var isOldLuCI = false;
+
 		netDevices.forEach(function(netdev) {
-			if (!bridgesEnabled || (bridgesEnabled.indexOf(netdev.ifname) === -1))
+			if (!bridgesEnabled)
+				return;
+
+			if (!isOldLuCI)
+				isOldLuCI = netdev.hasOwnProperty('ifname');
+
+			if (bridgesEnabled.indexOf(isOldLuCI ? netdev.ifname : netdev.device) === -1)
 				return;
 
 			if (!netdev.isBridge())
@@ -398,9 +406,10 @@ return L.view.extend({
 			if (!netdev.getBridgeSTP())
 				return;
 
+			var dev = isOldLuCI ? netdev.ifname : netdev.device;
 			bridges.push({
-				'name': netdev.ifname,
-				'name-cfg': netdev.ifname.replace(/^(br-)/, ''),
+				'name': dev,
+				'name-cfg': dev.replace(/^(br-)/, ''),
 				'ports': netdev.getPorts(),
 			});
 		});
@@ -431,8 +440,10 @@ return L.view.extend({
 				m.data.add('mstpd', 'bridge', bridges[i]['name-cfg']);
 
 			for (let j = 0; j < bridges[i].ports.length; j++) {
-				if (!m.data.get('mstpd', bridges[i].ports[j].ifname))
-					var sid = m.data.add('mstpd', 'bridge_port', bridges[i].ports[j].ifname);
+				var dev = isOldLuCI ? bridges[i].ports[j].ifname
+				                    : bridges[i].ports[j].device;
+				if (!m.data.get('mstpd', dev))
+					var sid = m.data.add('mstpd', 'bridge_port', dev);
 			}
 		}
 
@@ -467,9 +478,13 @@ return L.view.extend({
 			ss.sortable = true;
 
 			ss.filter = L.bind(function(br, section_id) {
-				for (let p = 0; p < br.ports.length; p++)
-					if (br.ports[p].ifname == section_id)
+				for (let p = 0; p < br.ports.length; p++) {
+					var dev = isOldLuCI ? br.ports[p].ifname
+					                    : br.ports[p].device;
+
+					if (dev == section_id)
 						return true;
+				}
 
 				return false;
 			}, ss, br);

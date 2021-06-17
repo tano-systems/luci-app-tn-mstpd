@@ -8,7 +8,9 @@ All dates in this document are in `DD.MM.YYYY` format.
 
 ## [Unreleased]
 
-*Nothing yet*
+### Added
+- Added support for latest LuCI versions with 'device' sections
+  and attributes in network configurations.
 
 ## [Version 2.1.0] (06.04.2021)
 ### Added
